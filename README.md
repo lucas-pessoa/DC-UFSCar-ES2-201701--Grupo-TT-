@@ -1,3 +1,17 @@
+# Trabalho De Engenharia de Software 2
+
+Grupo:
+
+Eduardo Noronha
+
+Guilherme Rodrigues
+
+Lucas Eduardo Pessoa
+
+Lucas Françoso Bataglia
+
+William Picon Studart
+
 # JabRef Development Version
 
 [![Build Status](https://travis-ci.org/JabRef/jabref.svg?branch=master)](https://travis-ci.org/JabRef/jabref)
