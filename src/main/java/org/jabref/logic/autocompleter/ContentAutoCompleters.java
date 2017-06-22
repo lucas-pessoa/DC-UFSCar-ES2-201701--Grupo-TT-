@@ -1,12 +1,12 @@
 package org.jabref.logic.autocompleter;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-
 import org.jabref.logic.journals.JournalAbbreviationLoader;
 import org.jabref.model.database.BibDatabase;
 import org.jabref.model.metadata.MetaData;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 
 public class ContentAutoCompleters extends AutoCompleters {
 

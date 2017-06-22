@@ -1,5 +1,7 @@
 package org.jabref.gui.util;
 
+import de.jensd.fx.glyphs.GlyphIcons;
+import de.jensd.fx.glyphs.materialdesignicons.utils.MaterialDesignIconFactory;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.control.ListCell;
@@ -9,11 +11,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Text;
 import javafx.util.Callback;
-
 import org.jabref.model.strings.StringUtil;
-
-import de.jensd.fx.glyphs.GlyphIcons;
-import de.jensd.fx.glyphs.materialdesignicons.utils.MaterialDesignIconFactory;
 
 /**
  * Constructs a {@link ListCell} based on the view model of the row and a bunch of specified converter methods.

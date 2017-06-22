@@ -1,18 +1,17 @@
 package org.jabref.logic.cleanup;
 
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.jabref.logic.formatter.casechanger.UpperCaseFormatter;
 import org.jabref.model.cleanup.FieldFormatterCleanup;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.entry.BibtexEntryTypes;
 import org.jabref.model.entry.FieldName;
-
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class FieldFormatterCleanupTest {
 

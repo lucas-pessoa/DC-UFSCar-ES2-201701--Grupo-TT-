@@ -1,6 +1,6 @@
 package org.jabref.gui.entryeditor;
 
-import javax.swing.JTabbedPane;
+import javax.swing.*;
 
 public class EntryEditorTabbedPane extends JTabbedPane {
 

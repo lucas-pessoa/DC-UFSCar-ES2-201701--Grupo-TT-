@@ -1,7 +1,6 @@
 package org.jabref.logic.msbib;
 
 import org.jabref.model.entry.Author;
-
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

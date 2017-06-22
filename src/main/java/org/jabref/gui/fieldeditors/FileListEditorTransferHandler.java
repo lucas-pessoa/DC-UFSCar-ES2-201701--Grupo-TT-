@@ -1,5 +1,15 @@
 package org.jabref.gui.fieldeditors;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.jabref.gui.EntryContainer;
+import org.jabref.gui.JabRefFrame;
+import org.jabref.gui.externalfiles.DroppedFileHandler;
+import org.jabref.gui.externalfiletype.ExternalFileTypes;
+import org.jabref.gui.groups.EntryTableTransferHandler;
+import org.jabref.model.util.FileHelper;
+
+import javax.swing.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.Transferable;
@@ -10,20 +20,6 @@ import java.net.URL;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.swing.JComponent;
-import javax.swing.SwingUtilities;
-import javax.swing.TransferHandler;
-
-import org.jabref.gui.EntryContainer;
-import org.jabref.gui.JabRefFrame;
-import org.jabref.gui.externalfiles.DroppedFileHandler;
-import org.jabref.gui.externalfiletype.ExternalFileTypes;
-import org.jabref.gui.groups.EntryTableTransferHandler;
-import org.jabref.model.util.FileHelper;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 
 class FileListEditorTransferHandler extends TransferHandler {
 

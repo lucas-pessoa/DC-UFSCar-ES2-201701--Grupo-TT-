@@ -1,5 +1,16 @@
 package org.jabref.logic.exporter;
 
+import com.google.common.base.Charsets;
+import org.jabref.logic.layout.LayoutFormatterPreferences;
+import org.jabref.model.database.BibDatabaseContext;
+import org.jabref.model.entry.BibEntry;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.TemporaryFolder;
+import org.mockito.Answers;
+
 import java.io.File;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
@@ -7,18 +18,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import org.jabref.logic.layout.LayoutFormatterPreferences;
-import org.jabref.model.database.BibDatabaseContext;
-import org.jabref.model.entry.BibEntry;
-
-import com.google.common.base.Charsets;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.TemporaryFolder;
-import org.mockito.Answers;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;

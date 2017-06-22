@@ -1,13 +1,13 @@
 package org.jabref.logic.exporter;
 
+import org.jabref.model.FieldChange;
+
 import java.nio.charset.Charset;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-
-import org.jabref.model.FieldChange;
 
 public abstract class SaveSession {
 

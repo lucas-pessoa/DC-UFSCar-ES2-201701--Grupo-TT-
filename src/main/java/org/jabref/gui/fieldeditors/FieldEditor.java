@@ -1,10 +1,9 @@
 package org.jabref.gui.fieldeditors;
 
-import java.awt.Color;
-
-import javax.swing.JComponent;
-
 import org.jabref.gui.autocompleter.AutoCompleteListener;
+
+import javax.swing.*;
+import java.awt.*;
 
 /**
  * FieldEditors is a common interface between the TextField and TextArea.

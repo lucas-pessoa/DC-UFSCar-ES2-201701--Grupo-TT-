@@ -1,17 +1,16 @@
 package org.jabref.logic.pdf;
 
-import java.util.List;
-import java.util.Map;
-
-import org.jabref.model.database.BibDatabaseContext;
-import org.jabref.model.entry.BibEntry;
-import org.jabref.model.pdf.FileAnnotation;
-
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.jabref.model.database.BibDatabaseContext;
+import org.jabref.model.entry.BibEntry;
+import org.jabref.model.pdf.FileAnnotation;
+
+import java.util.List;
+import java.util.Map;
 
 public class FileAnnotationCache {
 

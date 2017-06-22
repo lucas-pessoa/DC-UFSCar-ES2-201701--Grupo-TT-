@@ -1,15 +1,14 @@
 package org.jabref.logic.cleanup;
 
-import java.util.Optional;
-
 import org.jabref.logic.layout.LayoutFormatterPreferences;
 import org.jabref.model.database.BibDatabaseContext;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.metadata.FileDirectoryPreferences;
-
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.Optional;
 
 import static org.mockito.Mockito.mock;
 

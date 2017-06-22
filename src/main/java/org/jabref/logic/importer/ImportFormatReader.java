@@ -1,37 +1,15 @@
 package org.jabref.logic.importer;
 
-import java.io.IOException;
-import java.nio.file.Path;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.SortedSet;
-import java.util.TreeSet;
-
-import org.jabref.logic.importer.fileformat.BibTeXMLImporter;
-import org.jabref.logic.importer.fileformat.BiblioscapeImporter;
-import org.jabref.logic.importer.fileformat.BibtexImporter;
-import org.jabref.logic.importer.fileformat.CopacImporter;
-import org.jabref.logic.importer.fileformat.CustomImporter;
-import org.jabref.logic.importer.fileformat.EndnoteImporter;
-import org.jabref.logic.importer.fileformat.FreeCiteImporter;
-import org.jabref.logic.importer.fileformat.InspecImporter;
-import org.jabref.logic.importer.fileformat.IsiImporter;
-import org.jabref.logic.importer.fileformat.MedlineImporter;
-import org.jabref.logic.importer.fileformat.MedlinePlainImporter;
-import org.jabref.logic.importer.fileformat.ModsImporter;
-import org.jabref.logic.importer.fileformat.MsBibImporter;
-import org.jabref.logic.importer.fileformat.OvidImporter;
-import org.jabref.logic.importer.fileformat.PdfContentImporter;
-import org.jabref.logic.importer.fileformat.PdfXmpImporter;
-import org.jabref.logic.importer.fileformat.RepecNepImporter;
-import org.jabref.logic.importer.fileformat.RisImporter;
-import org.jabref.logic.importer.fileformat.SilverPlatterImporter;
+import org.jabref.logic.importer.fileformat.*;
 import org.jabref.logic.l10n.Localization;
 import org.jabref.logic.xmp.XMPPreferences;
 import org.jabref.model.database.BibDatabases;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.strings.StringUtil;
+
+import java.io.IOException;
+import java.nio.file.Path;
+import java.util.*;
 
 public class ImportFormatReader {
 

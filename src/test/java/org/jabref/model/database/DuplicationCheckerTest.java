@@ -1,7 +1,6 @@
 package org.jabref.model.database;
 
 import org.jabref.model.entry.BibEntry;
-
 import org.junit.Before;
 import org.junit.Test;
 

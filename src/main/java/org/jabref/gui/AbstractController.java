@@ -1,10 +1,10 @@
 package org.jabref.gui;
 
-import java.util.Objects;
-
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
+
+import java.util.Objects;
 
 public class AbstractController<T extends AbstractViewModel> {
 

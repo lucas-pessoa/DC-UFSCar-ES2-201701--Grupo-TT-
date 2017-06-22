@@ -1,13 +1,5 @@
 package org.jabref.gui.externalfiletype;
 
-import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
-import java.util.Optional;
-import java.util.Set;
-import java.util.TreeSet;
-
 import org.jabref.Globals;
 import org.jabref.gui.IconTheme;
 import org.jabref.logic.l10n.Localization;
@@ -15,6 +7,9 @@ import org.jabref.model.entry.FileFieldWriter;
 import org.jabref.model.strings.StringUtil;
 import org.jabref.model.util.FileHelper;
 import org.jabref.preferences.JabRefPreferences;
+
+import java.nio.file.Path;
+import java.util.*;
 
 public final class ExternalFileTypes {
 

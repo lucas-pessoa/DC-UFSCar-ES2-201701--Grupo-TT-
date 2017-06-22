@@ -1,22 +1,18 @@
 package org.jabref.gui.fieldeditors;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.jabref.gui.EntryContainer;
+import org.jabref.gui.JabRefFrame;
+import org.jabref.logic.l10n.Localization;
+
+import javax.swing.*;
+import javax.swing.text.BadLocationException;
 import java.awt.datatransfer.StringSelection;
 import java.awt.datatransfer.Transferable;
 import java.awt.dnd.DnDConstants;
 import java.io.IOException;
 import java.io.StringWriter;
-
-import javax.swing.JComponent;
-import javax.swing.JEditorPane;
-import javax.swing.TransferHandler;
-import javax.swing.text.BadLocationException;
-
-import org.jabref.gui.EntryContainer;
-import org.jabref.gui.JabRefFrame;
-import org.jabref.logic.l10n.Localization;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 
 public class PreviewPanelTransferHandler extends FileListEditorTransferHandler {
 

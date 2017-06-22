@@ -1,7 +1,5 @@
 package org.jabref.gui.journals;
 
-import java.util.List;
-
 import org.jabref.Globals;
 import org.jabref.gui.BasePanel;
 import org.jabref.gui.undo.NamedCompound;
@@ -9,6 +7,8 @@ import org.jabref.gui.worker.AbstractWorker;
 import org.jabref.logic.l10n.Localization;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.entry.InternalBibtexFields;
+
+import java.util.List;
 
 /**
  * Converts journal full names to either iso or medline abbreviations for all selected entries.

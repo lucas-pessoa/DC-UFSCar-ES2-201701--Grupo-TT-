@@ -1,8 +1,8 @@
 package org.jabref.gui.fieldeditors;
 
-import java.util.List;
-
 import javafx.util.StringConverter;
+
+import java.util.List;
 
 public abstract class OptionEditorViewModel<T> extends AbstractEditorViewModel {
 

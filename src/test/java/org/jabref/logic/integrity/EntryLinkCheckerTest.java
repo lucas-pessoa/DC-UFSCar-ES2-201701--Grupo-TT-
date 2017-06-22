@@ -1,17 +1,14 @@
 package org.jabref.logic.integrity;
 
-import java.util.Collections;
-import java.util.List;
-
 import org.jabref.model.database.BibDatabase;
 import org.jabref.model.entry.BibEntry;
-
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.fail;
+import java.util.Collections;
+import java.util.List;
+
+import static org.junit.Assert.*;
 
 
 public class EntryLinkCheckerTest {

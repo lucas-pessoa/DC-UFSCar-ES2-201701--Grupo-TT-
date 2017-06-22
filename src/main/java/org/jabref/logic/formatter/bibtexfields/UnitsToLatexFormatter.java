@@ -1,14 +1,10 @@
 package org.jabref.logic.formatter.bibtexfields;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Objects;
-
 import org.jabref.logic.l10n.Localization;
 import org.jabref.logic.util.strings.StringLengthComparator;
 import org.jabref.model.cleanup.Formatter;
+
+import java.util.*;
 
 public class UnitsToLatexFormatter implements Formatter {
 

@@ -1,15 +1,11 @@
 package org.jabref.logic.importer.util;
 
+import org.jabref.model.entry.FieldName;
+import org.jabref.model.entry.identifier.*;
+import org.jabref.model.strings.StringUtil;
+
 import java.util.Optional;
 import java.util.function.Function;
-
-import org.jabref.model.entry.FieldName;
-import org.jabref.model.entry.identifier.DOI;
-import org.jabref.model.entry.identifier.Eprint;
-import org.jabref.model.entry.identifier.ISBN;
-import org.jabref.model.entry.identifier.Identifier;
-import org.jabref.model.entry.identifier.MathSciNetId;
-import org.jabref.model.strings.StringUtil;
 
 public class IdentifierParser {
     public static Optional<? extends Identifier> parse(String fieldName, String input) {

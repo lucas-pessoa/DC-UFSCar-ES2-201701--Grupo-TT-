@@ -1,15 +1,13 @@
 package org.jabref.gui;
 
 
-import javax.swing.JButton;
-import javax.swing.JDialog;
-
-import org.jabref.testutils.category.GUITests;
-
 import org.assertj.swing.core.GenericTypeMatcher;
 import org.assertj.swing.dependency.jsr305.Nonnull;
+import org.jabref.testutils.category.GUITests;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
+
+import javax.swing.*;
 
 import static org.assertj.swing.finder.WindowFinder.findDialog;
 

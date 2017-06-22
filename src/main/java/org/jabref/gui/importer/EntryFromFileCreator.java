@@ -1,12 +1,5 @@
 package org.jabref.gui.importer;
 
-import java.io.File;
-import java.io.FileFilter;
-import java.nio.file.Path;
-import java.util.List;
-import java.util.Optional;
-import java.util.StringTokenizer;
-
 import org.jabref.Globals;
 import org.jabref.JabRefGUI;
 import org.jabref.gui.externalfiletype.ExternalFileType;
@@ -16,6 +9,13 @@ import org.jabref.gui.filelist.FileListTableModel;
 import org.jabref.logic.util.io.FileUtil;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.entry.FieldName;
+
+import java.io.File;
+import java.io.FileFilter;
+import java.nio.file.Path;
+import java.util.List;
+import java.util.Optional;
+import java.util.StringTokenizer;
 
 /**
  * The interface EntryFromFileCreator does twice: <br>

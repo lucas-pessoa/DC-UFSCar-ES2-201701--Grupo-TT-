@@ -1,11 +1,10 @@
 package org.jabref.gui.exporter;
 
-import java.io.File;
-import java.util.Locale;
+import org.jabref.logic.exporter.IExportFormat;
 
 import javax.swing.filechooser.FileFilter;
-
-import org.jabref.logic.exporter.IExportFormat;
+import java.io.File;
+import java.util.Locale;
 
 /**
  * File filter that lets the user choose export format while choosing file to

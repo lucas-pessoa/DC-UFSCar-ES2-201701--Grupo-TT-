@@ -1,15 +1,13 @@
 package org.jabref.gui.util;
 
-import java.io.IOException;
-
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.jabref.gui.AbstractView;
 import org.jabref.logic.l10n.Localization;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import java.io.IOException;
 
 public class ControlHelper {
     private static final Log LOGGER = LogFactory.getLog(ControlHelper.class);

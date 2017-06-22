@@ -2,7 +2,6 @@ package org.jabref.model.search.rules;
 
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.entry.BibtexEntryTypes;
-
 import org.junit.Assert;
 import org.junit.Test;
 

@@ -1,13 +1,11 @@
 package org.jabref.gui;
 
-import java.util.Optional;
-
+import com.airhacks.afterburner.views.FXMLView;
 import javafx.scene.Parent;
 import javafx.stage.Stage;
-
 import org.jabref.logic.l10n.Localization;
 
-import com.airhacks.afterburner.views.FXMLView;
+import java.util.Optional;
 
 public class AbstractView extends FXMLView {
     public AbstractView() {

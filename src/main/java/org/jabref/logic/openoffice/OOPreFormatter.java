@@ -1,10 +1,10 @@
 package org.jabref.logic.openoffice;
 
-import java.util.Map;
-
 import org.jabref.logic.layout.LayoutFormatter;
 import org.jabref.logic.util.strings.HTMLUnicodeConversionMaps;
 import org.jabref.model.strings.StringUtil;
+
+import java.util.Map;
 
 /**
  * This formatter preprocesses JabRef fields before they are run through the layout of the

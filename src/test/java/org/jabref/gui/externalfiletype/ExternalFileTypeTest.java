@@ -1,7 +1,6 @@
 package org.jabref.gui.externalfiletype;
 
 import org.jabref.testutils.category.GUITests;
-
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 

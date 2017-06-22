@@ -1,11 +1,11 @@
 package org.jabref.model.entry.specialfields;
 
+import org.jabref.model.entry.KeywordList;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
-
-import org.jabref.model.entry.KeywordList;
 
 public enum SpecialField {
 

@@ -1,17 +1,15 @@
 package org.jabref.gui.help;
 
-import javax.inject.Inject;
-
+import de.codecentric.centerdevice.javafxsvg.SvgImageLoaderFactory;
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-
 import org.jabref.gui.AbstractController;
 import org.jabref.gui.ClipBoardManager;
 import org.jabref.gui.DialogService;
 import org.jabref.logic.util.BuildInfo;
 
-import de.codecentric.centerdevice.javafxsvg.SvgImageLoaderFactory;
+import javax.inject.Inject;
 
 public class AboutDialogController extends AbstractController<AboutDialogViewModel> {
 

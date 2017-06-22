@@ -3,7 +3,6 @@ package org.jabref.logic;
 import org.jabref.model.database.BibDatabaseMode;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.entry.BibtexEntryTypes;
-
 import org.junit.Assert;
 import org.junit.Test;
 

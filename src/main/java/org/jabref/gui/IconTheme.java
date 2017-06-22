@@ -1,37 +1,23 @@
 package org.jabref.gui;
 
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Font;
-import java.awt.FontFormatException;
-import java.awt.FontMetrics;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.RenderingHints;
+import javafx.scene.Node;
+import javafx.scene.image.Image;
+import javafx.scene.text.Text;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.jabref.logic.groups.DefaultGroupsFactory;
+import org.jabref.preferences.JabRefPreferences;
+
+import javax.swing.*;
+import java.awt.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.*;
 import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-
-import javafx.scene.Node;
-import javafx.scene.image.Image;
-import javafx.scene.text.Text;
-
-import org.jabref.logic.groups.DefaultGroupsFactory;
-import org.jabref.preferences.JabRefPreferences;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 
 public class IconTheme {
 

@@ -1,15 +1,14 @@
 package org.jabref.logic.remote;
 
+import org.jabref.logic.remote.client.RemoteListenerClient;
+import org.jabref.logic.remote.server.RemoteListenerServerLifecycle;
+import org.junit.Assert;
+import org.junit.Test;
+
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
-
-import org.jabref.logic.remote.client.RemoteListenerClient;
-import org.jabref.logic.remote.server.RemoteListenerServerLifecycle;
-
-import org.junit.Assert;
-import org.junit.Test;
 
 public class RemoteTest {
 

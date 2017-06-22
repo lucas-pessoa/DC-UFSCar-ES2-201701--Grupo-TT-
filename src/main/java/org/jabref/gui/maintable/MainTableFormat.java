@@ -1,12 +1,6 @@
 package org.jabref.gui.maintable;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-
-import javax.swing.JLabel;
-
+import ca.odell.glazedlists.gui.TableFormat;
 import org.jabref.Globals;
 import org.jabref.gui.IconTheme;
 import org.jabref.model.database.BibDatabase;
@@ -14,7 +8,11 @@ import org.jabref.model.entry.BibEntry;
 import org.jabref.model.entry.FieldName;
 import org.jabref.preferences.JabRefPreferences;
 
-import ca.odell.glazedlists.gui.TableFormat;
+import javax.swing.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Class defining the contents and column headers of the main table.

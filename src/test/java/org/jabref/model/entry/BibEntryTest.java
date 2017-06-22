@@ -1,11 +1,11 @@
 package org.jabref.model.entry;
 
-import java.util.Optional;
-
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.Optional;
 
 public class BibEntryTest {
     private BibEntry entry;

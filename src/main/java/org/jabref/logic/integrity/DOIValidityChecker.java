@@ -1,9 +1,9 @@
 package org.jabref.logic.integrity;
 
-import java.util.Optional;
-
 import org.jabref.logic.l10n.Localization;
 import org.jabref.model.entry.identifier.DOI;
+
+import java.util.Optional;
 
 public class DOIValidityChecker implements ValueChecker {
 

@@ -1,16 +1,11 @@
 package org.jabref.model.entry;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
-
 import org.jabref.model.FieldChange;
-
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.*;
 
 import static org.junit.Assert.assertEquals;
 

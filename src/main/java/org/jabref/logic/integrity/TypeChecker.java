@@ -1,13 +1,13 @@
 package org.jabref.logic.integrity;
 
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
-
 import org.jabref.logic.integrity.IntegrityCheck.Checker;
 import org.jabref.logic.l10n.Localization;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.entry.FieldName;
+
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
 
 public class TypeChecker implements Checker {
 

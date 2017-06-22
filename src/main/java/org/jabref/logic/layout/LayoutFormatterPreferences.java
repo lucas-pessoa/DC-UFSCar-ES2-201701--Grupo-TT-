@@ -1,13 +1,13 @@
 package org.jabref.logic.layout;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
-
 import org.jabref.logic.journals.JournalAbbreviationLoader;
 import org.jabref.logic.journals.JournalAbbreviationPreferences;
 import org.jabref.logic.layout.format.FileLinkPreferences;
 import org.jabref.logic.layout.format.NameFormatterPreferences;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Optional;
 
 public class LayoutFormatterPreferences {
 

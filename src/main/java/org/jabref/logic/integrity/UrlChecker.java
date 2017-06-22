@@ -1,8 +1,8 @@
 package org.jabref.logic.integrity;
 
-import java.util.Optional;
-
 import org.jabref.logic.l10n.Localization;
+
+import java.util.Optional;
 
 public class UrlChecker implements ValueChecker {
 

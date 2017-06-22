@@ -1,13 +1,12 @@
 package org.jabref.logic.cleanup;
 
-import java.util.Optional;
-
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.entry.FieldName;
-
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.Optional;
 
 public class BiblatexCleanupTest {
 

@@ -1,8 +1,5 @@
 package org.jabref.gui.actions;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 import org.jabref.JabRefGUI;
 import org.jabref.gui.ClipBoardManager;
 import org.jabref.gui.maintable.MainTable;
@@ -10,6 +7,9 @@ import org.jabref.logic.l10n.Localization;
 import org.jabref.logic.util.OS;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.entry.FieldName;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * This class will copy each selected entry's BibTeX key as a hyperlink to its url to the clipboard.

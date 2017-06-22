@@ -1,12 +1,11 @@
 package org.jabref.logic.bibtex;
 
-import java.util.Collections;
-
 import org.jabref.logic.util.OS;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Answers;
+
+import java.util.Collections;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;

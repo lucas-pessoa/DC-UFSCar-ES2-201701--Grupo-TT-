@@ -1,5 +1,7 @@
 package org.jabref;
 
+import org.junit.Test;
+
 import java.io.IOException;
 import java.io.Reader;
 import java.nio.file.Files;
@@ -10,11 +12,7 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.stream.Collectors;
 
-import org.junit.Test;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class TestIconsProperties {
 

@@ -1,17 +1,16 @@
 package org.jabref.logic.importer;
 
-import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
-
 import org.jabref.logic.importer.fetcher.AbstractIsbnFetcher;
 import org.jabref.logic.importer.fetcher.IsbnViaChimboriFetcher;
 import org.jabref.logic.importer.fetcher.IsbnViaEbookDeFetcher;
 import org.jabref.logic.importer.fetcher.MrDLibFetcher;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.reflections.Reflections;
+
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;

@@ -1,18 +1,16 @@
 package org.jabref.gui;
 
-import java.io.IOException;
-
-import javax.swing.JButton;
-
-import org.jabref.gui.dbproperties.DatabasePropertiesDialog;
-import org.jabref.gui.preftabs.PreferencesDialog;
-import org.jabref.testutils.category.GUITests;
-
 import org.assertj.swing.core.GenericTypeMatcher;
 import org.assertj.swing.dependency.jsr305.Nonnull;
 import org.assertj.swing.fixture.DialogFixture;
+import org.jabref.gui.dbproperties.DatabasePropertiesDialog;
+import org.jabref.gui.preftabs.PreferencesDialog;
+import org.jabref.testutils.category.GUITests;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
+
+import javax.swing.*;
+import java.io.IOException;
 
 import static org.assertj.swing.finder.WindowFinder.findDialog;
 

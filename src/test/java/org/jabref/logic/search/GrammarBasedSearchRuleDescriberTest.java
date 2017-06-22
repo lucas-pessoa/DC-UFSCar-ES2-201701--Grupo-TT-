@@ -2,7 +2,6 @@ package org.jabref.logic.search;
 
 import org.jabref.logic.search.rules.describer.GrammarBasedSearchRuleDescriber;
 import org.jabref.model.search.rules.GrammarBasedSearchRule;
-
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

@@ -1,10 +1,6 @@
 package org.jabref.logic.l10n;
 
-import java.util.Locale;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.TreeMap;
+import java.util.*;
 
 public class Languages {
 

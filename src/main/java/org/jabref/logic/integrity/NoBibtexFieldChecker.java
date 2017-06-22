@@ -1,16 +1,12 @@
 package org.jabref.logic.integrity;
 
+import org.jabref.logic.integrity.IntegrityCheck.Checker;
+import org.jabref.logic.l10n.Localization;
+import org.jabref.model.entry.*;
+
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
-
-import org.jabref.logic.integrity.IntegrityCheck.Checker;
-import org.jabref.logic.l10n.Localization;
-import org.jabref.model.entry.BibEntry;
-import org.jabref.model.entry.BiblatexEntryTypes;
-import org.jabref.model.entry.BibtexEntryTypes;
-import org.jabref.model.entry.FieldName;
-import org.jabref.model.entry.InternalBibtexFields;
 
 /**
  * This checker checks whether the entry does not contain any field appearing only in biblatex (and not in BibTeX)

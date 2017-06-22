@@ -1,9 +1,9 @@
 package org.jabref.logic.integrity;
 
+import org.jabref.logic.l10n.Localization;
+
 import java.util.Locale;
 import java.util.Optional;
-
-import org.jabref.logic.l10n.Localization;
 
 public class PersonNamesChecker implements ValueChecker {
 

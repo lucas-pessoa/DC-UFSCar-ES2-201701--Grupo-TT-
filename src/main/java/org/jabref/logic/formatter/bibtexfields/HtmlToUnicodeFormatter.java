@@ -1,10 +1,9 @@
 package org.jabref.logic.formatter.bibtexfields;
 
+import org.apache.commons.lang3.StringEscapeUtils;
 import org.jabref.logic.l10n.Localization;
 import org.jabref.logic.layout.LayoutFormatter;
 import org.jabref.model.cleanup.Formatter;
-
-import org.apache.commons.lang3.StringEscapeUtils;
 
 public class HtmlToUnicodeFormatter implements LayoutFormatter, Formatter {
 

@@ -1,5 +1,14 @@
 package org.jabref.logic.util.io;
 
+import org.jabref.logic.layout.LayoutFormatterPreferences;
+import org.jabref.model.entry.BibEntry;
+import org.jabref.model.util.FileHelper;
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.TemporaryFolder;
+import org.mockito.Answers;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -11,20 +20,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
-import org.jabref.logic.layout.LayoutFormatterPreferences;
-import org.jabref.model.entry.BibEntry;
-import org.jabref.model.util.FileHelper;
-
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.TemporaryFolder;
-import org.mockito.Answers;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
 
 public class FileUtilTest {

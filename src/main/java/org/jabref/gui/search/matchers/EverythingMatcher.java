@@ -1,8 +1,7 @@
 package org.jabref.gui.search.matchers;
 
-import org.jabref.model.entry.BibEntry;
-
 import ca.odell.glazedlists.matchers.Matcher;
+import org.jabref.model.entry.BibEntry;
 
 /**
  * Matcher that accepts all entries. Used for filtering when so search is

@@ -1,10 +1,10 @@
 package org.jabref.logic.bst;
 
-import java.util.Locale;
-import java.util.Optional;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+
+import java.util.Locale;
+import java.util.Optional;
 
 public final class BibtexCaseChanger {
 

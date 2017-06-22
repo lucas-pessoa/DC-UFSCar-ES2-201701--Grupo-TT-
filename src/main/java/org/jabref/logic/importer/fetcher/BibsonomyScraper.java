@@ -1,17 +1,16 @@
 package org.jabref.logic.importer.fetcher;
 
-import java.io.IOException;
-import java.net.URL;
-import java.util.Optional;
-
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.jabref.logic.importer.ImportFormatPreferences;
 import org.jabref.logic.importer.ParseException;
 import org.jabref.logic.importer.fileformat.BibtexParser;
 import org.jabref.logic.net.URLDownload;
 import org.jabref.model.entry.BibEntry;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import java.io.IOException;
+import java.net.URL;
+import java.util.Optional;
 
 /**
  * Convenience class for getting BibTeX entries from the BibSonomy scraper,

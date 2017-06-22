@@ -1,10 +1,10 @@
 package org.jabref.gui.groups;
 
-import java.util.List;
-import java.util.Vector;
-
 import org.jabref.gui.undo.AbstractUndoableJabRefEdit;
 import org.jabref.model.groups.GroupTreeNode;
+
+import java.util.List;
+import java.util.Vector;
 
 public class UndoableModifySubtree extends AbstractUndoableJabRefEdit {
 

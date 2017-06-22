@@ -1,15 +1,14 @@
 package org.jabref.logic.citationstyle;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
-
+import com.google.common.eventbus.Subscribe;
 import org.jabref.model.database.BibDatabaseContext;
 import org.jabref.model.database.event.EntryRemovedEvent;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.entry.event.EntryChangedEvent;
 
-import com.google.common.eventbus.Subscribe;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
 
 
 /**

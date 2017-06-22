@@ -1,27 +1,22 @@
 package org.jabref.cleanup;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-
-import javax.swing.event.ListDataEvent;
-import javax.swing.event.ListDataListener;
-
 import org.jabref.gui.cleanup.CleanupActionsListModel;
 import org.jabref.logic.cleanup.Cleanups;
 import org.jabref.logic.formatter.bibtexfields.ClearFormatter;
 import org.jabref.model.cleanup.FieldFormatterCleanup;
 import org.jabref.model.cleanup.FieldFormatterCleanups;
-
 import org.junit.Test;
 import org.mockito.ArgumentCaptor;
 
+import javax.swing.event.ListDataEvent;
+import javax.swing.event.ListDataListener;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.verifyZeroInteractions;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 public class CleanupActionsListModelTest {
 

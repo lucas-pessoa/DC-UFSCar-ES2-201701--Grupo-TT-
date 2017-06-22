@@ -1,19 +1,18 @@
 package org.jabref.gui.importer;
 
-import java.io.File;
-import java.util.Optional;
-
 import org.jabref.JabRefGUI;
 import org.jabref.gui.JabRefFrame;
 import org.jabref.logic.importer.ImportDataTest;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.testutils.category.GUITests;
-
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
+
+import java.io.File;
+import java.util.Optional;
 
 import static org.mockito.Mockito.mock;
 

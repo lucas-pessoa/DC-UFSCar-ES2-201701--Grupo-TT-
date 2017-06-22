@@ -1,17 +1,16 @@
 package org.jabref.logic.importer.fileformat;
 
+import org.jabref.logic.importer.ImportFormatPreferences;
+import org.jabref.logic.util.FileExtensions;
+import org.jabref.model.entry.BibEntry;
+import org.junit.Before;
+import org.junit.Test;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.StringReader;
 import java.util.List;
 import java.util.Optional;
-
-import org.jabref.logic.importer.ImportFormatPreferences;
-import org.jabref.logic.util.FileExtensions;
-import org.jabref.model.entry.BibEntry;
-
-import org.junit.Before;
-import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;

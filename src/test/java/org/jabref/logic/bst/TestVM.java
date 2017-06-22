@@ -1,5 +1,16 @@
 package org.jabref.logic.bst;
 
+import org.antlr.runtime.RecognitionException;
+import org.jabref.logic.bst.VM.BstEntry;
+import org.jabref.logic.bst.VM.StackFunction;
+import org.jabref.logic.importer.ImportFormatPreferences;
+import org.jabref.logic.importer.ParserResult;
+import org.jabref.logic.importer.fileformat.BibtexParser;
+import org.jabref.model.entry.BibEntry;
+import org.junit.Assert;
+import org.junit.Test;
+import org.mockito.Answers;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.StringReader;
@@ -7,18 +18,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
-
-import org.jabref.logic.bst.VM.BstEntry;
-import org.jabref.logic.bst.VM.StackFunction;
-import org.jabref.logic.importer.ImportFormatPreferences;
-import org.jabref.logic.importer.ParserResult;
-import org.jabref.logic.importer.fileformat.BibtexParser;
-import org.jabref.model.entry.BibEntry;
-
-import org.antlr.runtime.RecognitionException;
-import org.junit.Assert;
-import org.junit.Test;
-import org.mockito.Answers;
 
 import static org.mockito.Mockito.mock;
 

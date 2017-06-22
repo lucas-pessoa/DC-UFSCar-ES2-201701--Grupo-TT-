@@ -1,12 +1,11 @@
 package org.jabref.model.groups;
 
-import java.util.Objects;
-
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.search.GroupSearchQuery;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import java.util.Objects;
 
 /**
  * This group matches entries by a complex search pattern, which might include conditions about the values of

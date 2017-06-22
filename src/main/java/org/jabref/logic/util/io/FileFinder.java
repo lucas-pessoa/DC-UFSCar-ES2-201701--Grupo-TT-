@@ -1,11 +1,11 @@
 package org.jabref.logic.util.io;
 
+import org.jabref.model.entry.BibEntry;
+
 import java.nio.file.Path;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-
-import org.jabref.model.entry.BibEntry;
 
 public interface FileFinder {
 

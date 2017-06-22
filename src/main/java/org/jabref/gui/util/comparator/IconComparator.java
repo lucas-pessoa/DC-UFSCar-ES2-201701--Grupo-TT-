@@ -1,10 +1,10 @@
 package org.jabref.gui.util.comparator;
 
+import org.jabref.model.entry.BibEntry;
+
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
-
-import org.jabref.model.entry.BibEntry;
 
 /**
  * Comparator that handles icon columns.

@@ -1,12 +1,11 @@
 package org.jabref.gui.actions;
 
-import java.awt.event.ActionEvent;
-
-import javax.swing.Action;
-
 import org.jabref.gui.JabRefFrame;
 import org.jabref.gui.shared.ConnectToSharedDatabaseDialog;
 import org.jabref.logic.l10n.Localization;
+
+import javax.swing.*;
+import java.awt.event.ActionEvent;
 
 /**
  * The action concerned with opening a shared database.

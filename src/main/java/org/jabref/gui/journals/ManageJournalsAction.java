@@ -1,13 +1,11 @@
 package org.jabref.gui.journals;
 
-import java.awt.event.ActionEvent;
-
-import javax.swing.Action;
-
 import javafx.application.Platform;
-
 import org.jabref.gui.actions.MnemonicAwareAction;
 import org.jabref.logic.l10n.Localization;
+
+import javax.swing.*;
+import java.awt.event.ActionEvent;
 
 public class ManageJournalsAction extends MnemonicAwareAction {
 

@@ -1,5 +1,18 @@
 package org.jabref.logic.util.io;
 
+import org.jabref.BibtexTestData;
+import org.jabref.logic.bibtex.FieldContentParserPreferences;
+import org.jabref.logic.importer.ImportFormatPreferences;
+import org.jabref.model.database.BibDatabase;
+import org.jabref.model.entry.BibEntry;
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.TemporaryFolder;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -9,20 +22,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
-
-import org.jabref.BibtexTestData;
-import org.jabref.logic.bibtex.FieldContentParserPreferences;
-import org.jabref.logic.importer.ImportFormatPreferences;
-import org.jabref.model.database.BibDatabase;
-import org.jabref.model.entry.BibEntry;
-
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.TemporaryFolder;
-import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import org.mockito.junit.MockitoJUnitRunner;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;

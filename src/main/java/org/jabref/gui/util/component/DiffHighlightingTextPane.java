@@ -1,6 +1,6 @@
 package org.jabref.gui.util.component;
 
-import javax.swing.JTextPane;
+import javax.swing.*;
 import javax.swing.text.html.HTMLEditorKit;
 import javax.swing.text.html.StyleSheet;
 

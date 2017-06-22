@@ -1,9 +1,9 @@
 package org.jabref.model.search.rules;
 
+import org.junit.Test;
+
 import java.util.Arrays;
 import java.util.Collections;
-
-import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 

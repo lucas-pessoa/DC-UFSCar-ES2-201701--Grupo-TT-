@@ -1,24 +1,14 @@
 package org.jabref.model;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
-
 import org.jabref.model.database.BibDatabaseMode;
-import org.jabref.model.entry.BiblatexEntryTypes;
-import org.jabref.model.entry.BibtexEntryTypes;
-import org.jabref.model.entry.CustomEntryType;
-import org.jabref.model.entry.EntryType;
-import org.jabref.model.entry.FieldName;
-import org.jabref.model.entry.IEEETranEntryTypes;
-
+import org.jabref.model.entry.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+
+import java.util.*;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;

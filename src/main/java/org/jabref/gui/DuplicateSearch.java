@@ -1,11 +1,5 @@
 package org.jabref.gui;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
-import javax.swing.SwingUtilities;
-
 import org.jabref.JabRefExecutorService;
 import org.jabref.JabRefGUI;
 import org.jabref.gui.DuplicateResolverDialog.DuplicateResolverResult;
@@ -17,8 +11,12 @@ import org.jabref.gui.worker.CallBack;
 import org.jabref.logic.bibtex.DuplicateCheck;
 import org.jabref.logic.l10n.Localization;
 import org.jabref.model.entry.BibEntry;
-
 import spin.Spin;
+
+import javax.swing.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class DuplicateSearch implements Runnable {
 

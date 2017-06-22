@@ -1,15 +1,10 @@
 package org.jabref.model.entry;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
+import org.jabref.model.strings.StringUtil;
+
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
-import org.jabref.model.strings.StringUtil;
 
 /**
  * This class is used to represent customized entry types.

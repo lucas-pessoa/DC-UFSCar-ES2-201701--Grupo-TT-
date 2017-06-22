@@ -1,25 +1,23 @@
 package org.jabref.gui.search;
 
-import java.util.Collection;
-import java.util.concurrent.TimeUnit;
-
-import javax.swing.JFrame;
-
-import org.jabref.gui.BasePanel;
-import org.jabref.model.entry.BibEntry;
-import org.jabref.testutils.TestUtils;
-import org.jabref.testutils.category.GUITests;
-
 import org.assertj.swing.core.ComponentFinder;
 import org.assertj.swing.edt.FailOnThreadViolationRepaintManager;
 import org.assertj.swing.finder.WindowFinder;
 import org.assertj.swing.fixture.FrameFixture;
 import org.assertj.swing.fixture.JTextComponentFixture;
 import org.assertj.swing.junit.testcase.AssertJSwingJUnitTestCase;
+import org.jabref.gui.BasePanel;
+import org.jabref.model.entry.BibEntry;
+import org.jabref.testutils.TestUtils;
+import org.jabref.testutils.category.GUITests;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
+
+import javax.swing.*;
+import java.util.Collection;
+import java.util.concurrent.TimeUnit;
 
 @Category(GUITests.class)
 public class SearchResultsTest extends AssertJSwingJUnitTestCase {

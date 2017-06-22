@@ -1,28 +1,7 @@
 package org.jabref.logic.exporter;
 
-import java.io.IOException;
-import java.nio.charset.Charset;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.TreeMap;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import java.util.stream.Collectors;
-
 import org.jabref.logic.bibtex.LatexFieldFormatterPreferences;
-import org.jabref.logic.bibtex.comparator.BibtexStringComparator;
-import org.jabref.logic.bibtex.comparator.CrossRefEntryComparator;
-import org.jabref.logic.bibtex.comparator.FieldComparator;
-import org.jabref.logic.bibtex.comparator.FieldComparatorStack;
-import org.jabref.logic.bibtex.comparator.IdComparator;
+import org.jabref.logic.bibtex.comparator.*;
 import org.jabref.model.EntryTypes;
 import org.jabref.model.FieldChange;
 import org.jabref.model.bibtexkeypattern.GlobalBibtexKeyPattern;
@@ -36,6 +15,13 @@ import org.jabref.model.entry.CustomEntryType;
 import org.jabref.model.entry.EntryType;
 import org.jabref.model.metadata.MetaData;
 import org.jabref.model.metadata.SaveOrderConfig;
+
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public abstract class BibDatabaseWriter<E extends SaveSession> {
 

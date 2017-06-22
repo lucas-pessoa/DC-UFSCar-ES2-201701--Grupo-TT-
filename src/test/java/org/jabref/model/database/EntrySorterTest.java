@@ -1,12 +1,11 @@
 package org.jabref.model.database;
 
+import org.jabref.model.entry.BibEntry;
+import org.junit.Test;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
-
-import org.jabref.model.entry.BibEntry;
-
-import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 

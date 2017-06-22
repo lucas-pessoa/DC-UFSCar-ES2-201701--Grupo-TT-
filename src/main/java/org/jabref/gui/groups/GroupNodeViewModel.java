@@ -1,10 +1,6 @@
 package org.jabref.gui.groups;
 
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.stream.Collectors;
-
+import com.google.common.eventbus.Subscribe;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.BooleanBinding;
 import javafx.beans.property.SimpleBooleanProperty;
@@ -13,7 +9,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.input.Dragboard;
 import javafx.scene.paint.Color;
-
+import org.fxmisc.easybind.EasyBind;
 import org.jabref.gui.DragAndDropDataFormats;
 import org.jabref.gui.IconTheme;
 import org.jabref.gui.StateManager;
@@ -32,8 +28,10 @@ import org.jabref.model.groups.GroupEntryChanger;
 import org.jabref.model.groups.GroupTreeNode;
 import org.jabref.model.strings.StringUtil;
 
-import com.google.common.eventbus.Subscribe;
-import org.fxmisc.easybind.EasyBind;
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class GroupNodeViewModel {
 

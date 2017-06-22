@@ -1,12 +1,11 @@
 package org.jabref.logic.help;
 
+import org.jabref.logic.net.URLDownload;
+import org.junit.Test;
+
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
-
-import org.jabref.logic.net.URLDownload;
-
-import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;
 

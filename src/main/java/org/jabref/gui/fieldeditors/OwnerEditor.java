@@ -1,15 +1,14 @@
 package org.jabref.gui.fieldeditors;
 
-import java.util.Optional;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.scene.layout.HBox;
-
 import org.jabref.gui.util.ControlHelper;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.preferences.JabRefPreferences;
+
+import java.util.Optional;
 
 public class OwnerEditor extends HBox implements FieldEditorFX {
 

@@ -1,12 +1,12 @@
 package org.jabref.gui.journals;
 
-import javax.swing.undo.CompoundEdit;
-
 import org.jabref.gui.undo.UndoableFieldChange;
 import org.jabref.logic.journals.Abbreviation;
 import org.jabref.logic.journals.JournalAbbreviationRepository;
 import org.jabref.model.database.BibDatabase;
 import org.jabref.model.entry.BibEntry;
+
+import javax.swing.undo.CompoundEdit;
 
 public class UndoableAbbreviator {
 

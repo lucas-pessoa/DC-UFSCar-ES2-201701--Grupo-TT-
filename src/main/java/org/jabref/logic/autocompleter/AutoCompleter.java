@@ -1,8 +1,8 @@
 package org.jabref.logic.autocompleter;
 
-import java.util.List;
-
 import org.jabref.model.entry.BibEntry;
+
+import java.util.List;
 
 /**
  * Delivers possible completions for a given string.

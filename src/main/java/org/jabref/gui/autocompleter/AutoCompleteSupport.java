@@ -1,26 +1,16 @@
 package org.jabref.gui.autocompleter;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.FocusAdapter;
-import java.awt.event.FocusEvent;
-import java.awt.event.KeyEvent;
-import java.util.List;
+import org.jabref.logic.autocompleter.AutoCompleter;
 
-import javax.swing.AbstractAction;
-import javax.swing.BorderFactory;
-import javax.swing.JComponent;
-import javax.swing.JPopupMenu;
-import javax.swing.KeyStroke;
+import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.event.PopupMenuEvent;
 import javax.swing.event.PopupMenuListener;
 import javax.swing.text.JTextComponent;
-
-import org.jabref.logic.autocompleter.AutoCompleter;
+import java.awt.*;
+import java.awt.event.*;
+import java.util.List;
 
 /**
  * Endows a textbox with the ability to autocomplete the input. Based on code by Santhosh Kumar

@@ -1,23 +1,17 @@
 package org.jabref.gui.groups;
 
-import java.util.Arrays;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-
 import org.jabref.gui.StateManager;
 import org.jabref.gui.util.CurrentThreadTaskExecutor;
 import org.jabref.gui.util.TaskExecutor;
 import org.jabref.model.database.BibDatabaseContext;
 import org.jabref.model.entry.BibEntry;
-import org.jabref.model.groups.AbstractGroup;
-import org.jabref.model.groups.AutomaticKeywordGroup;
-import org.jabref.model.groups.GroupHierarchyType;
-import org.jabref.model.groups.GroupTreeNode;
-import org.jabref.model.groups.WordKeywordGroup;
-
+import org.jabref.model.groups.*;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.Arrays;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;

@@ -1,11 +1,7 @@
 package org.jabref.shared;
 
-import java.sql.SQLException;
-import java.util.Collection;
-
 import org.jabref.shared.exception.InvalidDBMSConnectionPropertiesException;
 import org.jabref.testutils.category.DatabaseTests;
-
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
@@ -13,6 +9,9 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
+
+import java.sql.SQLException;
+import java.util.Collection;
 
 @RunWith(Parameterized.class)
 @Category(DatabaseTests.class)

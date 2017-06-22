@@ -1,9 +1,5 @@
 package org.jabref.logic.importer.fetcher;
 
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
-
 import org.jabref.logic.bibtex.FieldContentParserPreferences;
 import org.jabref.logic.importer.ImportFormatPreferences;
 import org.jabref.model.entry.BibEntry;
@@ -11,10 +7,13 @@ import org.jabref.model.entry.BiblatexEntryTypes;
 import org.jabref.model.entry.BibtexEntryTypes;
 import org.jabref.model.entry.FieldName;
 import org.jabref.testutils.category.FetcherTests;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
+
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
 
 import static org.jabref.logic.util.OS.NEWLINE;
 import static org.junit.Assert.assertEquals;

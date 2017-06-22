@@ -1,9 +1,9 @@
 package org.jabref.logic.autocompleter;
 
+import org.jabref.model.entry.BibEntry;
+
 import java.util.Objects;
 import java.util.StringTokenizer;
-
-import org.jabref.model.entry.BibEntry;
 
 /**
  * Delivers possible completions for a given string.

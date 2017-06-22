@@ -1,8 +1,7 @@
 package org.jabref.gui.groups;
 
-import org.jabref.model.entry.BibEntry;
-
 import ca.odell.glazedlists.matchers.Matcher;
+import org.jabref.model.entry.BibEntry;
 
 /**
  * Matcher for filtering or sorting the table according to whether entries

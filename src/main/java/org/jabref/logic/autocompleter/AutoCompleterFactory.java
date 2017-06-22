@@ -1,11 +1,11 @@
 package org.jabref.logic.autocompleter;
 
-import java.util.Objects;
-
 import org.jabref.logic.journals.JournalAbbreviationLoader;
 import org.jabref.model.entry.FieldName;
 import org.jabref.model.entry.FieldProperty;
 import org.jabref.model.entry.InternalBibtexFields;
+
+import java.util.Objects;
 
 /**
  * Returns an autocompleter to a given fieldname.

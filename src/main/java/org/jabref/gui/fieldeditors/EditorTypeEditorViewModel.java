@@ -1,9 +1,8 @@
 package org.jabref.gui.fieldeditors;
 
-import org.jabref.logic.l10n.Localization;
-
 import com.google.common.collect.BiMap;
 import com.google.common.collect.HashBiMap;
+import org.jabref.logic.l10n.Localization;
 
 public class EditorTypeEditorViewModel extends MapBasedEditorViewModel<String> {
 

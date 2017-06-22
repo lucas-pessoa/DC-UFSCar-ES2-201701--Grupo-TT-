@@ -1,10 +1,9 @@
 package org.jabref.gui.specialfields;
 
-import java.awt.event.ActionEvent;
-
-import javax.swing.AbstractAction;
-
 import org.jabref.gui.JabRefFrame;
+
+import javax.swing.*;
+import java.awt.event.ActionEvent;
 
 public class SpecialFieldMenuAction extends AbstractAction {
 

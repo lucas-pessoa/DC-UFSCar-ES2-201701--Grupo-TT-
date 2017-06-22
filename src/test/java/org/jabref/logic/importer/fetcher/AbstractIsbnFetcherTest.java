@@ -1,11 +1,10 @@
 package org.jabref.logic.importer.fetcher;
 
-import java.util.Optional;
-
 import org.jabref.logic.importer.FetcherException;
 import org.jabref.model.entry.BibEntry;
-
 import org.junit.Test;
+
+import java.util.Optional;
 
 import static org.junit.Assert.assertEquals;
 

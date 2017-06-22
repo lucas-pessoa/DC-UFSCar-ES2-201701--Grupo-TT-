@@ -1,15 +1,14 @@
 package org.jabref.logic.layout.format;
 
-import java.nio.file.Paths;
-import java.util.List;
-import java.util.stream.Collectors;
-
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.jabref.logic.layout.ParamLayoutFormatter;
 import org.jabref.model.entry.FileFieldParser;
 import org.jabref.model.entry.LinkedFile;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import java.nio.file.Paths;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Export formatter that handles the file link list of JabRef 2.3 and later, by

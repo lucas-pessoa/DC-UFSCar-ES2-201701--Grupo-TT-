@@ -1,11 +1,11 @@
 package org.jabref.logic.autocompleter;
 
-import java.util.List;
-import java.util.Objects;
-
 import org.jabref.logic.journals.Abbreviation;
 import org.jabref.logic.journals.JournalAbbreviationLoader;
 import org.jabref.logic.journals.JournalAbbreviationPreferences;
+
+import java.util.List;
+import java.util.Objects;
 
 public class JournalAutoCompleter extends EntireFieldAutoCompleter {
 

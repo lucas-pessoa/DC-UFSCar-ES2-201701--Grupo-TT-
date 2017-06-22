@@ -1,8 +1,8 @@
 package org.jabref.logic.journals;
 
-import java.util.Objects;
-
 import javafx.beans.property.SimpleStringProperty;
+
+import java.util.Objects;
 
 public class Abbreviation implements Comparable<Abbreviation> {
 

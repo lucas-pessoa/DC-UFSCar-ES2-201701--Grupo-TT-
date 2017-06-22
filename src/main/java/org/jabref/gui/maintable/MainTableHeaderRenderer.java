@@ -1,13 +1,10 @@
 package org.jabref.gui.maintable;
 
-import java.awt.Component;
-
-import javax.swing.Icon;
-import javax.swing.JLabel;
-import javax.swing.JTable;
-import javax.swing.table.TableCellRenderer;
-
 import org.jabref.gui.GUIGlobals;
+
+import javax.swing.*;
+import javax.swing.table.TableCellRenderer;
+import java.awt.*;
 
 public class MainTableHeaderRenderer implements TableCellRenderer {
 

@@ -1,11 +1,10 @@
 package org.jabref.gui.search;
 
-import java.util.Comparator;
-import java.util.Objects;
-
+import ca.odell.glazedlists.matchers.Matcher;
 import org.jabref.model.entry.BibEntry;
 
-import ca.odell.glazedlists.matchers.Matcher;
+import java.util.Comparator;
+import java.util.Objects;
 
 /**
  * This Comparator compares two objects based on whether none, one of them, or both

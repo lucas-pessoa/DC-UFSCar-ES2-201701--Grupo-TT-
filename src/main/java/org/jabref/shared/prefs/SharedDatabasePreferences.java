@@ -1,18 +1,17 @@
 package org.jabref.shared.prefs;
 
-import java.io.UnsupportedEncodingException;
-import java.security.GeneralSecurityException;
-import java.util.Optional;
-import java.util.prefs.BackingStoreException;
-import java.util.prefs.Preferences;
-
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.jabref.JabRefMain;
 import org.jabref.gui.shared.ConnectToSharedDatabaseDialog;
 import org.jabref.shared.DBMSConnectionProperties;
 import org.jabref.shared.security.Password;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import java.io.UnsupportedEncodingException;
+import java.security.GeneralSecurityException;
+import java.util.Optional;
+import java.util.prefs.BackingStoreException;
+import java.util.prefs.Preferences;
 
 /**
  * Stores and reads persistent data for {@link ConnectToSharedDatabaseDialog}.

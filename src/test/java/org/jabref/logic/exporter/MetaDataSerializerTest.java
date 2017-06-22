@@ -1,11 +1,5 @@
 package org.jabref.logic.exporter;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
-
 import org.jabref.logic.formatter.casechanger.LowerCaseFormatter;
 import org.jabref.logic.util.OS;
 import org.jabref.model.bibtexkeypattern.GlobalBibtexKeyPattern;
@@ -13,9 +7,10 @@ import org.jabref.model.cleanup.FieldFormatterCleanup;
 import org.jabref.model.cleanup.FieldFormatterCleanups;
 import org.jabref.model.metadata.ContentSelector;
 import org.jabref.model.metadata.MetaData;
-
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.*;
 
 import static org.junit.Assert.assertEquals;
 

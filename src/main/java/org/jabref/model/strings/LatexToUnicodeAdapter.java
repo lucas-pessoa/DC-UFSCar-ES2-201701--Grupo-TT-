@@ -1,10 +1,10 @@
 package org.jabref.model.strings;
 
+import com.github.tomtung.latex2unicode.LaTeX2Unicode;
+
 import java.text.Normalizer;
 import java.util.Objects;
 import java.util.regex.Pattern;
-
-import com.github.tomtung.latex2unicode.LaTeX2Unicode;
 
 /**
  * Adapter class for the latex2unicode lib. This is an alternative to our LatexToUnicode class

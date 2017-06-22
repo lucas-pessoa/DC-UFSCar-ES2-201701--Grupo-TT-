@@ -1,39 +1,5 @@
 package org.jabref.logic.xmp;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.StandardOpenOption;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Optional;
-import java.util.Set;
-import java.util.TreeSet;
-
-import javax.xml.transform.TransformerException;
-
-import org.jabref.logic.TypedBibEntry;
-import org.jabref.model.database.BibDatabase;
-import org.jabref.model.database.BibDatabaseMode;
-import org.jabref.model.entry.Author;
-import org.jabref.model.entry.AuthorList;
-import org.jabref.model.entry.BibEntry;
-import org.jabref.model.entry.FieldName;
-import org.jabref.model.entry.Month;
-import org.jabref.model.strings.StringUtil;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.jempbox.impl.DateConverter;
@@ -52,7 +18,20 @@ import org.apache.pdfbox.pdmodel.PDDocumentInformation;
 import org.apache.pdfbox.pdmodel.common.PDMetadata;
 import org.apache.pdfbox.pdmodel.encryption.BadSecurityHandlerException;
 import org.apache.pdfbox.pdmodel.encryption.StandardDecryptionMaterial;
+import org.jabref.logic.TypedBibEntry;
+import org.jabref.model.database.BibDatabase;
+import org.jabref.model.database.BibDatabaseMode;
+import org.jabref.model.entry.*;
+import org.jabref.model.strings.StringUtil;
 import org.w3c.dom.Document;
+
+import javax.xml.transform.TransformerException;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
+import java.util.*;
+import java.util.Map.Entry;
 
 /**
  * XMPUtils provide support for reading and writing BibTex data as XMP-Metadata

@@ -1,10 +1,10 @@
 package org.jabref.logic.integrity;
 
+import org.jabref.logic.l10n.Localization;
+
 import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.regex.Pattern;
-
-import org.jabref.logic.l10n.Localization;
 
 public class YearChecker implements ValueChecker {
 

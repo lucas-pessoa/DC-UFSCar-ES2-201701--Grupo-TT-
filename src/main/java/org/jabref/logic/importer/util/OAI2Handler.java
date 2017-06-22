@@ -1,13 +1,12 @@
 package org.jabref.logic.importer.util;
 
-import java.util.Optional;
-
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.entry.FieldName;
-
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
+
+import java.util.Optional;
 
 /**
  * SAX-Handler to parse OAI2-xml files.

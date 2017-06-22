@@ -1,18 +1,17 @@
 package org.jabref.gui.keyboard;
 
-import java.util.Objects;
-
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
 import javafx.scene.input.KeyEvent;
-
 import org.jabref.gui.AbstractViewModel;
 import org.jabref.gui.DialogService;
 import org.jabref.logic.l10n.Localization;
 import org.jabref.preferences.PreferencesService;
+
+import java.util.Objects;
 
 public class KeyBindingsDialogViewModel extends AbstractViewModel {
 

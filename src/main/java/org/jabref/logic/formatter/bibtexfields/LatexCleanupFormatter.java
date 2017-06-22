@@ -1,9 +1,9 @@
 package org.jabref.logic.formatter.bibtexfields;
 
-import java.util.regex.Pattern;
-
 import org.jabref.logic.l10n.Localization;
 import org.jabref.model.cleanup.Formatter;
+
+import java.util.regex.Pattern;
 
 public class LatexCleanupFormatter implements Formatter {
 

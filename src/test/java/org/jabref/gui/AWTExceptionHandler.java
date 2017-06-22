@@ -1,9 +1,8 @@
 package org.jabref.gui;
 
+import javax.swing.*;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
-
-import javax.swing.SwingUtilities;
 
 /**
  * Can catch any exceptions occurring on the EDT thread for assertion.

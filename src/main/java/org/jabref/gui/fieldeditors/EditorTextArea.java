@@ -1,14 +1,13 @@
 package org.jabref.gui.fieldeditors;
 
-import java.net.URL;
-import java.util.List;
-import java.util.ResourceBundle;
-
+import com.sun.javafx.scene.control.skin.TextAreaSkin;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.MenuItem;
 
-import com.sun.javafx.scene.control.skin.TextAreaSkin;
+import java.net.URL;
+import java.util.List;
+import java.util.ResourceBundle;
 
 public class EditorTextArea extends javafx.scene.control.TextArea implements Initializable {
 

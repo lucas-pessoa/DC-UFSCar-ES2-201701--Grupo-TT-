@@ -1,15 +1,7 @@
 package org.jabref.gui.entryeditor;
 
-import java.io.IOException;
-import java.net.URL;
-import java.util.List;
-import java.util.Optional;
-import java.util.concurrent.ExecutionException;
-
-import javax.swing.JEditorPane;
-import javax.swing.SwingWorker;
-import javax.swing.event.HyperlinkEvent;
-
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.jabref.Globals;
 import org.jabref.gui.IconTheme;
 import org.jabref.gui.desktop.JabRefDesktop;
@@ -19,8 +11,13 @@ import org.jabref.model.entry.BibEntry;
 import org.jabref.model.entry.FieldName;
 import org.jabref.preferences.JabRefPreferences;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import javax.swing.*;
+import javax.swing.event.HyperlinkEvent;
+import java.io.IOException;
+import java.net.URL;
+import java.util.List;
+import java.util.Optional;
+import java.util.concurrent.ExecutionException;
 
 /**
  * This Component is displaying the recommendations received from Mr. DLib.

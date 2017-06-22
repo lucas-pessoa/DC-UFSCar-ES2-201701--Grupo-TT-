@@ -1,13 +1,12 @@
 package org.jabref.logic.formatter.bibtexfields;
 
-import java.util.Objects;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
+import com.google.common.base.Strings;
 import org.jabref.logic.l10n.Localization;
 import org.jabref.model.cleanup.Formatter;
 
-import com.google.common.base.Strings;
+import java.util.Objects;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * This class includes sensible defaults for consistent formatting of BibTeX page numbers.

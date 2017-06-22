@@ -1,10 +1,10 @@
 package org.jabref.model.search;
 
-import java.util.Objects;
-
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.search.rules.SearchRule;
 import org.jabref.model.search.rules.SearchRules;
+
+import java.util.Objects;
 
 public class GroupSearchQuery implements SearchMatcher {
 

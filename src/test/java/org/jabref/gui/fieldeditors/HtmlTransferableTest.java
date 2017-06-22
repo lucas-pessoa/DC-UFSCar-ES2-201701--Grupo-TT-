@@ -1,10 +1,9 @@
 package org.jabref.gui.fieldeditors;
 
-import java.awt.datatransfer.DataFlavor;
-
 import org.jabref.logic.util.OS;
-
 import org.junit.Test;
+
+import java.awt.datatransfer.DataFlavor;
 
 import static org.junit.Assert.assertEquals;
 

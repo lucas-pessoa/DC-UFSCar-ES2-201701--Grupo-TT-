@@ -1,11 +1,11 @@
 package org.jabref.model.database;
 
+import org.jabref.model.entry.BibEntry;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-
-import org.jabref.model.entry.BibEntry;
 
 public class EntrySorter {
 

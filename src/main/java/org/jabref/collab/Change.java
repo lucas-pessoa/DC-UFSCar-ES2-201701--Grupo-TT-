@@ -1,11 +1,11 @@
 package org.jabref.collab;
 
-import javax.swing.JComponent;
-import javax.swing.tree.DefaultMutableTreeNode;
-
 import org.jabref.gui.BasePanel;
 import org.jabref.gui.undo.NamedCompound;
 import org.jabref.model.database.BibDatabase;
+
+import javax.swing.*;
+import javax.swing.tree.DefaultMutableTreeNode;
 
 abstract class Change extends DefaultMutableTreeNode {
 

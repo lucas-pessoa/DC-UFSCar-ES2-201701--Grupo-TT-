@@ -1,11 +1,11 @@
 package org.jabref.gui.importer.fetcher;
 
-import javax.swing.JPanel;
-
 import org.jabref.gui.importer.ImportInspectionDialog;
 import org.jabref.logic.help.HelpFile;
 import org.jabref.logic.importer.ImportInspector;
 import org.jabref.logic.importer.OutputPrinter;
+
+import javax.swing.*;
 
 /**
  * @Deprecated

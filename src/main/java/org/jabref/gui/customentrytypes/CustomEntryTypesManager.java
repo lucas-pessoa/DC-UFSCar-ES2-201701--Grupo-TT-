@@ -1,12 +1,12 @@
 package org.jabref.gui.customentrytypes;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 import org.jabref.model.EntryTypes;
 import org.jabref.model.database.BibDatabaseMode;
 import org.jabref.model.entry.CustomEntryType;
 import org.jabref.preferences.JabRefPreferences;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class CustomEntryTypesManager {
 

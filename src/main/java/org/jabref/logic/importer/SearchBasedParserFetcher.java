@@ -1,5 +1,9 @@
 package org.jabref.logic.importer;
 
+import org.jabref.model.cleanup.Formatter;
+import org.jabref.model.entry.BibEntry;
+import org.jsoup.helper.StringUtil;
+
 import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -8,11 +12,6 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.Collections;
 import java.util.List;
-
-import org.jabref.model.cleanup.Formatter;
-import org.jabref.model.entry.BibEntry;
-
-import org.jsoup.helper.StringUtil;
 
 /**
  * Provides a convenient interface for search-based fetcher, which follow the usual three-step procedure:

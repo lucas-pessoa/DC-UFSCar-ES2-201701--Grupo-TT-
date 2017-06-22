@@ -1,17 +1,5 @@
 package org.jabref.gui.externalfiles;
 
-import java.awt.event.ActionEvent;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
-
-import javax.swing.AbstractAction;
-import javax.swing.Action;
-import javax.xml.transform.TransformerException;
-
 import org.jabref.Globals;
 import org.jabref.gui.BasePanel;
 import org.jabref.gui.IconTheme;
@@ -20,6 +8,16 @@ import org.jabref.gui.worker.AbstractWorker;
 import org.jabref.logic.l10n.Localization;
 import org.jabref.logic.xmp.XMPUtil;
 import org.jabref.model.entry.BibEntry;
+
+import javax.swing.*;
+import javax.xml.transform.TransformerException;
+import java.awt.event.ActionEvent;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 /**
  * Write XMP action for EntryEditor toolbar.

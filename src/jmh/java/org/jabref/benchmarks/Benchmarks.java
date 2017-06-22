@@ -1,11 +1,5 @@
 package org.jabref.benchmarks;
 
-import java.io.IOException;
-import java.io.StringReader;
-import java.util.List;
-import java.util.Random;
-import java.util.stream.Collectors;
-
 import org.jabref.Globals;
 import org.jabref.logic.exporter.BibtexDatabaseWriter;
 import org.jabref.logic.exporter.SavePreferences;
@@ -28,13 +22,18 @@ import org.jabref.model.groups.KeywordGroup;
 import org.jabref.model.groups.WordKeywordGroup;
 import org.jabref.model.metadata.MetaData;
 import org.jabref.preferences.JabRefPreferences;
-
 import org.openjdk.jmh.Main;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.Setup;
 import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.runner.RunnerException;
+
+import java.io.IOException;
+import java.io.StringReader;
+import java.util.List;
+import java.util.Random;
+import java.util.stream.Collectors;
 
 @State(Scope.Thread)
 public class Benchmarks {

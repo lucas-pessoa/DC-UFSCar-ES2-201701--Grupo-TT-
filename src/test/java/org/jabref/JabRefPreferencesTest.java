@@ -1,13 +1,12 @@
 package org.jabref;
 
-import java.io.File;
-import java.nio.charset.StandardCharsets;
-
 import org.jabref.preferences.JabRefPreferences;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.io.File;
+import java.nio.charset.StandardCharsets;
 
 import static org.junit.Assert.assertEquals;
 

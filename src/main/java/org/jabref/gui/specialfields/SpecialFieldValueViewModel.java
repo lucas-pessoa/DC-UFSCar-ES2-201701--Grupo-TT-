@@ -1,13 +1,11 @@
 package org.jabref.gui.specialfields;
 
-import java.util.Objects;
-
-import javax.swing.Icon;
-import javax.swing.JLabel;
-
 import org.jabref.gui.IconTheme;
 import org.jabref.logic.l10n.Localization;
 import org.jabref.model.entry.specialfields.SpecialFieldValue;
+
+import javax.swing.*;
+import java.util.Objects;
 
 public class SpecialFieldValueViewModel {
 

@@ -1,18 +1,11 @@
 package org.jabref.gui.groups;
 
-import java.util.List;
-
 import javafx.application.Platform;
 import javafx.embed.swing.JFXPanel;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
-
 import org.jabref.Globals;
-import org.jabref.gui.BasePanel;
-import org.jabref.gui.IconTheme;
-import org.jabref.gui.JabRefFrame;
-import org.jabref.gui.SidePaneComponent;
-import org.jabref.gui.SidePaneManager;
+import org.jabref.gui.*;
 import org.jabref.gui.keyboard.KeyBinding;
 import org.jabref.gui.maintable.MainTableDataModel;
 import org.jabref.logic.l10n.Localization;
@@ -20,6 +13,8 @@ import org.jabref.model.groups.GroupTreeNode;
 import org.jabref.model.search.matchers.MatcherSet;
 import org.jabref.model.search.matchers.MatcherSets;
 import org.jabref.preferences.JabRefPreferences;
+
+import java.util.List;
 
 /**
  * The groups side pane.

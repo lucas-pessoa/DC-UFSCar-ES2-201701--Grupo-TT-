@@ -1,14 +1,14 @@
 package org.jabref.logic.cleanup;
 
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
-
 import org.jabref.model.FieldChange;
 import org.jabref.model.cleanup.CleanupJob;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.entry.FieldName;
 import org.jabref.model.entry.identifier.ISSN;
+
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
 
 public class ISSNCleanup implements CleanupJob {
 

@@ -1,10 +1,10 @@
 package org.jabref.gui.entryeditor;
 
-import java.util.Optional;
-
 import org.jabref.logic.l10n.Localization;
 import org.jabref.model.pdf.FileAnnotation;
 import org.jabref.model.pdf.FileAnnotationType;
+
+import java.util.Optional;
 
 public class FileAnnotationViewModel extends FileAnnotation {
 

@@ -1,15 +1,9 @@
 package org.jabref.gui.util.component;
 
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.RenderingHints;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-
-import javax.swing.JTextArea;
-import javax.swing.UIManager;
 
 /**
  * A text area which displays a predefined text the same way as {@link JTextFieldWithPlaceholder} does.

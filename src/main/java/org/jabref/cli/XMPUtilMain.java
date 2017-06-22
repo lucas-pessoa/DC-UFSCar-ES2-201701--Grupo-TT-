@@ -1,16 +1,7 @@
 package org.jabref.cli;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.StringWriter;
-import java.nio.charset.StandardCharsets;
-import java.util.Collection;
-import java.util.List;
-import java.util.Optional;
-
-import javax.xml.transform.TransformerException;
-
+import org.apache.jempbox.impl.XMLUtil;
+import org.apache.jempbox.xmp.XMPMetadata;
 import org.jabref.Globals;
 import org.jabref.logic.bibtex.BibEntryWriter;
 import org.jabref.logic.bibtex.LatexFieldFormatter;
@@ -23,8 +14,15 @@ import org.jabref.model.database.BibDatabaseMode;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.preferences.JabRefPreferences;
 
-import org.apache.jempbox.impl.XMLUtil;
-import org.apache.jempbox.xmp.XMPMetadata;
+import javax.xml.transform.TransformerException;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.StringWriter;
+import java.nio.charset.StandardCharsets;
+import java.util.Collection;
+import java.util.List;
+import java.util.Optional;
 
 public class XMPUtilMain {
 

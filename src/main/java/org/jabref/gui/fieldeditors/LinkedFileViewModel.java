@@ -1,19 +1,17 @@
 package org.jabref.gui.fieldeditors;
 
-import java.nio.file.Path;
-import java.util.List;
-import java.util.Optional;
-
+import de.jensd.fx.glyphs.GlyphIcons;
+import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIcon;
 import javafx.beans.Observable;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleDoubleProperty;
-
 import org.jabref.model.entry.LinkedFile;
 
-import de.jensd.fx.glyphs.GlyphIcons;
-import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIcon;
+import java.nio.file.Path;
+import java.util.List;
+import java.util.Optional;
 
 public class LinkedFileViewModel extends AbstractEditorViewModel {
     private final LinkedFile linkedFile;

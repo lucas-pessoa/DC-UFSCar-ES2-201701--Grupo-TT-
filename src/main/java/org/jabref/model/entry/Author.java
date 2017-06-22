@@ -1,9 +1,9 @@
 package org.jabref.model.entry;
 
+import org.jabref.model.strings.StringUtil;
+
 import java.util.Objects;
 import java.util.Optional;
-
-import org.jabref.model.strings.StringUtil;
 
 /**
  * This is an immutable class that keeps information regarding single

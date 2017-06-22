@@ -1,10 +1,10 @@
 package org.jabref.logic.autocompleter;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.jabref.model.database.BibDatabase;
 import org.jabref.model.entry.BibEntry;
+
+import java.util.HashMap;
+import java.util.Map;
 
 class AutoCompleters {
 

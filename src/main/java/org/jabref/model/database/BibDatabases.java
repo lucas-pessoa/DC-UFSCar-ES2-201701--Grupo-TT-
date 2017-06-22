@@ -1,11 +1,11 @@
 package org.jabref.model.database;
 
+import org.jabref.model.entry.BibEntry;
+import org.jabref.model.entry.IdGenerator;
+
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import org.jabref.model.entry.BibEntry;
-import org.jabref.model.entry.IdGenerator;
 
 public class BibDatabases {
 

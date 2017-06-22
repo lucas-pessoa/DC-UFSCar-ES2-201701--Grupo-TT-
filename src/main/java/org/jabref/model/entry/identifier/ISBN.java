@@ -1,13 +1,13 @@
 package org.jabref.model.entry.identifier;
 
+import org.jabref.model.entry.FieldName;
+
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import org.jabref.model.entry.FieldName;
 
 public class ISBN implements Identifier {
 

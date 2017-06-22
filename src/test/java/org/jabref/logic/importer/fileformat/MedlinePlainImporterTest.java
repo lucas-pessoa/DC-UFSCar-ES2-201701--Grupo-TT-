@@ -1,5 +1,13 @@
 package org.jabref.logic.importer.fileformat;
 
+import org.apache.commons.codec.Charsets;
+import org.jabref.logic.bibtex.BibEntryAssert;
+import org.jabref.logic.util.FileExtensions;
+import org.jabref.model.entry.BibEntry;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,15 +20,6 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
-
-import org.jabref.logic.bibtex.BibEntryAssert;
-import org.jabref.logic.util.FileExtensions;
-import org.jabref.model.entry.BibEntry;
-
-import org.apache.commons.codec.Charsets;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;

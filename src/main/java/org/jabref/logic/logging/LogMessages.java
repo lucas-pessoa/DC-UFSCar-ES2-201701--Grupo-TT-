@@ -2,7 +2,6 @@ package org.jabref.logic.logging;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-
 import org.apache.logging.log4j.core.LogEvent;
 import org.apache.logging.log4j.core.impl.MutableLogEvent;
 

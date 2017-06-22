@@ -1,15 +1,15 @@
 package org.jabref.logic.cleanup;
 
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
-
 import org.jabref.model.FieldChange;
 import org.jabref.model.cleanup.CleanupJob;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.entry.FieldName;
 import org.jabref.model.entry.FileFieldWriter;
 import org.jabref.model.entry.LinkedFile;
+
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
 
 /**
  * Fixes the format of the file field. For example, if the file link is empty but the description wrongly contains the path.

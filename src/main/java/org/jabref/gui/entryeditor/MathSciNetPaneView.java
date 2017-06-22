@@ -1,12 +1,11 @@
 package org.jabref.gui.entryeditor;
 
-import java.util.Objects;
-
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.layout.StackPane;
 import javafx.scene.web.WebView;
-
 import org.jabref.model.entry.identifier.MathSciNetId;
+
+import java.util.Objects;
 
 public class MathSciNetPaneView {
 

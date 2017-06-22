@@ -1,5 +1,23 @@
 package org.jabref.gui.groups;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.jabref.JabRefExecutorService;
+import org.jabref.gui.BasePanel;
+import org.jabref.gui.JabRefFrame;
+import org.jabref.gui.externalfiles.DroppedFileHandler;
+import org.jabref.gui.externalfiles.TransferableFileLinkSelection;
+import org.jabref.gui.externalfiletype.ExternalFileType;
+import org.jabref.gui.externalfiletype.ExternalFileTypes;
+import org.jabref.gui.importer.ImportMenuItem;
+import org.jabref.gui.importer.actions.OpenDatabaseAction;
+import org.jabref.gui.maintable.MainTable;
+import org.jabref.logic.net.URLDownload;
+import org.jabref.model.util.FileHelper;
+import org.jabref.pdfimport.PdfImporter;
+import org.jabref.pdfimport.PdfImporter.ImportPdfFilesResult;
+
+import javax.swing.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.Transferable;
@@ -19,28 +37,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
-
-import javax.swing.JComponent;
-import javax.swing.JTable;
-import javax.swing.TransferHandler;
-
-import org.jabref.JabRefExecutorService;
-import org.jabref.gui.BasePanel;
-import org.jabref.gui.JabRefFrame;
-import org.jabref.gui.externalfiles.DroppedFileHandler;
-import org.jabref.gui.externalfiles.TransferableFileLinkSelection;
-import org.jabref.gui.externalfiletype.ExternalFileType;
-import org.jabref.gui.externalfiletype.ExternalFileTypes;
-import org.jabref.gui.importer.ImportMenuItem;
-import org.jabref.gui.importer.actions.OpenDatabaseAction;
-import org.jabref.gui.maintable.MainTable;
-import org.jabref.logic.net.URLDownload;
-import org.jabref.model.util.FileHelper;
-import org.jabref.pdfimport.PdfImporter;
-import org.jabref.pdfimport.PdfImporter.ImportPdfFilesResult;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 
 public class EntryTableTransferHandler extends TransferHandler {
 

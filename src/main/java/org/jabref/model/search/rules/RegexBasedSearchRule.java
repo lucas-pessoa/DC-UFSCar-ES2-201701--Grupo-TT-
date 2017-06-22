@@ -1,12 +1,12 @@
 package org.jabref.model.search.rules;
 
+import org.jabref.model.entry.BibEntry;
+
 import java.util.Locale;
 import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
-
-import org.jabref.model.entry.BibEntry;
 
 /**
  * Search rule for regex-based search.

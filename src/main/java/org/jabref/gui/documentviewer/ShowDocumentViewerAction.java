@@ -1,15 +1,12 @@
 package org.jabref.gui.documentviewer;
 
-import java.awt.event.ActionEvent;
-
-import javax.swing.Action;
-import javax.swing.Icon;
-
 import javafx.application.Platform;
-
 import org.jabref.gui.IconTheme;
 import org.jabref.gui.actions.MnemonicAwareAction;
 import org.jabref.logic.l10n.Localization;
+
+import javax.swing.*;
+import java.awt.event.ActionEvent;
 
 public class ShowDocumentViewerAction extends MnemonicAwareAction {
 

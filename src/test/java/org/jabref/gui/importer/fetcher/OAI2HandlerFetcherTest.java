@@ -1,22 +1,20 @@
 package org.jabref.gui.importer.fetcher;
 
-import java.io.IOException;
-import java.util.Optional;
-
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
-
 import org.jabref.logic.importer.util.OAI2Handler;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.testutils.category.GUITests;
-
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.xml.sax.SAXException;
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
+import java.io.IOException;
+import java.util.Optional;
 
 /**
  * Test for OAI2-Handler and Fetcher.

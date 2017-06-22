@@ -1,13 +1,12 @@
 package org.jabref.logic.autocompleter;
 
+import org.jabref.model.entry.BibEntry;
+import org.junit.Assert;
+import org.junit.Test;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-
-import org.jabref.model.entry.BibEntry;
-
-import org.junit.Assert;
-import org.junit.Test;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;

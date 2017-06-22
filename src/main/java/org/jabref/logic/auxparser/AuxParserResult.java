@@ -1,14 +1,10 @@
 package org.jabref.logic.auxparser;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
 import org.jabref.logic.l10n.Localization;
 import org.jabref.model.database.BibDatabase;
 import org.jabref.model.entry.BibtexString;
+
+import java.util.*;
 
 public class AuxParserResult {
 

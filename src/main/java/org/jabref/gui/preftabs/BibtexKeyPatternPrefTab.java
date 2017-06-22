@@ -1,14 +1,7 @@
 package org.jabref.gui.preftabs;
 
-import java.awt.GridBagConstraints;
-
-import javax.swing.BorderFactory;
-import javax.swing.ButtonGroup;
-import javax.swing.JCheckBox;
-import javax.swing.JPanel;
-import javax.swing.JRadioButton;
-import javax.swing.JTextField;
-
+import com.jgoodies.forms.builder.DefaultFormBuilder;
+import com.jgoodies.forms.layout.FormLayout;
 import org.jabref.Globals;
 import org.jabref.gui.BasePanel;
 import org.jabref.gui.bibtexkeypattern.BibtexKeyPatternPanel;
@@ -16,8 +9,8 @@ import org.jabref.logic.l10n.Localization;
 import org.jabref.model.bibtexkeypattern.GlobalBibtexKeyPattern;
 import org.jabref.preferences.JabRefPreferences;
 
-import com.jgoodies.forms.builder.DefaultFormBuilder;
-import com.jgoodies.forms.layout.FormLayout;
+import javax.swing.*;
+import java.awt.*;
 
 /**
  * The Preferences panel for key generation.

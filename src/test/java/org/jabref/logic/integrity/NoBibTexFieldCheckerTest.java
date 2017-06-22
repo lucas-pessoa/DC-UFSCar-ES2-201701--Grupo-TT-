@@ -1,11 +1,10 @@
 package org.jabref.logic.integrity;
 
+import org.jabref.model.entry.BibEntry;
+import org.junit.Test;
+
 import java.util.Collections;
 import java.util.List;
-
-import org.jabref.model.entry.BibEntry;
-
-import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 

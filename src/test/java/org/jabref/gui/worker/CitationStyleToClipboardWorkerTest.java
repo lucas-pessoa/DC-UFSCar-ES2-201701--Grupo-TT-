@@ -1,16 +1,15 @@
 package org.jabref.gui.worker;
 
-import java.awt.datatransfer.DataFlavor;
-import java.awt.datatransfer.StringSelection;
-import java.util.Arrays;
-
 import org.jabref.gui.exporter.RtfTransferable;
 import org.jabref.gui.fieldeditors.HtmlTransferable;
 import org.jabref.gui.fieldeditors.XmlTransferable;
 import org.jabref.logic.util.OS;
-
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.awt.datatransfer.DataFlavor;
+import java.awt.datatransfer.StringSelection;
+import java.util.Arrays;
 
 
 public class CitationStyleToClipboardWorkerTest {

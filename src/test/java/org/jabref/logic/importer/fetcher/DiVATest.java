@@ -1,20 +1,17 @@
 package org.jabref.logic.importer.fetcher;
 
-import java.util.Optional;
-
 import org.jabref.logic.help.HelpFile;
 import org.jabref.logic.importer.ImportFormatPreferences;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.testutils.category.FetcherTests;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.mockito.Answers;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import java.util.Optional;
+
+import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
 
 @Category(FetcherTests.class)

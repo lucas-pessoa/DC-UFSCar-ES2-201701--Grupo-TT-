@@ -1,5 +1,9 @@
 package org.jabref.gui.desktop.os;
 
+import org.jabref.gui.externalfiletype.ExternalFileType;
+import org.jabref.gui.externalfiletype.ExternalFileTypes;
+import org.jabref.preferences.JabRefPreferences;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
@@ -7,13 +11,7 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.Optional;
 
-import org.jabref.gui.externalfiletype.ExternalFileType;
-import org.jabref.gui.externalfiletype.ExternalFileTypes;
-import org.jabref.preferences.JabRefPreferences;
-
-import static org.jabref.preferences.JabRefPreferences.ADOBE_ACROBAT_COMMAND;
-import static org.jabref.preferences.JabRefPreferences.SUMATRA_PDF_COMMAND;
-import static org.jabref.preferences.JabRefPreferences.USE_PDF_READER;
+import static org.jabref.preferences.JabRefPreferences.*;
 
 public class Windows implements NativeDesktop {
     private static String DEFAULT_EXECUTABLE_EXTENSION = ".exe";

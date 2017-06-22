@@ -1,10 +1,10 @@
 package org.jabref.gui.util.comparator;
 
-import java.util.Comparator;
-import java.util.Optional;
-
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.entry.specialfields.SpecialField;
+
+import java.util.Comparator;
+import java.util.Optional;
 
 /**
  * Comparator that handles the ranking icon column

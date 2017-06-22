@@ -1,13 +1,13 @@
 package org.jabref.logic.bibtex;
 
+import org.jabref.logic.util.OS;
+import org.jabref.model.entry.FieldName;
+import org.jabref.model.strings.StringUtil;
+
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 import java.util.regex.Pattern;
-
-import org.jabref.logic.util.OS;
-import org.jabref.model.entry.FieldName;
-import org.jabref.model.strings.StringUtil;
 
 /**
  * This class provides the reformatting needed when reading BibTeX fields formatted

@@ -1,17 +1,5 @@
 package org.jabref.logic.importer.fileformat;
 
-import java.io.IOException;
-import java.io.StringReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.Set;
-
 import org.jabref.logic.exporter.SavePreferences;
 import org.jabref.logic.formatter.casechanger.LowerCaseFormatter;
 import org.jabref.logic.importer.ImportFormatPreferences;
@@ -28,22 +16,17 @@ import org.jabref.model.entry.BibEntry;
 import org.jabref.model.entry.BibtexString;
 import org.jabref.model.entry.EntryType;
 import org.jabref.model.entry.FieldName;
-import org.jabref.model.groups.AllEntriesGroup;
-import org.jabref.model.groups.ExplicitGroup;
-import org.jabref.model.groups.GroupHierarchyType;
-import org.jabref.model.groups.GroupTreeNode;
-import org.jabref.model.groups.RegexKeywordGroup;
-import org.jabref.model.groups.WordKeywordGroup;
+import org.jabref.model.groups.*;
 import org.jabref.model.metadata.SaveOrderConfig;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Answers;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import java.io.IOException;
+import java.io.StringReader;
+import java.util.*;
+
+import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 

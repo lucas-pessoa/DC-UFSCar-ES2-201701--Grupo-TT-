@@ -1,16 +1,14 @@
 package org.jabref.gui.externalfiles;
 
+import javafx.concurrent.Task;
+import org.fxmisc.easybind.EasyBind;
+import org.jabref.logic.net.ProgressInputStream;
+import org.jabref.logic.net.URLDownload;
+
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
-
-import javafx.concurrent.Task;
-
-import org.jabref.logic.net.ProgressInputStream;
-import org.jabref.logic.net.URLDownload;
-
-import org.fxmisc.easybind.EasyBind;
 
 public class FileDownloadTask extends Task<Void> {
 

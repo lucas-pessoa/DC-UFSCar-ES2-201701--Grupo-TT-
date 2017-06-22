@@ -1,7 +1,6 @@
 package org.jabref.gui.specialfields;
 
-import java.util.List;
-
+import com.google.common.eventbus.Subscribe;
 import org.jabref.Globals;
 import org.jabref.gui.undo.NamedCompound;
 import org.jabref.gui.undo.UndoableFieldChange;
@@ -11,7 +10,7 @@ import org.jabref.model.FieldChange;
 import org.jabref.model.database.event.EntryAddedEvent;
 import org.jabref.model.entry.BibEntry;
 
-import com.google.common.eventbus.Subscribe;
+import java.util.List;
 
 public class SpecialFieldDatabaseChangeListener {
 

@@ -1,5 +1,7 @@
 package org.jabref.logic.journals;
 
+import org.jabref.logic.util.OS;
+
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
@@ -7,8 +9,6 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
-
-import org.jabref.logic.util.OS;
 
 /**
  * This class provides handy static methodes to save abbreviations to the file system.

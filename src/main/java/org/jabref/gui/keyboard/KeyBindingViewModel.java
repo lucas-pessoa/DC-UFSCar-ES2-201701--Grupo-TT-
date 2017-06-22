@@ -1,17 +1,15 @@
 package org.jabref.gui.keyboard;
 
-import java.util.Optional;
-
+import com.google.common.base.CaseFormat;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-
 import org.jabref.gui.IconTheme;
 
-import com.google.common.base.CaseFormat;
+import java.util.Optional;
 
 /**
  * This class represents a view model for objects of the KeyBinding

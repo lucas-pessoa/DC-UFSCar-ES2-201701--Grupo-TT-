@@ -1,9 +1,9 @@
 package org.jabref.logic.remote.server;
 
-import java.io.IOException;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+
+import java.io.IOException;
 
 /**
  * This thread wrapper is required to be able to interrupt the remote listener while listening on a port.

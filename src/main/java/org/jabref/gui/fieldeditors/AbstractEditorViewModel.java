@@ -1,13 +1,12 @@
 package org.jabref.gui.fieldeditors;
 
-import java.util.Optional;
-
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-
 import org.jabref.gui.AbstractViewModel;
 import org.jabref.gui.util.BindingsHelper;
 import org.jabref.model.entry.BibEntry;
+
+import java.util.Optional;
 
 public class AbstractEditorViewModel extends AbstractViewModel {
     protected StringProperty text = new SimpleStringProperty("");

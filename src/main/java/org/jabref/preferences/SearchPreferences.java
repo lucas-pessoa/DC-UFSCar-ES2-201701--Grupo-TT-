@@ -1,9 +1,9 @@
 package org.jabref.preferences;
 
+import org.jabref.gui.search.SearchDisplayMode;
+
 import java.util.Map;
 import java.util.Objects;
-
-import org.jabref.gui.search.SearchDisplayMode;
 
 public class SearchPreferences {
 

@@ -1,18 +1,7 @@
 package org.jabref.gui.contentselector;
 
-import java.awt.Dimension;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Window;
-import java.awt.event.ActionEvent;
-
-import javax.swing.AbstractAction;
-import javax.swing.Box;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JComponent;
-import javax.swing.KeyStroke;
-
+import com.jgoodies.forms.layout.Sizes;
+import com.jgoodies.looks.Options;
 import org.jabref.gui.BasePanel;
 import org.jabref.gui.JabRefFrame;
 import org.jabref.gui.fieldeditors.FieldEditor;
@@ -21,8 +10,9 @@ import org.jabref.model.entry.Keyword;
 import org.jabref.model.entry.KeywordList;
 import org.jabref.model.metadata.MetaData;
 
-import com.jgoodies.forms.layout.Sizes;
-import com.jgoodies.looks.Options;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
 
 /**
  * A combo-box and a manage button that will add selected strings to an

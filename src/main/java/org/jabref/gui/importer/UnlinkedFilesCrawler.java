@@ -1,19 +1,18 @@
 package org.jabref.gui.importer;
 
+import org.jabref.gui.FindUnlinkedFilesDialog.CheckableTreeNode;
+import org.jabref.gui.FindUnlinkedFilesDialog.FileNodeWrapper;
+import org.jabref.model.database.BibDatabase;
+import org.jabref.model.database.BibDatabaseContext;
+
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.io.File;
 import java.io.FileFilter;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
-
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
-
-import org.jabref.gui.FindUnlinkedFilesDialog.CheckableTreeNode;
-import org.jabref.gui.FindUnlinkedFilesDialog.FileNodeWrapper;
-import org.jabref.model.database.BibDatabase;
-import org.jabref.model.database.BibDatabaseContext;
 
 /**
  * Util class for searching files on the file system which are not linked to a provided {@link BibDatabase}.

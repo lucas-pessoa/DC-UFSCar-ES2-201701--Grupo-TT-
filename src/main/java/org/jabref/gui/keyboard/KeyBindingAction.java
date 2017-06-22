@@ -1,14 +1,11 @@
 package org.jabref.gui.keyboard;
 
-import java.awt.event.ActionEvent;
-
-import javax.swing.AbstractAction;
-import javax.swing.Action;
-
 import javafx.application.Platform;
-
 import org.jabref.gui.IconTheme;
 import org.jabref.logic.l10n.Localization;
+
+import javax.swing.*;
+import java.awt.event.ActionEvent;
 
 public class KeyBindingAction extends AbstractAction {
 

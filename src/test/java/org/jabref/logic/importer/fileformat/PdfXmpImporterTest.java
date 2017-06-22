@@ -1,5 +1,13 @@
 package org.jabref.logic.importer.fileformat;
 
+import org.jabref.logic.importer.ParserResult;
+import org.jabref.logic.util.FileExtensions;
+import org.jabref.logic.xmp.XMPPreferences;
+import org.jabref.model.entry.BibEntry;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
@@ -9,18 +17,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
-import org.jabref.logic.importer.ParserResult;
-import org.jabref.logic.util.FileExtensions;
-import org.jabref.logic.xmp.XMPPreferences;
-import org.jabref.model.entry.BibEntry;
-
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
 
 public class PdfXmpImporterTest {

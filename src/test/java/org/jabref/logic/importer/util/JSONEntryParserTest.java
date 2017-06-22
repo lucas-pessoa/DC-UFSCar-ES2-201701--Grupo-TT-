@@ -1,12 +1,11 @@
 package org.jabref.logic.importer.util;
 
-import java.util.Optional;
-
 import org.jabref.model.entry.BibEntry;
-
 import org.json.JSONObject;
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.util.Optional;
 
 public class JSONEntryParserTest {
 

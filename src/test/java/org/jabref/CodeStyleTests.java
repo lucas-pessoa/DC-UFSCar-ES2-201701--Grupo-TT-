@@ -1,14 +1,13 @@
 package org.jabref;
 
+import org.jabref.model.strings.StringUtil;
+import org.junit.Assert;
+import org.junit.Test;
+
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-
-import org.jabref.model.strings.StringUtil;
-
-import org.junit.Assert;
-import org.junit.Test;
 
 public class CodeStyleTests {
 

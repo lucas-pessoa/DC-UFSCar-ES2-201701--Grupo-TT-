@@ -1,9 +1,9 @@
 package org.jabref.logic.l10n;
 
+import org.junit.Test;
+
 import java.util.Locale;
 import java.util.Optional;
-
-import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 

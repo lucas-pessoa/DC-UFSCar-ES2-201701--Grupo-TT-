@@ -1,16 +1,12 @@
 package org.jabref.model.util;
 
+import org.jabref.model.database.BibDatabaseContext;
+import org.jabref.model.metadata.FileDirectoryPreferences;
+
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
-import java.util.Objects;
-import java.util.Optional;
-
-import org.jabref.model.database.BibDatabaseContext;
-import org.jabref.model.metadata.FileDirectoryPreferences;
+import java.util.*;
 
 public class FileHelper {
     /**

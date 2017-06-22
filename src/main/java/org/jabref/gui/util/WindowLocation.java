@@ -1,18 +1,11 @@
 package org.jabref.gui.util;
 
-import java.awt.Dimension;
-import java.awt.Frame;
-import java.awt.GraphicsDevice;
-import java.awt.GraphicsEnvironment;
-import java.awt.Point;
-import java.awt.Rectangle;
-import java.awt.Window;
+import org.jabref.Globals;
+
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
-
-import javax.swing.JFrame;
-
-import org.jabref.Globals;
 
 /**
  * Restores and saves the position of non-modal windows inside the JabRef preferences.

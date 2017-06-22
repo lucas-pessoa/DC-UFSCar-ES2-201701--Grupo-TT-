@@ -1,11 +1,11 @@
 package org.jabref.gui.importer.actions;
 
-import javax.swing.JOptionPane;
-
 import org.jabref.gui.BasePanel;
 import org.jabref.gui.actions.Actions;
 import org.jabref.logic.importer.ParserResult;
 import org.jabref.logic.l10n.Localization;
+
+import javax.swing.*;
 
 /**
  * GUIPostOpenAction that checks whether there are warnings about duplicate BibTeX keys, and

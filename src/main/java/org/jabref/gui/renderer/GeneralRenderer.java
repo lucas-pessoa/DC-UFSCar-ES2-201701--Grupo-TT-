@@ -1,12 +1,8 @@
 package org.jabref.gui.renderer;
 
-import java.awt.Color;
-import java.awt.Component;
-
-import javax.swing.Icon;
-import javax.swing.JLabel;
-import javax.swing.JTable;
+import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
+import java.awt.*;
 
 /**
  * Renderer for table cells, which supports both Icons, JLabels and plain text.

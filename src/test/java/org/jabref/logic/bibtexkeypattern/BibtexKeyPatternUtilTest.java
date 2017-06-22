@@ -1,16 +1,15 @@
 package org.jabref.logic.bibtexkeypattern;
 
-import java.util.Optional;
-
 import org.jabref.logic.importer.ImportFormatPreferences;
 import org.jabref.logic.importer.ParseException;
 import org.jabref.logic.importer.fileformat.BibtexParser;
 import org.jabref.model.database.BibDatabase;
 import org.jabref.model.entry.BibEntry;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Answers;
+
+import java.util.Optional;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;

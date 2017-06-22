@@ -1,5 +1,14 @@
 package org.jabref.logic.importer.fileformat;
 
+import org.jabref.logic.bibtex.BibEntryAssert;
+import org.jabref.logic.importer.ImportFormatPreferences;
+import org.jabref.model.entry.BibEntry;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameter;
+import org.junit.runners.Parameterized.Parameters;
+
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
@@ -8,16 +17,6 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-
-import org.jabref.logic.bibtex.BibEntryAssert;
-import org.jabref.logic.importer.ImportFormatPreferences;
-import org.jabref.model.entry.BibEntry;
-
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-import org.junit.runners.Parameterized.Parameter;
-import org.junit.runners.Parameterized.Parameters;
 
 import static org.mockito.Mockito.mock;
 

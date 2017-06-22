@@ -1,11 +1,8 @@
 package org.jabref.logic.util.io;
 
-import java.io.StringWriter;
-import java.util.AbstractList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
-import java.util.RandomAccess;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.w3c.dom.*;
 
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
@@ -13,14 +10,8 @@ import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
+import java.io.StringWriter;
+import java.util.*;
 
 /**
  * Currently used for debugging only

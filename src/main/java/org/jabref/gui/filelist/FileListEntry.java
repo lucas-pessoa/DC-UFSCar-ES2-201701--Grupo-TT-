@@ -1,10 +1,10 @@
 package org.jabref.gui.filelist;
 
-import java.util.Objects;
-import java.util.Optional;
-
 import org.jabref.gui.externalfiletype.ExternalFileType;
 import org.jabref.model.entry.LinkedFile;
+
+import java.util.Objects;
+import java.util.Optional;
 /**
  * This class represents a file link for a Bibtex entry.
  */

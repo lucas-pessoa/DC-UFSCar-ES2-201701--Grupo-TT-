@@ -1,8 +1,5 @@
 package org.jabref.collab;
 
-import javax.swing.JComponent;
-import javax.swing.JScrollPane;
-
 import org.jabref.gui.BasePanel;
 import org.jabref.gui.PreviewPanel;
 import org.jabref.gui.undo.NamedCompound;
@@ -11,6 +8,8 @@ import org.jabref.logic.l10n.Localization;
 import org.jabref.model.database.BibDatabase;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.entry.IdGenerator;
+
+import javax.swing.*;
 
 class EntryAddChange extends Change {
 

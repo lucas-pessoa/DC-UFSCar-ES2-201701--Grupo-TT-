@@ -1,10 +1,10 @@
 package org.jabref.model.pdf;
 
-import java.util.Locale;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotation;
+
+import java.util.Locale;
 
 /**
  * Our representation of the type of the FileAnnotation. This is needed as some FileAnnotationTypes require special

@@ -1,8 +1,7 @@
 package org.jabref.collab;
 
-import javax.swing.JComponent;
-import javax.swing.JScrollPane;
-
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.jabref.gui.BasePanel;
 import org.jabref.gui.undo.NamedCompound;
 import org.jabref.gui.undo.UndoableInsertString;
@@ -12,8 +11,7 @@ import org.jabref.model.database.BibDatabase;
 import org.jabref.model.database.KeyCollisionException;
 import org.jabref.model.entry.BibtexString;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import javax.swing.*;
 
 class StringChange extends Change {
 

@@ -1,10 +1,5 @@
 package org.jabref.gui.actions;
 
-import java.util.List;
-import java.util.Objects;
-
-import javax.swing.JOptionPane;
-
 import org.jabref.Globals;
 import org.jabref.gui.BasePanel;
 import org.jabref.gui.JabRefFrame;
@@ -19,6 +14,10 @@ import org.jabref.logic.l10n.Localization;
 import org.jabref.model.FieldChange;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.preferences.JabRefPreferences;
+
+import javax.swing.*;
+import java.util.List;
+import java.util.Objects;
 
 public class CleanupAction extends AbstractWorker {
 

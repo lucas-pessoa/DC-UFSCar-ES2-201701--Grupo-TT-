@@ -1,12 +1,9 @@
 package org.jabref.gui.actions;
 
-import java.awt.event.ActionEvent;
-
-import javax.swing.AbstractAction;
-import javax.swing.Action;
-import javax.swing.Icon;
-
 import org.jabref.gui.desktop.JabRefDesktop;
+
+import javax.swing.*;
+import java.awt.event.ActionEvent;
 
 public class OpenBrowserAction extends AbstractAction {
 

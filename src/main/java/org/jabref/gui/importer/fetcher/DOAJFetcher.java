@@ -1,8 +1,11 @@
 package org.jabref.gui.importer.fetcher;
 
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-
+import com.mashape.unirest.http.HttpResponse;
+import com.mashape.unirest.http.JsonNode;
+import com.mashape.unirest.http.Unirest;
+import com.mashape.unirest.http.exceptions.UnirestException;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.jabref.Globals;
 import org.jabref.gui.importer.ImportInspectionDialog;
 import org.jabref.logic.help.HelpFile;
@@ -11,15 +14,10 @@ import org.jabref.logic.importer.OutputPrinter;
 import org.jabref.logic.importer.util.JSONEntryParser;
 import org.jabref.logic.l10n.Localization;
 import org.jabref.model.entry.BibEntry;
-
-import com.mashape.unirest.http.HttpResponse;
-import com.mashape.unirest.http.JsonNode;
-import com.mashape.unirest.http.Unirest;
-import com.mashape.unirest.http.exceptions.UnirestException;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.json.JSONArray;
 import org.json.JSONObject;
+
+import javax.swing.*;
 
 public class DOAJFetcher implements EntryFetcher {
 

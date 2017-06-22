@@ -1,13 +1,13 @@
 package org.jabref.logic.bibtex.comparator;
 
-import java.util.Comparator;
-import java.util.Locale;
-import java.util.Objects;
-
 import org.jabref.model.entry.AuthorList;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.entry.FieldProperty;
 import org.jabref.model.entry.InternalBibtexFields;
+
+import java.util.Comparator;
+import java.util.Locale;
+import java.util.Objects;
 
 /**
  * This implementation of Comparator takes care of most of the details of sorting BibTeX entries in JabRef. It is

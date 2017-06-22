@@ -1,15 +1,7 @@
 package org.jabref.collab;
 
-import java.util.Collections;
-import java.util.Enumeration;
-import java.util.Optional;
-import java.util.Set;
-import java.util.TreeSet;
-
-import javax.swing.JComponent;
-import javax.swing.JLabel;
-import javax.swing.JScrollPane;
-
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.jabref.gui.BasePanel;
 import org.jabref.gui.undo.NamedCompound;
 import org.jabref.gui.undo.UndoableFieldChange;
@@ -18,8 +10,8 @@ import org.jabref.logic.l10n.Localization;
 import org.jabref.model.database.BibDatabase;
 import org.jabref.model.entry.BibEntry;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import javax.swing.*;
+import java.util.*;
 
 class EntryChange extends Change {
 

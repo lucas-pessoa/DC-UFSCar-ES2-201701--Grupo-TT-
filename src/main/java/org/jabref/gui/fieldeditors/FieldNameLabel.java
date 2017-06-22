@@ -1,7 +1,6 @@
 package org.jabref.gui.fieldeditors;
 
 import javafx.scene.control.Label;
-
 import org.jabref.model.entry.FieldName;
 
 public class FieldNameLabel extends Label {

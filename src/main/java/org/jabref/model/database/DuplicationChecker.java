@@ -1,15 +1,14 @@
 package org.jabref.model.database;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
-
+import com.google.common.eventbus.Subscribe;
 import org.jabref.model.database.event.EntryAddedEvent;
 import org.jabref.model.database.event.EntryRemovedEvent;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.entry.event.FieldChangedEvent;
 
-import com.google.common.eventbus.Subscribe;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Optional;
 
 /**
  * Determines which bibtex cite keys are duplicates in a single {@link BibDatabase}.

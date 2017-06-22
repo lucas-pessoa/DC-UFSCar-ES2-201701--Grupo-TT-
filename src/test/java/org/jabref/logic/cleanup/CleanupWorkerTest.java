@@ -1,19 +1,6 @@
 package org.jabref.logic.cleanup;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.EnumSet;
-import java.util.List;
-import java.util.Optional;
-
-import org.jabref.logic.formatter.bibtexfields.HtmlToLatexFormatter;
-import org.jabref.logic.formatter.bibtexfields.LatexCleanupFormatter;
-import org.jabref.logic.formatter.bibtexfields.NormalizeDateFormatter;
-import org.jabref.logic.formatter.bibtexfields.NormalizeMonthFormatter;
-import org.jabref.logic.formatter.bibtexfields.NormalizePagesFormatter;
-import org.jabref.logic.formatter.bibtexfields.UnitsToLatexFormatter;
+import org.jabref.logic.formatter.bibtexfields.*;
 import org.jabref.logic.formatter.casechanger.ProtectTermsFormatter;
 import org.jabref.logic.layout.LayoutFormatterPreferences;
 import org.jabref.logic.protectedterms.ProtectedTermsLoader;
@@ -29,12 +16,15 @@ import org.jabref.model.entry.FileFieldWriter;
 import org.jabref.model.entry.LinkedFile;
 import org.jabref.model.metadata.FileDirectoryPreferences;
 import org.jabref.model.metadata.MetaData;
-
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.*;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;

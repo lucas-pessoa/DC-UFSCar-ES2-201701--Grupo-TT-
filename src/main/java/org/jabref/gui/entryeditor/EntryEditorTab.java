@@ -1,30 +1,11 @@
 package org.jabref.gui.entryeditor;
 
-import java.awt.Component;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Set;
-import java.util.stream.Stream;
-
-import javax.swing.ActionMap;
-import javax.swing.InputMap;
-import javax.swing.JComponent;
-
 import javafx.embed.swing.JFXPanel;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.layout.ColumnConstraints;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Priority;
-import javafx.scene.layout.Region;
-import javafx.scene.layout.RowConstraints;
-
+import javafx.scene.layout.*;
 import org.jabref.Globals;
 import org.jabref.gui.BasePanel;
 import org.jabref.gui.FXDialogService;
@@ -40,6 +21,12 @@ import org.jabref.model.entry.BibEntry;
 import org.jabref.model.entry.FieldName;
 import org.jabref.model.entry.FieldProperty;
 import org.jabref.model.entry.InternalBibtexFields;
+
+import javax.swing.*;
+import java.awt.*;
+import java.util.*;
+import java.util.List;
+import java.util.stream.Stream;
 
 /**
  * A single tab displayed in the EntryEditor holding several FieldEditors.
@@ -137,9 +124,9 @@ class EntryEditorTab {
                 //parent.addSearchListener((TextArea) fieldEditor);
                 defaultHeight = fieldEditor.getPane().getPreferredSize().height;
             }
-            
+
             Optional<JComponent> extra = parent.getExtra(fieldEditor);
-            
+
             // Add autocompleter listener, if required for this field:
             /*
             AutoCompleter<String> autoCompleter = bPanel.getAutoCompleters().get(field);
@@ -153,7 +140,7 @@ class EntryEditorTab {
 
             FieldEditorFX fieldEditor = FieldEditors.getForField(fieldName, Globals.taskExecutor, new FXDialogService(), Globals.journalAbbreviationLoader, Globals.prefs.getJournalAbbreviationPreferences(), Globals.prefs, bPanel.getBibDatabaseContext(), entry.getType());
             fieldEditor.bindToEntry(entry);
-          
+
             editors.put(fieldName, fieldEditor);
             /*
             // TODO: Reenable this
@@ -282,7 +269,7 @@ class EntryEditorTab {
         if (fieldEditor.getText().equals(content)) {
             return true;
         }
-        
+
         // trying to preserve current edit position (fixes SF bug #1285)
         if (fieldEditor.getTextComponent() instanceof JTextComponent) {
             int initialCaretPosition = ((JTextComponent) fieldEditor).getCaretPosition();

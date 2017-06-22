@@ -1,9 +1,5 @@
 package org.jabref.gui.entryeditor;
 
-import java.awt.event.ActionEvent;
-import java.util.Arrays;
-import java.util.List;
-
 import org.jabref.JabRefGUI;
 import org.jabref.gui.fieldeditors.FieldEditor;
 import org.jabref.gui.fieldeditors.TextArea;
@@ -11,11 +7,14 @@ import org.jabref.logic.autocompleter.AutoCompleter;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.testutils.TestUtils;
 import org.jabref.testutils.category.GUITests;
-
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
+
+import java.awt.event.ActionEvent;
+import java.util.Arrays;
+import java.util.List;
 
 @Category(GUITests.class)
 public class EntryEditorTest {

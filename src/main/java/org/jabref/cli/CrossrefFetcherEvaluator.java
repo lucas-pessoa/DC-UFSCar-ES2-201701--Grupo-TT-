@@ -1,14 +1,5 @@
 package org.jabref.cli;
 
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.List;
-import java.util.Optional;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.atomic.AtomicInteger;
-
 import org.jabref.Globals;
 import org.jabref.logic.importer.FetcherException;
 import org.jabref.logic.importer.ParserResult;
@@ -19,6 +10,15 @@ import org.jabref.model.entry.BibEntry;
 import org.jabref.model.entry.FieldName;
 import org.jabref.model.entry.identifier.DOI;
 import org.jabref.preferences.JabRefPreferences;
+
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.List;
+import java.util.Optional;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Useful for checking out new algorithm improvements and thresholds. Not used inside the JabRef code itself.

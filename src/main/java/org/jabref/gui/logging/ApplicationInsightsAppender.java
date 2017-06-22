@@ -1,8 +1,5 @@
 package org.jabref.gui.logging;
 
-import org.jabref.Globals;
-import org.jabref.logic.logging.LogMessages;
-
 import com.microsoft.applicationinsights.log4j.v2.internal.ApplicationInsightsLogEvent;
 import com.microsoft.applicationinsights.telemetry.ExceptionTelemetry;
 import com.microsoft.applicationinsights.telemetry.Telemetry;
@@ -14,6 +11,8 @@ import org.apache.logging.log4j.core.config.plugins.Plugin;
 import org.apache.logging.log4j.core.config.plugins.PluginAttribute;
 import org.apache.logging.log4j.core.config.plugins.PluginElement;
 import org.apache.logging.log4j.core.config.plugins.PluginFactory;
+import org.jabref.Globals;
+import org.jabref.logic.logging.LogMessages;
 
 @Plugin(name = "OurApplicationInsightsAppender", category = "Core", elementType = "appender", printObject = true)
 @SuppressWarnings("unused") // class is indirectly constructed by log4j

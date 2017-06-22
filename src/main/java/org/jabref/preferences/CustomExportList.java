@@ -1,22 +1,16 @@
 package org.jabref.preferences;
 
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.TreeMap;
-
-import org.jabref.logic.exporter.ExportFormat;
-import org.jabref.logic.exporter.SavePreferences;
-import org.jabref.logic.journals.JournalAbbreviationLoader;
-import org.jabref.logic.layout.LayoutFormatterPreferences;
-
 import ca.odell.glazedlists.BasicEventList;
 import ca.odell.glazedlists.EventList;
 import ca.odell.glazedlists.SortedList;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.jabref.logic.exporter.ExportFormat;
+import org.jabref.logic.exporter.SavePreferences;
+import org.jabref.logic.journals.JournalAbbreviationLoader;
+import org.jabref.logic.layout.LayoutFormatterPreferences;
+
+import java.util.*;
 
 /**
  * This class handles user defined custom export formats. They are initially

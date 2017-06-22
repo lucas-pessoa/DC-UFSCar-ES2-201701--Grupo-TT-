@@ -1,5 +1,16 @@
 package org.jabref.model.search.rules;
 
+import org.antlr.v4.runtime.*;
+import org.antlr.v4.runtime.misc.ParseCancellationException;
+import org.antlr.v4.runtime.tree.ParseTree;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.jabref.model.entry.BibEntry;
+import org.jabref.model.entry.Keyword;
+import org.jabref.search.SearchBaseVisitor;
+import org.jabref.search.SearchLexer;
+import org.jabref.search.SearchParser;
+
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
@@ -7,23 +18,6 @@ import java.util.function.Predicate;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
-
-import org.jabref.model.entry.BibEntry;
-import org.jabref.model.entry.Keyword;
-import org.jabref.search.SearchBaseVisitor;
-import org.jabref.search.SearchLexer;
-import org.jabref.search.SearchParser;
-
-import org.antlr.v4.runtime.ANTLRInputStream;
-import org.antlr.v4.runtime.BailErrorStrategy;
-import org.antlr.v4.runtime.BaseErrorListener;
-import org.antlr.v4.runtime.CommonTokenStream;
-import org.antlr.v4.runtime.RecognitionException;
-import org.antlr.v4.runtime.Recognizer;
-import org.antlr.v4.runtime.misc.ParseCancellationException;
-import org.antlr.v4.runtime.tree.ParseTree;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 
 /**
  * The search query must be specified in an expression that is acceptable by the Search.g4 grammar.

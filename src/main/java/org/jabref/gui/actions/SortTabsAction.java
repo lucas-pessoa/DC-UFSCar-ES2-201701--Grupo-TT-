@@ -1,16 +1,15 @@
 package org.jabref.gui.actions;
 
+import org.jabref.gui.BasePanel;
+import org.jabref.gui.JabRefFrame;
+import org.jabref.logic.l10n.Localization;
+
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.util.Comparator;
 import java.util.Locale;
 import java.util.Map;
 import java.util.TreeMap;
-
-import javax.swing.Action;
-
-import org.jabref.gui.BasePanel;
-import org.jabref.gui.JabRefFrame;
-import org.jabref.logic.l10n.Localization;
 
 /**
  * This action rearranges all tabs in the main tabbed pane of the given JabRefFrame

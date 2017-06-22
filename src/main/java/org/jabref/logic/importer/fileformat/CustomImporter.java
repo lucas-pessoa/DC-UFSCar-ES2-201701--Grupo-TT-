@@ -1,5 +1,9 @@
 package org.jabref.logic.importer.fileformat;
 
+import org.jabref.logic.importer.Importer;
+import org.jabref.logic.importer.ParserResult;
+import org.jabref.logic.util.FileExtensions;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.net.URL;
@@ -9,10 +13,6 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
-
-import org.jabref.logic.importer.Importer;
-import org.jabref.logic.importer.ParserResult;
-import org.jabref.logic.util.FileExtensions;
 
 /**
  * Object with data for a custom importer.

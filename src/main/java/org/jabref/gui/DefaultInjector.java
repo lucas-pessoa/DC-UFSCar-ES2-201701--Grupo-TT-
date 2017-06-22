@@ -1,17 +1,16 @@
 package org.jabref.gui;
 
-import java.util.function.Function;
-
+import com.airhacks.afterburner.injection.Injector;
+import com.airhacks.afterburner.injection.PresenterFactory;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.jabref.Globals;
 import org.jabref.gui.keyboard.KeyBindingRepository;
 import org.jabref.gui.util.TaskExecutor;
 import org.jabref.logic.journals.JournalAbbreviationLoader;
 import org.jabref.preferences.PreferencesService;
 
-import com.airhacks.afterburner.injection.Injector;
-import com.airhacks.afterburner.injection.PresenterFactory;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import java.util.function.Function;
 
 public class DefaultInjector implements PresenterFactory {
 

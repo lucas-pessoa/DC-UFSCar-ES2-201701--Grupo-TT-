@@ -1,11 +1,11 @@
 package org.jabref.logic.importer;
 
-import java.nio.charset.Charset;
-import java.util.Set;
-
 import org.jabref.logic.bibtex.FieldContentParserPreferences;
 import org.jabref.logic.bibtexkeypattern.BibtexKeyPatternPreferences;
 import org.jabref.logic.importer.fileformat.CustomImporter;
+
+import java.nio.charset.Charset;
+import java.util.Set;
 
 public class ImportFormatPreferences {
 

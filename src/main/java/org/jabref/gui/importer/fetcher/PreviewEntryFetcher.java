@@ -1,10 +1,10 @@
 package org.jabref.gui.importer.fetcher;
 
-import java.util.Map;
-
 import org.jabref.gui.importer.FetcherPreviewDialog;
 import org.jabref.logic.importer.ImportInspector;
 import org.jabref.logic.importer.OutputPrinter;
+
+import java.util.Map;
 
 /**
  *

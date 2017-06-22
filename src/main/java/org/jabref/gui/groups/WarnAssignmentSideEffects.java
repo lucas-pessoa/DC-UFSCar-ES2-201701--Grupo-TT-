@@ -1,18 +1,17 @@
 package org.jabref.gui.groups;
 
-import java.awt.Component;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Locale;
-
-import javax.swing.JOptionPane;
-
 import org.jabref.logic.l10n.Localization;
 import org.jabref.model.entry.FieldName;
 import org.jabref.model.entry.InternalBibtexFields;
 import org.jabref.model.groups.AbstractGroup;
 import org.jabref.model.groups.KeywordGroup;
+
+import javax.swing.*;
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Locale;
 
 public class WarnAssignmentSideEffects {
 

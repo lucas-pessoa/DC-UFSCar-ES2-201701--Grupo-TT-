@@ -1,9 +1,8 @@
 package org.jabref.shared.listener;
 
-import org.jabref.shared.DBMSSynchronizer;
-
 import oracle.jdbc.dcn.DatabaseChangeEvent;
 import oracle.jdbc.dcn.DatabaseChangeListener;
+import org.jabref.shared.DBMSSynchronizer;
 
 /**
  * A listener for Oracle database notifications.

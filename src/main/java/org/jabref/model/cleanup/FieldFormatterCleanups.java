@@ -1,15 +1,9 @@
 package org.jabref.model.cleanup;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.StringJoiner;
-
 import org.jabref.model.FieldChange;
 import org.jabref.model.entry.BibEntry;
+
+import java.util.*;
 
 public class FieldFormatterCleanups {
 

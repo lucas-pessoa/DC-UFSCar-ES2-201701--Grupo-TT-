@@ -1,13 +1,9 @@
 package org.jabref.logic.util.strings;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Objects;
-
 import difflib.Delta;
 import difflib.DiffUtils;
+
+import java.util.*;
 
 public class DiffHighlighting {
 

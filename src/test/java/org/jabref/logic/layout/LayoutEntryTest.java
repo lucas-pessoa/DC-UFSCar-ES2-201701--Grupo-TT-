@@ -1,13 +1,12 @@
 package org.jabref.logic.layout;
 
-import java.io.IOException;
-import java.io.StringReader;
-
 import org.jabref.model.entry.BibEntry;
-
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.io.IOException;
+import java.io.StringReader;
 
 import static org.mockito.Mockito.mock;
 

@@ -1,5 +1,11 @@
 package org.jabref.logic.importer;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.jabref.model.cleanup.Formatter;
+import org.jabref.model.entry.BibEntry;
+import org.jsoup.helper.StringUtil;
+
 import java.io.BufferedInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -9,13 +15,6 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.List;
 import java.util.Optional;
-
-import org.jabref.model.cleanup.Formatter;
-import org.jabref.model.entry.BibEntry;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.jsoup.helper.StringUtil;
 
 /**
  * Provides a convenient interface for ID-based fetcher, which follow the usual three-step procedure:

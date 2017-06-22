@@ -1,13 +1,13 @@
 package org.jabref.logic.util;
 
+import org.jabref.model.FieldChange;
+import org.jabref.model.entry.BibEntry;
+import org.jabref.model.entry.FieldName;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Collection;
 import java.util.Optional;
-
-import org.jabref.model.FieldChange;
-import org.jabref.model.entry.BibEntry;
-import org.jabref.model.entry.FieldName;
 
 public class UpdateField {
 

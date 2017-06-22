@@ -1,10 +1,8 @@
 package org.jabref.gui.actions;
 
-import javax.swing.AbstractAction;
-import javax.swing.Action;
-import javax.swing.Icon;
-
 import org.jabref.gui.IconTheme;
+
+import javax.swing.*;
 
 /**
  * This class extends {@link AbstractAction} with the ability to set

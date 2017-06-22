@@ -1,7 +1,6 @@
 package org.jabref.gui.specialfields;
 
-import javax.swing.SwingUtilities;
-
+import com.google.common.eventbus.Subscribe;
 import org.jabref.Globals;
 import org.jabref.JabRefGUI;
 import org.jabref.logic.specialfields.SpecialFieldsUtils;
@@ -10,7 +9,7 @@ import org.jabref.model.entry.FieldName;
 import org.jabref.model.entry.event.FieldChangedEvent;
 import org.jabref.model.entry.specialfields.SpecialField;
 
-import com.google.common.eventbus.Subscribe;
+import javax.swing.*;
 
 /**
  * Listener triggering

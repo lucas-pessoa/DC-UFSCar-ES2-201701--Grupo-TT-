@@ -1,8 +1,8 @@
 package org.jabref.model.pdf;
 
-import java.time.LocalDateTime;
-
 import org.junit.Test;
+
+import java.time.LocalDateTime;
 
 import static org.junit.Assert.assertEquals;
 

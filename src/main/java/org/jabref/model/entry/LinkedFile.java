@@ -1,15 +1,15 @@
 package org.jabref.model.entry;
 
+import org.jabref.model.database.BibDatabaseContext;
+import org.jabref.model.metadata.FileDirectoryPreferences;
+import org.jabref.model.util.FileHelper;
+
 import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
-
-import org.jabref.model.database.BibDatabaseContext;
-import org.jabref.model.metadata.FileDirectoryPreferences;
-import org.jabref.model.util.FileHelper;
 
 /**
  * Represents the link to an external file (e.g. associated PDF file).

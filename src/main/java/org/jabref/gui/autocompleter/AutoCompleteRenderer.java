@@ -1,6 +1,6 @@
 package org.jabref.gui.autocompleter;
 
-import java.awt.Component;
+import java.awt.*;
 import java.awt.event.ActionListener;
 import java.util.List;
 

@@ -1,15 +1,5 @@
 package org.jabref.gui.menus;
 
-import java.awt.Font;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
-import javax.swing.JPopupMenu;
-import javax.swing.KeyStroke;
-
 import org.jabref.Globals;
 import org.jabref.gui.BasePanel;
 import org.jabref.gui.actions.ChangeTypeAction;
@@ -20,6 +10,12 @@ import org.jabref.model.database.BibDatabaseMode;
 import org.jabref.model.entry.BibtexEntryTypes;
 import org.jabref.model.entry.EntryType;
 import org.jabref.model.entry.IEEETranEntryTypes;
+
+import javax.swing.*;
+import java.awt.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class ChangeEntryTypeMenu {
     public final Map<String, KeyStroke> entryShortCuts = new HashMap<>();

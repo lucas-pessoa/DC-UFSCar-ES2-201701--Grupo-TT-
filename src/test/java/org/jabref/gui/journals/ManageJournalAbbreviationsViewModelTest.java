@@ -1,5 +1,20 @@
 package org.jabref.gui.journals;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import org.assertj.core.util.Files;
+import org.jabref.CatchExceptionsFromThread;
+import org.jabref.JabRefException;
+import org.jabref.gui.DialogService;
+import org.jabref.gui.util.CurrentThreadTaskExecutor;
+import org.jabref.gui.util.TaskExecutor;
+import org.jabref.logic.journals.Abbreviation;
+import org.jabref.logic.journals.JournalAbbreviationLoader;
+import org.jabref.logic.journals.JournalAbbreviationPreferences;
+import org.jabref.preferences.PreferencesService;
+import org.junit.*;
+import org.junit.rules.TemporaryFolder;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
@@ -10,33 +25,10 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-
-import org.jabref.CatchExceptionsFromThread;
-import org.jabref.JabRefException;
-import org.jabref.gui.DialogService;
-import org.jabref.gui.util.CurrentThreadTaskExecutor;
-import org.jabref.gui.util.TaskExecutor;
-import org.jabref.logic.journals.Abbreviation;
-import org.jabref.logic.journals.JournalAbbreviationLoader;
-import org.jabref.logic.journals.JournalAbbreviationPreferences;
-import org.jabref.preferences.PreferencesService;
-
-import org.assertj.core.util.Files;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.ClassRule;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.TemporaryFolder;
-
 import static org.jabref.logic.util.OS.NEWLINE;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 public class ManageJournalAbbreviationsViewModelTest {
 

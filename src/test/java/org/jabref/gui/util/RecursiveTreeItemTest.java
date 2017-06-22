@@ -1,18 +1,16 @@
 package org.jabref.gui.util;
 
-import java.util.Collections;
-import java.util.function.Predicate;
-import java.util.stream.Collectors;
-
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.scene.control.TreeItem;
-
 import org.jabref.model.TreeNode;
 import org.jabref.model.TreeNodeTestData;
-
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.Collections;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 import static org.junit.Assert.assertEquals;
 

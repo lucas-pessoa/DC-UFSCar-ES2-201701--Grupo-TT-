@@ -1,11 +1,11 @@
 package org.jabref.logic.exporter;
 
+import org.jabref.model.database.BibDatabaseContext;
+import org.jabref.model.entry.BibEntry;
+
 import java.nio.charset.Charset;
 import java.nio.file.Path;
 import java.util.List;
-
-import org.jabref.model.database.BibDatabaseContext;
-import org.jabref.model.entry.BibEntry;
 
 public interface IExportFormat {
 

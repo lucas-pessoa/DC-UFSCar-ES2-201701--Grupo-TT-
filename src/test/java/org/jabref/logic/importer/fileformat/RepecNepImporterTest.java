@@ -1,5 +1,13 @@
 package org.jabref.logic.importer.fileformat;
 
+import org.jabref.logic.bibtex.BibEntryAssert;
+import org.jabref.logic.importer.ImportFormatPreferences;
+import org.jabref.logic.util.FileExtensions;
+import org.jabref.model.entry.BibEntry;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URISyntaxException;
@@ -8,15 +16,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
-
-import org.jabref.logic.bibtex.BibEntryAssert;
-import org.jabref.logic.importer.ImportFormatPreferences;
-import org.jabref.logic.util.FileExtensions;
-import org.jabref.model.entry.BibEntry;
-
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;

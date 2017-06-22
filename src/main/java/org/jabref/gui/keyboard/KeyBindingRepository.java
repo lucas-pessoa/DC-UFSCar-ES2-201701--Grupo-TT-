@@ -1,29 +1,18 @@
 package org.jabref.gui.keyboard;
 
-import java.awt.AWTError;
-import java.awt.HeadlessException;
-import java.awt.Toolkit;
-import java.awt.event.InputEvent;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Optional;
-import java.util.SortedMap;
-import java.util.TreeMap;
-import java.util.stream.Collectors;
-
-import javax.swing.KeyStroke;
-
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyCombination;
 import javafx.scene.input.KeyEvent;
-
-import org.jabref.logic.util.OS;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.jabref.logic.util.OS;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.InputEvent;
+import java.util.*;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class KeyBindingRepository {
 

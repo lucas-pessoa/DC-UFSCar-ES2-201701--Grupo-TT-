@@ -1,19 +1,13 @@
 package org.jabref.gui.util;
 
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.FutureTask;
-import java.util.function.Consumer;
-
 import javafx.application.Platform;
 import javafx.concurrent.Task;
-
-import org.jabref.gui.externalfiles.FileDownloadTask;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.jabref.gui.externalfiles.FileDownloadTask;
+
+import java.util.concurrent.*;
+import java.util.function.Consumer;
 
 /**
  * A very simple implementation of the {@link TaskExecutor} interface.

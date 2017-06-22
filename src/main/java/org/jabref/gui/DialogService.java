@@ -1,17 +1,16 @@
 package org.jabref.gui;
 
-import java.nio.file.Path;
-import java.util.List;
-import java.util.Optional;
-
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.DialogPane;
 import javafx.stage.FileChooser;
-
 import org.jabref.gui.util.DirectoryDialogConfiguration;
 import org.jabref.gui.util.FileDialogConfiguration;
 import org.jabref.logic.l10n.Localization;
+
+import java.nio.file.Path;
+import java.util.List;
+import java.util.Optional;
 
 /**
  * This interface provides methods to create dialogs and show them to the user.

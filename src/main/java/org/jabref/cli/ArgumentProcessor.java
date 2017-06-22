@@ -1,38 +1,16 @@
 package org.jabref.cli;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-import java.util.Optional;
-import java.util.prefs.BackingStoreException;
-
+import org.apache.commons.lang3.exception.ExceptionUtils;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.jabref.Globals;
 import org.jabref.JabRefException;
 import org.jabref.gui.externalfiles.AutoSetLinks;
 import org.jabref.gui.importer.fetcher.EntryFetcher;
 import org.jabref.gui.importer.fetcher.EntryFetchers;
 import org.jabref.logic.bibtexkeypattern.BibtexKeyPatternUtil;
-import org.jabref.logic.exporter.BibDatabaseWriter;
-import org.jabref.logic.exporter.BibtexDatabaseWriter;
-import org.jabref.logic.exporter.ExportFormat;
-import org.jabref.logic.exporter.ExportFormats;
-import org.jabref.logic.exporter.FileSaveSession;
-import org.jabref.logic.exporter.IExportFormat;
-import org.jabref.logic.exporter.SaveException;
-import org.jabref.logic.exporter.SavePreferences;
-import org.jabref.logic.exporter.SaveSession;
-import org.jabref.logic.importer.ImportException;
-import org.jabref.logic.importer.ImportFormatReader;
-import org.jabref.logic.importer.OpenDatabase;
-import org.jabref.logic.importer.OutputPrinter;
-import org.jabref.logic.importer.ParserResult;
+import org.jabref.logic.exporter.*;
+import org.jabref.logic.importer.*;
 import org.jabref.logic.l10n.Localization;
 import org.jabref.logic.layout.LayoutFormatterPreferences;
 import org.jabref.logic.logging.JabRefLogger;
@@ -51,9 +29,12 @@ import org.jabref.model.strings.StringUtil;
 import org.jabref.preferences.SearchPreferences;
 import org.jabref.shared.prefs.SharedDatabasePreferences;
 
-import org.apache.commons.lang3.exception.ExceptionUtils;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.*;
+import java.util.prefs.BackingStoreException;
 
 public class ArgumentProcessor {
 

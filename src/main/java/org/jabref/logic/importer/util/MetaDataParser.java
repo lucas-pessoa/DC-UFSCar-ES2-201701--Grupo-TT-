@@ -1,15 +1,7 @@
 package org.jabref.logic.importer.util;
 
-import java.io.IOException;
-import java.io.Reader;
-import java.io.StringReader;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.jabref.logic.cleanup.Cleanups;
 import org.jabref.logic.importer.ParseException;
 import org.jabref.model.database.BibDatabaseMode;
@@ -18,8 +10,10 @@ import org.jabref.model.metadata.MetaData;
 import org.jabref.model.metadata.SaveOrderConfig;
 import org.jabref.model.strings.StringUtil;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import java.io.IOException;
+import java.io.Reader;
+import java.io.StringReader;
+import java.util.*;
 
 public class MetaDataParser {
 

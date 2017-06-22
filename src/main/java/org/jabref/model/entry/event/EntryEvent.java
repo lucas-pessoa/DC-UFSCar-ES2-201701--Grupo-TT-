@@ -1,9 +1,9 @@
 package org.jabref.model.entry.event;
 
-import java.util.Objects;
-
 import org.jabref.model.database.event.BibDatabaseContextChangedEvent;
 import org.jabref.model.entry.BibEntry;
+
+import java.util.Objects;
 
 /**
  * This abstract class pretends a minimal set of attributes and methods

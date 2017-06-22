@@ -1,13 +1,5 @@
 package org.jabref.gui.externalfiles;
 
-import java.awt.event.ActionEvent;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.Optional;
-
-import javax.swing.AbstractAction;
-import javax.swing.JOptionPane;
-
 import org.jabref.Globals;
 import org.jabref.gui.JabRefFrame;
 import org.jabref.gui.entryeditor.EntryEditor;
@@ -16,6 +8,12 @@ import org.jabref.gui.filelist.FileListEntry;
 import org.jabref.logic.cleanup.RenamePdfCleanup;
 import org.jabref.logic.l10n.Localization;
 import org.jabref.model.entry.LinkedFile;
+
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.Optional;
 
 public class RenameFileAction extends AbstractAction {
 

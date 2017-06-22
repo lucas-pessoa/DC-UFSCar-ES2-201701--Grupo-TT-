@@ -1,16 +1,15 @@
 package org.jabref.model.database;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
+import com.google.common.eventbus.Subscribe;
 import org.jabref.model.database.event.EntryRemovedEvent;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.entry.FieldProperty;
 import org.jabref.model.entry.InternalBibtexFields;
 import org.jabref.model.entry.event.FieldChangedEvent;
 
-import com.google.common.eventbus.Subscribe;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class KeyChangeListener {
 

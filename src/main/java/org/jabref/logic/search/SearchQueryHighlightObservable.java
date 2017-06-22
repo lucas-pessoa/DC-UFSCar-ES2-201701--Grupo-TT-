@@ -1,12 +1,12 @@
 package org.jabref.logic.search;
 
+import com.google.common.eventbus.EventBus;
+
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.StringJoiner;
 import java.util.regex.Pattern;
-
-import com.google.common.eventbus.EventBus;
 
 public class SearchQueryHighlightObservable {
 

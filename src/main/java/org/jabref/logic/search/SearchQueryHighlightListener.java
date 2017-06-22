@@ -1,9 +1,9 @@
 package org.jabref.logic.search;
 
+import com.google.common.eventbus.Subscribe;
+
 import java.util.Optional;
 import java.util.regex.Pattern;
-
-import com.google.common.eventbus.Subscribe;
 
 /**
  * Every Listener that wants to receive events from a search needs to

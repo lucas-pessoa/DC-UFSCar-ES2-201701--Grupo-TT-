@@ -1,16 +1,15 @@
 package org.jabref.collab;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.jabref.logic.util.io.FileUtil;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Map;
-
-import org.jabref.logic.util.io.FileUtil;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 
 /**
  * This thread monitors a set of files, each associated with a FileUpdateListener, for changes

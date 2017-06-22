@@ -1,22 +1,12 @@
 package org.jabref.logic.exporter;
 
+import javafx.scene.paint.Color;
+import org.jabref.logic.util.MetadataSerializationConfiguration;
+import org.jabref.model.groups.*;
+import org.jabref.model.strings.StringUtil;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import javafx.scene.paint.Color;
-
-import org.jabref.logic.util.MetadataSerializationConfiguration;
-import org.jabref.model.groups.AbstractGroup;
-import org.jabref.model.groups.AllEntriesGroup;
-import org.jabref.model.groups.AutomaticGroup;
-import org.jabref.model.groups.AutomaticKeywordGroup;
-import org.jabref.model.groups.AutomaticPersonsGroup;
-import org.jabref.model.groups.ExplicitGroup;
-import org.jabref.model.groups.GroupTreeNode;
-import org.jabref.model.groups.KeywordGroup;
-import org.jabref.model.groups.RegexKeywordGroup;
-import org.jabref.model.groups.SearchGroup;
-import org.jabref.model.strings.StringUtil;
 
 public class GroupSerializer {
     private static String serializeAllEntriesGroup(AllEntriesGroup group) {

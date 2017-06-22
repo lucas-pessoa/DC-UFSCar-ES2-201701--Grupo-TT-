@@ -1,12 +1,12 @@
 package org.jabref.logic.formatter.casechanger;
 
-import java.util.List;
-import java.util.Objects;
-
 import org.jabref.logic.l10n.Localization;
 import org.jabref.logic.protectedterms.ProtectedTermsLoader;
 import org.jabref.logic.util.strings.StringLengthComparator;
 import org.jabref.model.cleanup.Formatter;
+
+import java.util.List;
+import java.util.Objects;
 
 public class ProtectTermsFormatter implements Formatter {
 
