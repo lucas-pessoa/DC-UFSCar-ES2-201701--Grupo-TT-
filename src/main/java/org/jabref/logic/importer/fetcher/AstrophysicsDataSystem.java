@@ -1,20 +1,5 @@
 package org.jabref.logic.importer.fetcher;
 
-import org.apache.http.client.utils.URIBuilder;
-import org.jabref.logic.cleanup.MoveFieldCleanup;
-import org.jabref.logic.formatter.bibtexfields.ClearFormatter;
-import org.jabref.logic.formatter.bibtexfields.NormalizeNamesFormatter;
-import org.jabref.logic.formatter.bibtexfields.RemoveBracesFormatter;
-import org.jabref.logic.help.HelpFile;
-import org.jabref.logic.importer.*;
-import org.jabref.logic.importer.fileformat.BibtexParser;
-import org.jabref.logic.l10n.Localization;
-import org.jabref.logic.net.URLDownload;
-import org.jabref.model.cleanup.FieldFormatterCleanup;
-import org.jabref.model.entry.BibEntry;
-import org.jabref.model.entry.FieldName;
-import org.jsoup.helper.StringUtil;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
@@ -24,6 +9,28 @@ import java.net.URLConnection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
+
+import org.jabref.logic.cleanup.MoveFieldCleanup;
+import org.jabref.logic.formatter.bibtexfields.ClearFormatter;
+import org.jabref.logic.formatter.bibtexfields.NormalizeNamesFormatter;
+import org.jabref.logic.formatter.bibtexfields.RemoveBracesFormatter;
+import org.jabref.logic.help.HelpFile;
+import org.jabref.logic.importer.EntryBasedParserFetcher;
+import org.jabref.logic.importer.FetcherException;
+import org.jabref.logic.importer.IdBasedParserFetcher;
+import org.jabref.logic.importer.ImportFormatPreferences;
+import org.jabref.logic.importer.ParseException;
+import org.jabref.logic.importer.Parser;
+import org.jabref.logic.importer.SearchBasedParserFetcher;
+import org.jabref.logic.importer.fileformat.BibtexParser;
+import org.jabref.logic.l10n.Localization;
+import org.jabref.logic.net.URLDownload;
+import org.jabref.model.cleanup.FieldFormatterCleanup;
+import org.jabref.model.entry.BibEntry;
+import org.jabref.model.entry.FieldName;
+
+import org.apache.http.client.utils.URIBuilder;
+import org.jsoup.helper.StringUtil;
 
 /**
  * Fetches data from the SAO/NASA Astrophysics Data System (http://www.adsabs.harvard.edu/)

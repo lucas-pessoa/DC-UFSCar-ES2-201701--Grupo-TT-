@@ -1,11 +1,11 @@
 package org.jabref.gui.fieldeditors;
 
+import java.util.Optional;
+
 import org.jabref.logic.journals.JournalAbbreviationLoader;
 import org.jabref.logic.journals.JournalAbbreviationPreferences;
 import org.jabref.logic.journals.JournalAbbreviationRepository;
 import org.jabref.model.strings.StringUtil;
-
-import java.util.Optional;
 
 public class JournalEditorViewModel extends AbstractEditorViewModel {
     private final JournalAbbreviationLoader journalAbbreviationLoader;

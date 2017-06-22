@@ -1,27 +1,36 @@
 package org.jabref.logic.importer.fetcher;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.apache.http.client.utils.URIBuilder;
-import org.jabref.logic.help.HelpFile;
-import org.jabref.logic.importer.*;
-import org.jabref.logic.importer.fileformat.BibtexParser;
-import org.jabref.logic.l10n.Localization;
-import org.jabref.logic.net.URLDownload;
-import org.jabref.model.entry.BibEntry;
-import org.jabref.model.entry.FieldName;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.select.Elements;
-
 import java.io.IOException;
 import java.io.StringReader;
 import java.net.HttpCookie;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import org.jabref.logic.help.HelpFile;
+import org.jabref.logic.importer.FetcherException;
+import org.jabref.logic.importer.FulltextFetcher;
+import org.jabref.logic.importer.ImportFormatPreferences;
+import org.jabref.logic.importer.ParserResult;
+import org.jabref.logic.importer.SearchBasedFetcher;
+import org.jabref.logic.importer.fileformat.BibtexParser;
+import org.jabref.logic.l10n.Localization;
+import org.jabref.logic.net.URLDownload;
+import org.jabref.model.entry.BibEntry;
+import org.jabref.model.entry.FieldName;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.apache.http.client.utils.URIBuilder;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
 
 /**
  * FulltextFetcher implementation that attempts to find a PDF URL at GoogleScholar.

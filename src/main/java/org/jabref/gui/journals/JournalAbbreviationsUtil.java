@@ -1,11 +1,12 @@
 package org.jabref.gui.journals;
 
-import org.jabref.logic.journals.Abbreviation;
-import org.jabref.logic.l10n.Localization;
+import java.util.Collection;
 
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
-import java.util.Collection;
+
+import org.jabref.logic.journals.Abbreviation;
+import org.jabref.logic.l10n.Localization;
 
 public class JournalAbbreviationsUtil {
 

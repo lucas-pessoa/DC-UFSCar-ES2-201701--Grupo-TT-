@@ -1,20 +1,24 @@
 package org.jabref.gui;
 
 
+import java.util.Arrays;
+import java.util.Collection;
+
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JDialog;
+import javax.swing.text.JTextComponent;
+
+import org.jabref.testutils.category.GUITests;
+
 import org.assertj.swing.core.GenericTypeMatcher;
 import org.assertj.swing.dependency.jsr305.Nonnull;
 import org.assertj.swing.fixture.JTableFixture;
 import org.assertj.swing.timing.Condition;
-import org.jabref.testutils.category.GUITests;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-
-import javax.swing.*;
-import javax.swing.text.JTextComponent;
-import java.util.Arrays;
-import java.util.Collection;
 
 import static org.assertj.swing.finder.WindowFinder.findDialog;
 import static org.assertj.swing.timing.Pause.pause;

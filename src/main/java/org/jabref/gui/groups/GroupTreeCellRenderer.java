@@ -1,14 +1,18 @@
 package org.jabref.gui.groups;
 
-import org.jabref.model.groups.GroupTreeNode;
-
-import javax.swing.*;
-import javax.swing.border.Border;
-import javax.swing.tree.DefaultTreeCellRenderer;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Component;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+
+import javax.swing.BorderFactory;
+import javax.swing.JLabel;
+import javax.swing.JTree;
+import javax.swing.border.Border;
+import javax.swing.tree.DefaultTreeCellRenderer;
+
+import org.jabref.model.groups.GroupTreeNode;
 
 /**
  * Renders a GroupTreeNode using its group's getName() method, rather that its toString() method.

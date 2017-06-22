@@ -1,13 +1,16 @@
 package org.jabref.logic.specialfields;
 
-import org.jabref.model.FieldChange;
-import org.jabref.model.entry.BibEntry;
-import org.junit.Test;
-
 import java.util.List;
 import java.util.Optional;
 
-import static org.junit.Assert.*;
+import org.jabref.model.FieldChange;
+import org.jabref.model.entry.BibEntry;
+
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 
 public class SpecialFieldsUtilsTest {

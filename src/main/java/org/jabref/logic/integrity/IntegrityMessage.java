@@ -1,9 +1,10 @@
 package org.jabref.logic.integrity;
 
-import org.apache.commons.lang3.builder.EqualsBuilder;
+import java.util.Objects;
+
 import org.jabref.model.entry.BibEntry;
 
-import java.util.Objects;
+import org.apache.commons.lang3.builder.EqualsBuilder;
 
 public final class IntegrityMessage implements Cloneable {
 

@@ -1,16 +1,17 @@
 package org.jabref.logic.importer.fetcher;
 
-import org.jabref.logic.bibtex.BibEntryAssert;
-import org.jabref.logic.importer.fileformat.GvkParser;
-import org.jabref.model.entry.BibEntry;
-import org.junit.Assert;
-import org.junit.Test;
-
 import java.io.InputStream;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+
+import org.jabref.logic.bibtex.BibEntryAssert;
+import org.jabref.logic.importer.fileformat.GvkParser;
+import org.jabref.model.entry.BibEntry;
+
+import org.junit.Assert;
+import org.junit.Test;
 
 public class GvkParserTest {
 

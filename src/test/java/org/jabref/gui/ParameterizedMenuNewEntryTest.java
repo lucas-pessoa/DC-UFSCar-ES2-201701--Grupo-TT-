@@ -1,15 +1,16 @@
 package org.jabref.gui;
 
-import org.assertj.swing.fixture.JTableFixture;
+import java.util.Arrays;
+import java.util.Collection;
+
 import org.jabref.model.strings.StringUtil;
 import org.jabref.testutils.category.GUITests;
+
+import org.assertj.swing.fixture.JTableFixture;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-
-import java.util.Arrays;
-import java.util.Collection;
 
 @RunWith(Parameterized.class)
 @Category(GUITests.class)

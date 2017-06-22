@@ -1,13 +1,14 @@
 package org.jabref.shared;
 
-import oracle.jdbc.OracleConnection;
-import oracle.jdbc.OracleStatement;
-import oracle.jdbc.dcn.DatabaseChangeRegistration;
-import org.jabref.shared.listener.OracleNotificationListener;
-
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
+
+import org.jabref.shared.listener.OracleNotificationListener;
+
+import oracle.jdbc.OracleConnection;
+import oracle.jdbc.OracleStatement;
+import oracle.jdbc.dcn.DatabaseChangeRegistration;
 
 /**
  * Processes all incoming or outgoing bib data to Oracle database and manages its structure.

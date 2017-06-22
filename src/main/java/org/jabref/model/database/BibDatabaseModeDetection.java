@@ -1,10 +1,10 @@
 package org.jabref.model.database;
 
-import org.jabref.model.EntryTypes;
-import org.jabref.model.entry.BibEntry;
-
 import java.util.Locale;
 import java.util.stream.Stream;
+
+import org.jabref.model.EntryTypes;
+import org.jabref.model.entry.BibEntry;
 
 public class BibDatabaseModeDetection {
 

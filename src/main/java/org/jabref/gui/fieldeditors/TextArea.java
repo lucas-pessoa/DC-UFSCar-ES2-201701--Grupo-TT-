@@ -1,16 +1,20 @@
 package org.jabref.gui.fieldeditors;
 
+import java.awt.Color;
+import java.lang.reflect.InvocationTargetException;
+
+import javax.swing.JComponent;
+import javax.swing.SwingUtilities;
+
 import javafx.embed.swing.JFXPanel;
 import javafx.scene.Scene;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+
 import org.jabref.gui.GUIGlobals;
 import org.jabref.gui.autocompleter.AutoCompleteListener;
 import org.jabref.gui.util.DefaultTaskExecutor;
 
-import javax.swing.*;
-import java.awt.*;
-import java.lang.reflect.InvocationTargetException;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * An implementation of the FieldEditor backed by a {@link EditorTextArea}.

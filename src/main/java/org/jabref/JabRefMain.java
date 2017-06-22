@@ -1,10 +1,14 @@
 package org.jabref;
 
+import java.net.Authenticator;
+import java.util.Map;
+
+import javax.swing.SwingUtilities;
+
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.stage.Stage;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+
 import org.jabref.cli.ArgumentProcessor;
 import org.jabref.gui.remote.JabRefMessageHandler;
 import org.jabref.logic.exporter.ExportFormat;
@@ -27,13 +31,13 @@ import org.jabref.model.database.BibDatabaseMode;
 import org.jabref.model.entry.InternalBibtexFields;
 import org.jabref.preferences.JabRefPreferences;
 
-import javax.swing.*;
-import java.net.Authenticator;
-import java.util.Map;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * JabRef MainClass
  */
+
 public class JabRefMain extends Application {
 
     private static final Log LOGGER = LogFactory.getLog(JabRefMain.class);

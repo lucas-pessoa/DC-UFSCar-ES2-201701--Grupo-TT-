@@ -1,19 +1,20 @@
 package org.jabref.logic.importer.fetcher;
 
-import com.mashape.unirest.http.HttpResponse;
-import com.mashape.unirest.http.Unirest;
-import com.mashape.unirest.http.exceptions.UnirestException;
-import org.jabref.logic.importer.FetcherException;
-import org.jabref.logic.importer.ImportFormatPreferences;
-import org.jabref.logic.importer.ParseException;
-import org.jabref.model.entry.BibEntry;
-import org.jsoup.helper.StringUtil;
-
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.List;
 import java.util.Optional;
+
+import org.jabref.logic.importer.FetcherException;
+import org.jabref.logic.importer.ImportFormatPreferences;
+import org.jabref.logic.importer.ParseException;
+import org.jabref.model.entry.BibEntry;
+
+import com.mashape.unirest.http.HttpResponse;
+import com.mashape.unirest.http.Unirest;
+import com.mashape.unirest.http.exceptions.UnirestException;
+import org.jsoup.helper.StringUtil;
 
 /**
  * Fetcher for ISBN using https://bibtex.chimbori.com/, which in turn uses Amazon's API.

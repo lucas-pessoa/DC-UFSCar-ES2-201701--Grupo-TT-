@@ -1,13 +1,14 @@
 package org.jabref.gui.documentviewer;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.PDPage;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.pdmodel.PDPage;
 
 public class PdfDocumentViewModel extends DocumentViewModel {
 

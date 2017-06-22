@@ -1,8 +1,12 @@
 package org.jabref.model.entry;
 
-import org.jabref.model.strings.StringUtil;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
 
-import java.util.*;
+import org.jabref.model.strings.StringUtil;
 
 /**
  * String constants for BibTeX entry field names

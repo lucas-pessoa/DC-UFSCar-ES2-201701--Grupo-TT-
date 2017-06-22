@@ -1,14 +1,5 @@
 package org.jabref.logic.auxparser;
 
-import org.jabref.logic.importer.ImportFormatPreferences;
-import org.jabref.logic.importer.ParserResult;
-import org.jabref.logic.importer.fileformat.BibtexParser;
-import org.jabref.model.database.BibDatabase;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-import org.mockito.Answers;
-
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -18,7 +9,19 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Paths;
 import java.util.Optional;
 
-import static org.junit.Assert.*;
+import org.jabref.logic.importer.ImportFormatPreferences;
+import org.jabref.logic.importer.ParserResult;
+import org.jabref.logic.importer.fileformat.BibtexParser;
+import org.jabref.model.database.BibDatabase;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.Answers;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
 
 public class AuxParserTest {

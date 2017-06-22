@@ -1,8 +1,8 @@
 package org.jabref.logic.layout.format;
 
-import org.jabref.logic.layout.AbstractParamLayoutFormatter;
-
 import java.util.List;
+
+import org.jabref.logic.layout.AbstractParamLayoutFormatter;
 
 /**
  * @author ralmond

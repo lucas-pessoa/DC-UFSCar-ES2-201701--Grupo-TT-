@@ -1,18 +1,19 @@
 package org.jabref.logic.importer;
 
-import org.jabref.logic.xmp.XMPPreferences;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-import org.mockito.Answers;
-
 import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collection;
+
+import org.jabref.logic.xmp.XMPPreferences;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.mockito.Answers;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;

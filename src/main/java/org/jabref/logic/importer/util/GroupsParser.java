@@ -1,14 +1,23 @@
 package org.jabref.logic.importer.util;
 
+import java.util.List;
+
 import org.jabref.logic.groups.DefaultGroupsFactory;
 import org.jabref.logic.importer.ParseException;
 import org.jabref.logic.l10n.Localization;
 import org.jabref.logic.util.MetadataSerializationConfiguration;
 import org.jabref.logic.util.strings.QuotedStringTokenizer;
-import org.jabref.model.groups.*;
+import org.jabref.model.groups.AbstractGroup;
+import org.jabref.model.groups.AutomaticKeywordGroup;
+import org.jabref.model.groups.AutomaticPersonsGroup;
+import org.jabref.model.groups.ExplicitGroup;
+import org.jabref.model.groups.GroupHierarchyType;
+import org.jabref.model.groups.GroupTreeNode;
+import org.jabref.model.groups.KeywordGroup;
+import org.jabref.model.groups.RegexKeywordGroup;
+import org.jabref.model.groups.SearchGroup;
+import org.jabref.model.groups.WordKeywordGroup;
 import org.jabref.model.strings.StringUtil;
-
-import java.util.List;
 
 /**
  * Converts string representation of groups to a parsed {@link GroupTreeNode}.
@@ -239,7 +248,7 @@ public class GroupsParser {
         if (tokenizer.hasMoreTokens()) {
             group.setExpanded(Integer.parseInt(tokenizer.nextToken()) == 1);
             group.setColor(tokenizer.nextToken());
-            group.setIconCode(tokenizer.nextToken());
+            group.setIconName(tokenizer.nextToken());
             group.setDescription(tokenizer.nextToken());
         }
     }

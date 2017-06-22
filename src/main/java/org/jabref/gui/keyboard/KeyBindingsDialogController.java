@@ -1,8 +1,14 @@
 package org.jabref.gui.keyboard;
 
+import javax.inject.Inject;
+
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
-import org.fxmisc.easybind.EasyBind;
+import javafx.scene.control.SelectionMode;
+import javafx.scene.control.SelectionModel;
+import javafx.scene.control.TreeItem;
+import javafx.scene.control.TreeTableColumn;
+import javafx.scene.control.TreeTableView;
+
 import org.jabref.gui.AbstractController;
 import org.jabref.gui.DialogService;
 import org.jabref.gui.IconTheme;
@@ -10,7 +16,7 @@ import org.jabref.gui.util.RecursiveTreeItem;
 import org.jabref.gui.util.ViewModelTreeTableCellFactory;
 import org.jabref.preferences.PreferencesService;
 
-import javax.inject.Inject;
+import org.fxmisc.easybind.EasyBind;
 
 public class KeyBindingsDialogController extends AbstractController<KeyBindingsDialogViewModel> {
 

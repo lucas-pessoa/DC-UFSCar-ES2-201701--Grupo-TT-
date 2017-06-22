@@ -1,5 +1,12 @@
 package org.jabref.logic.exporter;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+
 import org.jabref.logic.util.OS;
 import org.jabref.model.bibtexkeypattern.AbstractBibtexKeyPattern;
 import org.jabref.model.bibtexkeypattern.GlobalBibtexKeyPattern;
@@ -8,8 +15,6 @@ import org.jabref.model.groups.GroupTreeNode;
 import org.jabref.model.metadata.ContentSelector;
 import org.jabref.model.metadata.MetaData;
 import org.jabref.model.strings.StringUtil;
-
-import java.util.*;
 
 public class MetaDataSerializer {
 

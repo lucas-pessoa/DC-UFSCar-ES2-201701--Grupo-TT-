@@ -1,10 +1,11 @@
 package org.jabref.gui.fieldeditors;
 
-import com.google.common.collect.BiMap;
-import javafx.util.StringConverter;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import javafx.util.StringConverter;
+
+import com.google.common.collect.BiMap;
 
 /**
  * View model for a field editor that shows various options backed by a map.

@@ -1,5 +1,17 @@
 package org.jabref.gui.importer;
 
+import java.io.File;
+import java.io.FileFilter;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Optional;
+
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import javax.swing.undo.CompoundEdit;
+
 import org.jabref.gui.BasePanel;
 import org.jabref.gui.externalfiletype.ExternalFileType;
 import org.jabref.gui.externalfiletype.ExternalFileTypes;
@@ -9,13 +21,6 @@ import org.jabref.model.database.BibDatabase;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.entry.EntryType;
 import org.jabref.model.entry.IdGenerator;
-
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
-import javax.swing.undo.CompoundEdit;
-import java.io.File;
-import java.io.FileFilter;
-import java.util.*;
 
 /**
  * The class EntryFromFileCreatorManager manages entry creators.

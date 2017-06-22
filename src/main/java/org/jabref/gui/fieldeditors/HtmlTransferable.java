@@ -1,8 +1,5 @@
 package org.jabref.gui.fieldeditors;
 
-import org.jabref.logic.formatter.bibtexfields.HtmlToUnicodeFormatter;
-import org.jabref.logic.util.OS;
-
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.Transferable;
 import java.awt.datatransfer.UnsupportedFlavorException;
@@ -10,6 +7,9 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Pattern;
+
+import org.jabref.logic.formatter.bibtexfields.HtmlToUnicodeFormatter;
+import org.jabref.logic.util.OS;
 
 
 /**

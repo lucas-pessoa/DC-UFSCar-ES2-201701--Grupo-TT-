@@ -1,16 +1,17 @@
 package org.jabref.gui.maintable;
 
-import org.jabref.Globals;
-import org.jabref.model.entry.FieldName;
-import org.jabref.preferences.JabRefPreferences;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.TableColumnModelEvent;
 import javax.swing.event.TableColumnModelListener;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
+
+import org.jabref.Globals;
+import org.jabref.model.entry.FieldName;
+import org.jabref.preferences.JabRefPreferences;
 
 /**
  * Listens for TableColumnModelEvents to keep track of changes made to the

@@ -1,15 +1,16 @@
 package org.jabref.shared;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.jabref.logic.l10n.Localization;
-import org.jabref.shared.exception.InvalidDBMSConnectionPropertiesException;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.HashSet;
 import java.util.Set;
+
+import org.jabref.logic.l10n.Localization;
+import org.jabref.shared.exception.InvalidDBMSConnectionPropertiesException;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class DBMSConnection {
 

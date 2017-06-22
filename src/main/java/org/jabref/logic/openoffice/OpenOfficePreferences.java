@@ -1,11 +1,11 @@
 package org.jabref.logic.openoffice;
 
-import org.jabref.logic.l10n.Localization;
-import org.jabref.preferences.JabRefPreferences;
-
 import java.io.File;
 import java.util.Arrays;
 import java.util.List;
+
+import org.jabref.logic.l10n.Localization;
+import org.jabref.preferences.JabRefPreferences;
 
 /**
  * The OpenOffice connection preferences are:

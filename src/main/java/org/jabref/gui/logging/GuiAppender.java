@@ -1,5 +1,10 @@
 package org.jabref.gui.logging;
 
+import java.io.Serializable;
+
+import org.jabref.gui.util.DefaultTaskExecutor;
+import org.jabref.logic.logging.LogMessages;
+
 import org.apache.logging.log4j.core.Filter;
 import org.apache.logging.log4j.core.Layout;
 import org.apache.logging.log4j.core.LogEvent;
@@ -9,10 +14,6 @@ import org.apache.logging.log4j.core.config.plugins.PluginAttribute;
 import org.apache.logging.log4j.core.config.plugins.PluginElement;
 import org.apache.logging.log4j.core.config.plugins.PluginFactory;
 import org.apache.logging.log4j.core.layout.PatternLayout;
-import org.jabref.gui.util.DefaultTaskExecutor;
-import org.jabref.logic.logging.LogMessages;
-
-import java.io.Serializable;
 
 @Plugin(name = "GuiAppender", category = "Core", elementType = "appender", printObject = true)
 @SuppressWarnings("unused") // class is indirectly constructed by log4j

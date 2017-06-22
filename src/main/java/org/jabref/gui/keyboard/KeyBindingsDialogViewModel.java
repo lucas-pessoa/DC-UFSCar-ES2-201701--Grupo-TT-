@@ -1,17 +1,18 @@
 package org.jabref.gui.keyboard;
 
+import java.util.Objects;
+
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
 import javafx.scene.input.KeyEvent;
+
 import org.jabref.gui.AbstractViewModel;
 import org.jabref.gui.DialogService;
 import org.jabref.logic.l10n.Localization;
 import org.jabref.preferences.PreferencesService;
-
-import java.util.Objects;
 
 public class KeyBindingsDialogViewModel extends AbstractViewModel {
 
@@ -19,7 +20,7 @@ public class KeyBindingsDialogViewModel extends AbstractViewModel {
     private final PreferencesService preferences;
     private final ObjectProperty<KeyBindingViewModel> selectedKeyBinding = new SimpleObjectProperty<>();
     private final ObjectProperty<KeyBindingViewModel> rootKeyBinding = new SimpleObjectProperty<>();
-    private DialogService dialogService;
+    private final DialogService dialogService;
 
     public KeyBindingsDialogViewModel(KeyBindingRepository keyBindingRepository, DialogService dialogService, PreferencesService preferences) {
         this.keyBindingRepository = Objects.requireNonNull(keyBindingRepository);
@@ -84,10 +85,10 @@ public class KeyBindingsDialogViewModel extends AbstractViewModel {
         ButtonType resetButtonType = new ButtonType("Reset", ButtonBar.ButtonData.OK_DONE);
         dialogService.showCustomButtonDialogAndWait(Alert.AlertType.INFORMATION, title, content, resetButtonType,
                 ButtonType.CANCEL).ifPresent(response -> {
-            if (response == resetButtonType) {
-                keyBindingRepository.resetToDefault();
-                populateTable();
-            }
-        });
+                    if (response == resetButtonType) {
+                        keyBindingRepository.resetToDefault();
+                        populateTable();
+                    }
+                });
     }
 }

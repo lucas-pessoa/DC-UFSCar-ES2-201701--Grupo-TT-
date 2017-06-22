@@ -1,10 +1,10 @@
 package org.jabref.logic.util;
 
-import org.jabref.logic.l10n.Localization;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.StringJoiner;
+
+import org.jabref.logic.l10n.Localization;
 
 /**
  * This enum contains all kind of file extensions for open and save dialogs.

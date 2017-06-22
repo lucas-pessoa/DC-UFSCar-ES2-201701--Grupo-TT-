@@ -1,15 +1,23 @@
 package org.jabref.gui.preftabs;
 
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.util.List;
+import java.util.Objects;
+
+import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.AbstractTableModel;
+
 import org.jabref.gui.JabRefDialog;
 import org.jabref.gui.WrapLayout;
 import org.jabref.logic.l10n.Localization;
 import org.jabref.preferences.JabRefPreferencesFilter;
-
-import javax.swing.*;
-import javax.swing.table.AbstractTableModel;
-import java.awt.*;
-import java.util.List;
-import java.util.Objects;
 
 class PreferencesFilterDialog extends JabRefDialog {
 

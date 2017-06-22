@@ -1,11 +1,11 @@
 package org.jabref.gui.groups;
 
+import java.util.List;
+
 import org.jabref.gui.undo.AbstractUndoableJabRefEdit;
 import org.jabref.logic.l10n.Localization;
 import org.jabref.model.groups.AbstractGroup;
 import org.jabref.model.groups.GroupTreeNode;
-
-import java.util.List;
 
 class UndoableModifyGroup extends AbstractUndoableJabRefEdit {
 

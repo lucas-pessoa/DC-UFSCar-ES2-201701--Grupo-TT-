@@ -1,9 +1,9 @@
 package org.jabref.model.entry;
 
+import java.util.Optional;
+
 import org.junit.Assert;
 import org.junit.Test;
-
-import java.util.Optional;
 
 public class AuthorListTest {
 

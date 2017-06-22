@@ -1,7 +1,8 @@
 package org.jabref.collab;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import javax.swing.JComponent;
+import javax.swing.JScrollPane;
+
 import org.jabref.gui.BasePanel;
 import org.jabref.gui.PreviewPanel;
 import org.jabref.gui.undo.NamedCompound;
@@ -11,7 +12,8 @@ import org.jabref.logic.l10n.Localization;
 import org.jabref.model.database.BibDatabase;
 import org.jabref.model.entry.BibEntry;
 
-import javax.swing.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 class EntryDeleteChange extends Change {
 

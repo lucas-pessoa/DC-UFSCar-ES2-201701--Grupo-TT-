@@ -1,6 +1,10 @@
 package org.jabref.logic.importer.fetcher;
 
-import org.apache.http.client.utils.URIBuilder;
+import java.net.MalformedURLException;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.util.Objects;
+
 import org.jabref.logic.cleanup.DoiCleanup;
 import org.jabref.logic.formatter.bibtexfields.ClearFormatter;
 import org.jabref.logic.help.HelpFile;
@@ -13,10 +17,7 @@ import org.jabref.model.cleanup.FieldFormatterCleanup;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.entry.FieldName;
 
-import java.net.MalformedURLException;
-import java.net.URISyntaxException;
-import java.net.URL;
-import java.util.Objects;
+import org.apache.http.client.utils.URIBuilder;
 
 /**
  * Fetches BibTeX data from DBLP (dblp.org)

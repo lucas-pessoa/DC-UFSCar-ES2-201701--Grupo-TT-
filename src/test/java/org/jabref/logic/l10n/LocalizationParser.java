@@ -1,8 +1,5 @@
 package org.jabref.logic.l10n;
 
-import com.sun.javafx.application.PlatformImpl;
-import javafx.fxml.FXMLLoader;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -10,10 +7,22 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.*;
+import java.util.Enumeration;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Properties;
+import java.util.ResourceBundle;
+import java.util.Set;
+import java.util.SortedSet;
+import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+
+import javafx.fxml.FXMLLoader;
+
+import com.sun.javafx.application.PlatformImpl;
 
 public class LocalizationParser {
 

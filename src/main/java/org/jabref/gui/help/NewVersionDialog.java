@@ -1,16 +1,23 @@
 package org.jabref.gui.help;
 
+import java.awt.Cursor;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
+import java.awt.event.MouseEvent;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.event.MouseInputAdapter;
+
 import org.jabref.Globals;
 import org.jabref.gui.JabRefDialog;
 import org.jabref.gui.desktop.JabRefDesktop;
 import org.jabref.logic.l10n.Localization;
 import org.jabref.logic.util.Version;
 import org.jabref.preferences.VersionPreferences;
-
-import javax.swing.*;
-import javax.swing.event.MouseInputAdapter;
-import java.awt.*;
-import java.awt.event.MouseEvent;
 
 public class NewVersionDialog extends JabRefDialog {
 

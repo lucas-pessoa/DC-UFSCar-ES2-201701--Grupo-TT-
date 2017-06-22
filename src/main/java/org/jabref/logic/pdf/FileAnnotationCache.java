@@ -1,16 +1,17 @@
 package org.jabref.logic.pdf;
 
+import java.util.List;
+import java.util.Map;
+
+import org.jabref.model.database.BibDatabaseContext;
+import org.jabref.model.entry.BibEntry;
+import org.jabref.model.pdf.FileAnnotation;
+
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.jabref.model.database.BibDatabaseContext;
-import org.jabref.model.entry.BibEntry;
-import org.jabref.model.pdf.FileAnnotation;
-
-import java.util.List;
-import java.util.Map;
 
 public class FileAnnotationCache {
 
@@ -37,12 +38,12 @@ public class FileAnnotationCache {
      * @return Map containing a list of annotations in a list for each file
      */
     public Map<String, List<FileAnnotation>> getFromCache(BibEntry entry) {
-        LOGGER.debug(String.format("Loading Bibentry '%s' from cache.", entry.getField(BibEntry.KEY_FIELD).get()));
+        LOGGER.debug(String.format("Loading Bibentry '%s' from cache.", entry.getCiteKeyOptional().orElse(entry.getId())));
         return annotationCache.getUnchecked(entry);
     }
 
     public void remove(BibEntry entry) {
-        LOGGER.debug(String.format("Deleted Bibentry '%s' from cache.", entry.getField(BibEntry.KEY_FIELD).get()));
+        LOGGER.debug(String.format("Deleted Bibentry '%s' from cache.", entry.getCiteKeyOptional().orElse(entry.getId())));
         annotationCache.invalidate(entry);
     }
 }

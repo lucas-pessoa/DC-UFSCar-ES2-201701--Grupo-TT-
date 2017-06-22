@@ -1,10 +1,11 @@
 package org.jabref.gui.maintable;
 
-import ca.odell.glazedlists.BasicEventList;
-import ca.odell.glazedlists.EventList;
-import ca.odell.glazedlists.FilterList;
-import ca.odell.glazedlists.SortedList;
-import ca.odell.glazedlists.matchers.Matcher;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
+
 import org.jabref.gui.groups.GroupMatcher;
 import org.jabref.gui.search.HitOrMissComparator;
 import org.jabref.gui.search.matchers.EverythingMatcher;
@@ -13,11 +14,11 @@ import org.jabref.gui.util.comparator.IsMarkedComparator;
 import org.jabref.model.database.BibDatabaseContext;
 import org.jabref.model.entry.BibEntry;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Objects;
-import java.util.stream.Collectors;
+import ca.odell.glazedlists.BasicEventList;
+import ca.odell.glazedlists.EventList;
+import ca.odell.glazedlists.FilterList;
+import ca.odell.glazedlists.SortedList;
+import ca.odell.glazedlists.matchers.Matcher;
 
 public class MainTableDataModel {
 

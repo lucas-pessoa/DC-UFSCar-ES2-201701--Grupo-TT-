@@ -1,22 +1,5 @@
 package org.jabref.logic.importer.fetcher;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.apache.http.client.utils.URIBuilder;
-import org.jabref.logic.formatter.bibtexfields.ClearFormatter;
-import org.jabref.logic.formatter.bibtexfields.NormalizeMonthFormatter;
-import org.jabref.logic.help.HelpFile;
-import org.jabref.logic.importer.*;
-import org.jabref.logic.importer.fileformat.MedlineImporter;
-import org.jabref.logic.l10n.Localization;
-import org.jabref.model.cleanup.FieldFormatterCleanup;
-import org.jabref.model.entry.BibEntry;
-import org.jabref.model.entry.FieldName;
-
-import javax.xml.stream.XMLInputFactory;
-import javax.xml.stream.XMLStreamConstants;
-import javax.xml.stream.XMLStreamException;
-import javax.xml.stream.XMLStreamReader;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -29,6 +12,29 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
+
+import javax.xml.stream.XMLInputFactory;
+import javax.xml.stream.XMLStreamConstants;
+import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.XMLStreamReader;
+
+import org.jabref.logic.formatter.bibtexfields.ClearFormatter;
+import org.jabref.logic.formatter.bibtexfields.NormalizeMonthFormatter;
+import org.jabref.logic.help.HelpFile;
+import org.jabref.logic.importer.FetcherException;
+import org.jabref.logic.importer.IdBasedParserFetcher;
+import org.jabref.logic.importer.Parser;
+import org.jabref.logic.importer.ParserResult;
+import org.jabref.logic.importer.SearchBasedFetcher;
+import org.jabref.logic.importer.fileformat.MedlineImporter;
+import org.jabref.logic.l10n.Localization;
+import org.jabref.model.cleanup.FieldFormatterCleanup;
+import org.jabref.model.entry.BibEntry;
+import org.jabref.model.entry.FieldName;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.apache.http.client.utils.URIBuilder;
 
 /**
  * Fetch or search from PubMed <a href="http://www.ncbi.nlm.nih.gov/sites/entrez/">www.ncbi.nlm.nih.gov</a>

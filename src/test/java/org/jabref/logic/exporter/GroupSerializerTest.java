@@ -1,13 +1,26 @@
 package org.jabref.logic.exporter;
 
-import javafx.scene.paint.Color;
-import org.jabref.model.groups.*;
-import org.junit.Before;
-import org.junit.Test;
-
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+
+import javafx.scene.paint.Color;
+
+import org.jabref.model.groups.AllEntriesGroup;
+import org.jabref.model.groups.AutomaticGroup;
+import org.jabref.model.groups.AutomaticKeywordGroup;
+import org.jabref.model.groups.AutomaticPersonsGroup;
+import org.jabref.model.groups.ExplicitGroup;
+import org.jabref.model.groups.GroupHierarchyType;
+import org.jabref.model.groups.GroupTreeNode;
+import org.jabref.model.groups.GroupTreeNodeTest;
+import org.jabref.model.groups.KeywordGroup;
+import org.jabref.model.groups.RegexKeywordGroup;
+import org.jabref.model.groups.SearchGroup;
+import org.jabref.model.groups.WordKeywordGroup;
+
+import org.junit.Before;
+import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
@@ -37,7 +50,7 @@ public class GroupSerializerTest {
     @Test
     public void serializeSingleExplicitGroupWithIconAndDescription() {
         ExplicitGroup group = new ExplicitGroup("myExplicitGroup", GroupHierarchyType.INDEPENDENT, ',');
-        group.setIconCode("test icon");
+        group.setIconName("test icon");
         group.setExpanded(true);
         group.setColor(Color.ALICEBLUE);
         group.setDescription("test description");

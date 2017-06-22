@@ -1,18 +1,5 @@
 package org.jabref.gui.externalfiles;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.jabref.Globals;
-import org.jabref.gui.BasePanel;
-import org.jabref.gui.filelist.FileListTableModel;
-import org.jabref.gui.undo.UndoableFieldChange;
-import org.jabref.gui.worker.AbstractWorker;
-import org.jabref.logic.importer.FulltextFetchers;
-import org.jabref.logic.l10n.Localization;
-import org.jabref.model.entry.BibEntry;
-import org.jabref.model.entry.FieldName;
-
-import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -21,6 +8,21 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
+
+import javax.swing.JOptionPane;
+
+import org.jabref.Globals;
+import org.jabref.gui.BasePanel;
+import org.jabref.gui.undo.UndoableFieldChange;
+import org.jabref.gui.worker.AbstractWorker;
+import org.jabref.logic.importer.FulltextFetchers;
+import org.jabref.logic.l10n.Localization;
+import org.jabref.model.FieldChange;
+import org.jabref.model.entry.BibEntry;
+import org.jabref.model.entry.FieldName;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * Try to download fulltext PDF for selected entry(ies) by following URL or DOI link.
@@ -92,16 +94,13 @@ public class FindFullTextAction extends AbstractWorker {
                         basePanel.getBibDatabaseContext(), entry);
                 try {
                     def.download(result.get(), file -> {
-                        FileListTableModel fileLinkModel = new FileListTableModel();
-                        entry.getField(FieldName.FILE).ifPresent(fileLinkModel::setContent);
-                        // add full text file link at first position
-                        fileLinkModel.addEntry(0, file);
-                        String newValue = fileLinkModel.getStringRepresentation();
-                        UndoableFieldChange edit = new UndoableFieldChange(entry, FieldName.FILE,
-                                entry.getField(FieldName.FILE).orElse(null), newValue);
-                        entry.setField(FieldName.FILE, newValue);
-                        basePanel.getUndoManager().addEdit(edit);
-                        basePanel.markBaseChanged();
+                        Optional<FieldChange> fieldChange = entry.addFile(file);
+                        if (fieldChange.isPresent()) {
+                            UndoableFieldChange edit = new UndoableFieldChange(entry, FieldName.FILE,
+                                    entry.getField(FieldName.FILE).orElse(null), fieldChange.get().getNewValue());
+                            basePanel.getUndoManager().addEdit(edit);
+                            basePanel.markBaseChanged();
+                        }
                     });
                 } catch (IOException e) {
                     LOGGER.warn("Problem downloading file", e);

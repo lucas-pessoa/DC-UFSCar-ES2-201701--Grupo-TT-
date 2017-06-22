@@ -1,6 +1,7 @@
 package org.jabref.logic.bst;
 
 import org.jabref.model.entry.AuthorList;
+
 import org.junit.Assert;
 import org.junit.Test;
 

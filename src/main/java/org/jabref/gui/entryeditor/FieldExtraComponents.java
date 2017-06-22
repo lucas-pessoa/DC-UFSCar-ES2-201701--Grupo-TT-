@@ -1,5 +1,10 @@
 package org.jabref.gui.entryeditor;
 
+import java.util.Optional;
+import java.util.Set;
+
+import javax.swing.JComponent;
+
 import org.jabref.gui.BasePanel;
 import org.jabref.gui.JabRefFrame;
 import org.jabref.gui.contentselector.FieldContentSelector;
@@ -7,10 +12,6 @@ import org.jabref.gui.entryeditor.EntryEditor.StoreFieldAction;
 import org.jabref.gui.fieldeditors.FieldEditor;
 import org.jabref.model.entry.FieldProperty;
 import org.jabref.model.entry.InternalBibtexFields;
-
-import javax.swing.*;
-import java.util.Optional;
-import java.util.Set;
 
 public class FieldExtraComponents {
 

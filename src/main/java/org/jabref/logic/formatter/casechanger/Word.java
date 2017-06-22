@@ -1,6 +1,11 @@
 package org.jabref.logic.formatter.casechanger;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Locale;
+import java.util.Objects;
+import java.util.Set;
 
 /**
  * Represents a word in a title of a bibtex entry.

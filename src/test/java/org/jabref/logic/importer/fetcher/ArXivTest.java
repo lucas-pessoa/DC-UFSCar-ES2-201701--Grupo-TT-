@@ -1,5 +1,10 @@
 package org.jabref.logic.importer.fetcher;
 
+import java.io.IOException;
+import java.net.URL;
+import java.util.Collections;
+import java.util.Optional;
+
 import org.jabref.logic.importer.FetcherException;
 import org.jabref.logic.importer.ImportFormatPreferences;
 import org.jabref.model.entry.BibEntry;
@@ -7,17 +12,13 @@ import org.jabref.model.entry.BiblatexEntryTypes;
 import org.jabref.model.entry.FieldName;
 import org.jabref.model.entry.identifier.ArXivIdentifier;
 import org.jabref.testutils.category.FetcherTests;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.junit.rules.ExpectedException;
-
-import java.io.IOException;
-import java.net.URL;
-import java.util.Collections;
-import java.util.Optional;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;

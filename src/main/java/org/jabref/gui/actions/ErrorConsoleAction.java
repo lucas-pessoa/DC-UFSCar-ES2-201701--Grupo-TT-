@@ -1,11 +1,14 @@
 package org.jabref.gui.actions;
 
+import java.awt.event.ActionEvent;
+
+import javax.swing.AbstractAction;
+import javax.swing.Action;
+
 import javafx.application.Platform;
+
 import org.jabref.gui.errorconsole.ErrorConsoleView;
 import org.jabref.logic.l10n.Localization;
-
-import javax.swing.*;
-import java.awt.event.ActionEvent;
 
 /**
  * Such an error console can be

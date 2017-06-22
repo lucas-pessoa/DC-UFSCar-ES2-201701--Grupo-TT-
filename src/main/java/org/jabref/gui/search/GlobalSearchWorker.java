@@ -1,20 +1,22 @@
 package org.jabref.gui.search;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.jabref.gui.BasePanel;
-import org.jabref.gui.JabRefFrame;
-import org.jabref.logic.l10n.Localization;
-import org.jabref.logic.search.SearchQuery;
-import org.jabref.model.entry.BibEntry;
-
-import javax.swing.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.ExecutionException;
 import java.util.stream.Collectors;
+
+import javax.swing.SwingWorker;
+
+import org.jabref.gui.BasePanel;
+import org.jabref.gui.JabRefFrame;
+import org.jabref.logic.l10n.Localization;
+import org.jabref.logic.search.SearchQuery;
+import org.jabref.model.entry.BibEntry;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 class GlobalSearchWorker extends SwingWorker<Map<BasePanel, List<BibEntry>>, Void> {
 

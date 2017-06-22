@@ -1,10 +1,10 @@
 package org.jabref.model.search.matchers;
 
-import org.jabref.model.search.SearchMatcher;
-
 import java.util.List;
 import java.util.Objects;
 import java.util.Vector;
+
+import org.jabref.model.search.SearchMatcher;
 
 public abstract class MatcherSet implements SearchMatcher {
 

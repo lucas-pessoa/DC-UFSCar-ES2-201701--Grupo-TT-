@@ -1,8 +1,8 @@
 package org.jabref.model.entry;
 
-import org.jabref.model.strings.StringUtil;
-
 import java.util.Optional;
+
+import org.jabref.model.strings.StringUtil;
 
 /**
  * Represents a Month of the Year.

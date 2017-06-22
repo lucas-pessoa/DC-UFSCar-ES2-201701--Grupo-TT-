@@ -1,10 +1,11 @@
 package org.jabref.model.event;
 
-import com.google.common.eventbus.Subscribe;
 import org.jabref.model.database.event.EntryAddedEvent;
 import org.jabref.model.database.event.EntryRemovedEvent;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.entry.event.EntryChangedEvent;
+
+import com.google.common.eventbus.Subscribe;
 
 public class TestEventListener {
 

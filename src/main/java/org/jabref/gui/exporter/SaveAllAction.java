@@ -1,5 +1,9 @@
 package org.jabref.gui.exporter;
 
+import java.awt.event.ActionEvent;
+
+import javax.swing.Action;
+
 import org.jabref.Globals;
 import org.jabref.gui.BasePanel;
 import org.jabref.gui.IconTheme;
@@ -8,10 +12,8 @@ import org.jabref.gui.actions.Actions;
 import org.jabref.gui.actions.MnemonicAwareAction;
 import org.jabref.gui.keyboard.KeyBinding;
 import org.jabref.logic.l10n.Localization;
-import spin.Spin;
 
-import javax.swing.*;
-import java.awt.event.ActionEvent;
+import spin.Spin;
 
 /**
  *

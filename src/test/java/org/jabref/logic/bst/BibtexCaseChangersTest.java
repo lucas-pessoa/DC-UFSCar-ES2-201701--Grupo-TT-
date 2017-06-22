@@ -1,6 +1,7 @@
 package org.jabref.logic.bst;
 
 import org.jabref.logic.bst.BibtexCaseChanger.FORMAT_MODE;
+
 import org.junit.Assert;
 import org.junit.Test;
 

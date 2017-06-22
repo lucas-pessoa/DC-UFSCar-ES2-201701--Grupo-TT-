@@ -1,12 +1,12 @@
 package org.jabref.model.pdf;
 
-import org.apache.pdfbox.cos.COSName;
-import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotation;
-
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 import java.util.Optional;
+
+import org.apache.pdfbox.cos.COSName;
+import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotation;
 
 public class FileAnnotation {
 

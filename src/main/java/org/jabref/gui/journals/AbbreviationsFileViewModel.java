@@ -1,13 +1,5 @@
 package org.jabref.gui.journals;
 
-import javafx.beans.property.ReadOnlyBooleanProperty;
-import javafx.beans.property.SimpleBooleanProperty;
-import javafx.beans.property.SimpleListProperty;
-import javafx.collections.FXCollections;
-import org.jabref.logic.journals.Abbreviation;
-import org.jabref.logic.journals.AbbreviationWriter;
-import org.jabref.logic.journals.JournalAbbreviationLoader;
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -17,6 +9,15 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
+
+import javafx.beans.property.ReadOnlyBooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleListProperty;
+import javafx.collections.FXCollections;
+
+import org.jabref.logic.journals.Abbreviation;
+import org.jabref.logic.journals.AbbreviationWriter;
+import org.jabref.logic.journals.JournalAbbreviationLoader;
 
 /**
  * This class provides a model for abbreviation files.

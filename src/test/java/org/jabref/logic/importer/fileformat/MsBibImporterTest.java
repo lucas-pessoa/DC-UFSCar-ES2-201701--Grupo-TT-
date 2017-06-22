@@ -1,9 +1,5 @@
 package org.jabref.logic.importer.fileformat;
 
-import org.jabref.logic.util.FileExtensions;
-import org.jabref.model.entry.BibEntry;
-import org.junit.Test;
-
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.charset.Charset;
@@ -12,6 +8,11 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+
+import org.jabref.logic.util.FileExtensions;
+import org.jabref.model.entry.BibEntry;
+
+import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;

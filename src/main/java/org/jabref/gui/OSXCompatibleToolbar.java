@@ -1,9 +1,11 @@
 package org.jabref.gui;
 
-import org.jabref.logic.util.OS;
+import java.awt.Component;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JButton;
+import javax.swing.JToolBar;
+
+import org.jabref.logic.util.OS;
 
 public class OSXCompatibleToolbar extends JToolBar {
 

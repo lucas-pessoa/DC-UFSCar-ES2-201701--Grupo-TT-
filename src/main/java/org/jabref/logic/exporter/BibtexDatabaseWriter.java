@@ -1,5 +1,10 @@
 package org.jabref.logic.exporter;
 
+import java.io.IOException;
+import java.io.Writer;
+import java.nio.charset.Charset;
+import java.util.Map;
+
 import org.jabref.logic.bibtex.BibEntryWriter;
 import org.jabref.logic.bibtex.InvalidFieldValueException;
 import org.jabref.logic.bibtex.LatexFieldFormatter;
@@ -12,11 +17,6 @@ import org.jabref.model.entry.BibtexString;
 import org.jabref.model.entry.CustomEntryType;
 import org.jabref.model.metadata.MetaData;
 import org.jabref.model.strings.StringUtil;
-
-import java.io.IOException;
-import java.io.Writer;
-import java.nio.charset.Charset;
-import java.util.Map;
 
 public class BibtexDatabaseWriter<E extends SaveSession> extends BibDatabaseWriter<E> {
 

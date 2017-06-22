@@ -24,6 +24,8 @@ We refer to [GitHub issues](https://github.com/JabRef/jabref/issues) by using `#
 - All authors and editors are separated using semicolons when exporting to csv. [#2762](https://github.com/JabRef/jabref/issues/2762)
 - Improved wording of "Show recommendations: into "Show 'Related Articles' tab" in the preferences
 - We added integration of the Library of Congress catalog as a fetcher based on the [LCCN identifier](https://en.wikipedia.org/wiki/Library_of_Congress_Control_Number). [Feature request 636 in the forum](http://discourse.jabref.org/t/loc-marc-mods-connection/636)
+- The integrity check for person names now also tests that the names are specified in one of the standard BibTeX formats.
+- Links in the Recommended Articles tab (Mr.DLib), when clicked, are now opened in the system's default browser. [2931](https://github.com/JabRef/jabref/issues/2931)
 
 ### Fixed
 - We fixed the adding of a new entry from DOI which led to a connection error. The DOI resolution now uses HTTPS to protect the user's privacy.[#2879](https://github.com/JabRef/jabref/issues/2897)
@@ -33,6 +35,9 @@ We refer to [GitHub issues](https://github.com/JabRef/jabref/issues) by using `#
 - We fixed a bug that only allowed parsing positive timezones from a FileAnnotation [#2839](https://github.com/JabRef/jabref/issues/2839)
 - We fixed a bug that did not allow the correct re-export of the MS-Office XML field `msbib-accessed` with a different date format [#2859](https://github.com/JabRef/jabref/issues/2859).
 - We fixed some bugs that prevented the display of FileAnnotations that were created using the Foxit Reader. [#2839, comment](https://github.com/JabRef/jabref/issues/2839#issuecomment-302058227).
+- We fixed an error that prevented the FileAnnotation tab to load when the entry had no bibtexkey [#2903](https://github.com/JabRef/jabref/issues/2903).
+- We fixed a bug which which could result in an exception when opening/saving files from/to a nonexistent directory [#2917](https://github.com/JabRef/jabref/issues/2917).
+- We fixed a bug where recursive RegExpBased search found a file in a subdirectory multiple times and non-recursive RegExpBased search erroneously found files in subdirectories.
 ### Removed
 
 

@@ -1,9 +1,9 @@
 package org.jabref.gui.util;
 
-import javafx.concurrent.Task;
-
 import java.util.concurrent.Callable;
 import java.util.function.Consumer;
+
+import javafx.concurrent.Task;
 
 /**
  * This class is essentially a wrapper around {@link Task}.

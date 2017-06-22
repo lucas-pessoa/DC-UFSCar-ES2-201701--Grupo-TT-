@@ -1,14 +1,16 @@
 package org.jabref.gui.actions;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import java.awt.event.ActionEvent;
+
+import javax.swing.Action;
+
 import org.jabref.gui.BasePanel;
 import org.jabref.gui.JabRefFrame;
 import org.jabref.gui.worker.LookupIdentifiersWorker;
 import org.jabref.logic.importer.IdFetcher;
 
-import javax.swing.*;
-import java.awt.event.ActionEvent;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class LookupIdentifierAction extends MnemonicAwareAction {
 

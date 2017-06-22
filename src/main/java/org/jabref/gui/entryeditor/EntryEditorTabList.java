@@ -1,11 +1,11 @@
 package org.jabref.gui.entryeditor;
 
-import org.jabref.Globals;
-import org.jabref.preferences.JabRefPreferences;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import org.jabref.Globals;
+import org.jabref.preferences.JabRefPreferences;
 
 /**
  * Class for holding the information about customizable entry editor tabs.

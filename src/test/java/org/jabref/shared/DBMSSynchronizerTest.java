@@ -1,5 +1,13 @@
 package org.jabref.shared;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+
 import org.jabref.logic.exporter.MetaDataSerializer;
 import org.jabref.logic.formatter.casechanger.LowerCaseFormatter;
 import org.jabref.model.bibtexkeypattern.GlobalBibtexKeyPattern;
@@ -15,6 +23,7 @@ import org.jabref.shared.exception.DatabaseNotSupportedException;
 import org.jabref.shared.exception.InvalidDBMSConnectionPropertiesException;
 import org.jabref.shared.exception.OfflineLockException;
 import org.jabref.testutils.category.DatabaseTests;
+
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -24,9 +33,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
-
-import java.sql.SQLException;
-import java.util.*;
 
 @RunWith(Parameterized.class)
 @Category(DatabaseTests.class)

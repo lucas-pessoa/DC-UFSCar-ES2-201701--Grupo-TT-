@@ -1,8 +1,12 @@
 package org.jabref.gui.keyboard;
 
-import org.jabref.Globals;
+import javax.swing.Action;
+import javax.swing.ActionMap;
+import javax.swing.InputMap;
+import javax.swing.JComponent;
+import javax.swing.JRootPane;
 
-import javax.swing.*;
+import org.jabref.Globals;
 
 public class KeyBinder {
 

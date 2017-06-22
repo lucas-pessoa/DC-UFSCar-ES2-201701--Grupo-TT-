@@ -1,12 +1,13 @@
 package org.jabref.gui.fieldeditors;
 
-import javafx.util.StringConverter;
-import org.jabref.model.entry.Date;
-import org.jabref.model.strings.StringUtil;
-
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.time.temporal.TemporalAccessor;
+
+import javafx.util.StringConverter;
+
+import org.jabref.model.entry.Date;
+import org.jabref.model.strings.StringUtil;
 
 public class DateEditorViewModel extends AbstractEditorViewModel {
     private final DateTimeFormatter dateFormatter;

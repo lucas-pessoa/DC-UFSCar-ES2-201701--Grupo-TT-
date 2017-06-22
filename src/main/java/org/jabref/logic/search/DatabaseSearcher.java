@@ -1,15 +1,16 @@
 package org.jabref.logic.search;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.jabref.model.database.BibDatabase;
-import org.jabref.model.database.BibDatabases;
-import org.jabref.model.entry.BibEntry;
-
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
+
+import org.jabref.model.database.BibDatabase;
+import org.jabref.model.database.BibDatabases;
+import org.jabref.model.entry.BibEntry;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * @author Silberer, Zirn

@@ -1,9 +1,9 @@
 package org.jabref.model.entry;
 
-import org.junit.Test;
-
 import java.time.LocalDate;
 import java.util.Optional;
+
+import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 

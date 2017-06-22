@@ -1,11 +1,46 @@
 package org.jabref.gui;
 
-import com.google.common.eventbus.Subscribe;
-import com.jgoodies.forms.builder.FormBuilder;
-import com.jgoodies.forms.layout.FormLayout;
+import java.awt.BorderLayout;
+import java.awt.Toolkit;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.ClipboardOwner;
+import java.awt.datatransfer.StringSelection;
+import java.awt.datatransfer.Transferable;
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.io.File;
+import java.io.IOException;
+import java.io.StringReader;
+import java.lang.reflect.InvocationTargetException;
+import java.nio.charset.Charset;
+import java.nio.charset.UnsupportedCharsetException;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+import javax.swing.AbstractAction;
+import javax.swing.BorderFactory;
+import javax.swing.JComponent;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JSplitPane;
+import javax.swing.JTextArea;
+import javax.swing.SwingUtilities;
+import javax.swing.undo.CannotRedoException;
+import javax.swing.undo.CannotUndoException;
+
 import javafx.application.Platform;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+
 import org.jabref.Globals;
 import org.jabref.JabRefExecutorService;
 import org.jabref.collab.ChangeScanner;
@@ -46,11 +81,21 @@ import org.jabref.gui.plaintextimport.TextInputDialog;
 import org.jabref.gui.specialfields.SpecialFieldDatabaseChangeListener;
 import org.jabref.gui.specialfields.SpecialFieldValueViewModel;
 import org.jabref.gui.specialfields.SpecialFieldViewModel;
-import org.jabref.gui.undo.*;
+import org.jabref.gui.undo.CountingUndoManager;
+import org.jabref.gui.undo.NamedCompound;
+import org.jabref.gui.undo.UndoableChangeType;
+import org.jabref.gui.undo.UndoableFieldChange;
+import org.jabref.gui.undo.UndoableInsertEntry;
+import org.jabref.gui.undo.UndoableKeyChange;
+import org.jabref.gui.undo.UndoableRemoveEntry;
 import org.jabref.gui.util.DefaultTaskExecutor;
 import org.jabref.gui.util.FileDialogConfiguration;
 import org.jabref.gui.util.component.CheckBoxMessage;
-import org.jabref.gui.worker.*;
+import org.jabref.gui.worker.AbstractWorker;
+import org.jabref.gui.worker.CallBack;
+import org.jabref.gui.worker.CitationStyleToClipboardWorker;
+import org.jabref.gui.worker.MarkEntriesAction;
+import org.jabref.gui.worker.SendAsEMailAction;
 import org.jabref.logic.autocompleter.AutoCompletePreferences;
 import org.jabref.logic.autocompleter.AutoCompleter;
 import org.jabref.logic.autocompleter.AutoCompleterFactory;
@@ -58,7 +103,11 @@ import org.jabref.logic.autocompleter.ContentAutoCompleters;
 import org.jabref.logic.bibtexkeypattern.BibtexKeyPatternUtil;
 import org.jabref.logic.citationstyle.CitationStyleCache;
 import org.jabref.logic.citationstyle.CitationStyleOutputFormat;
-import org.jabref.logic.exporter.*;
+import org.jabref.logic.exporter.BibtexDatabaseWriter;
+import org.jabref.logic.exporter.FileSaveSession;
+import org.jabref.logic.exporter.SaveException;
+import org.jabref.logic.exporter.SavePreferences;
+import org.jabref.logic.exporter.SaveSession;
 import org.jabref.logic.l10n.Encodings;
 import org.jabref.logic.l10n.Localization;
 import org.jabref.logic.layout.Layout;
@@ -90,27 +139,11 @@ import org.jabref.preferences.JabRefPreferences;
 import org.jabref.preferences.PreviewPreferences;
 import org.jabref.shared.DBMSSynchronizer;
 
-import javax.swing.*;
-import javax.swing.undo.CannotRedoException;
-import javax.swing.undo.CannotUndoException;
-import java.awt.*;
-import java.awt.datatransfer.Clipboard;
-import java.awt.datatransfer.ClipboardOwner;
-import java.awt.datatransfer.StringSelection;
-import java.awt.datatransfer.Transferable;
-import java.awt.event.ActionEvent;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.io.File;
-import java.io.IOException;
-import java.io.StringReader;
-import java.lang.reflect.InvocationTargetException;
-import java.nio.charset.Charset;
-import java.nio.charset.UnsupportedCharsetException;
-import java.nio.file.Path;
-import java.util.*;
-import java.util.List;
-import java.util.stream.Collectors;
+import com.google.common.eventbus.Subscribe;
+import com.jgoodies.forms.builder.FormBuilder;
+import com.jgoodies.forms.layout.FormLayout;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class BasePanel extends JPanel implements ClipboardOwner, FileUpdateListener {
 
@@ -814,8 +847,6 @@ public class BasePanel extends JPanel implements ClipboardOwner, FileUpdateListe
     private void copyTitle() {
         List<BibEntry> selectedBibEntries = mainTable.getSelectedEntries();
         if (!selectedBibEntries.isEmpty()) {
-            storeCurrentEdit();
-
             // Collect all non-null titles.
             List<String> titles = selectedBibEntries.stream()
                     .filter(bibEntry -> bibEntry.getTitle().isPresent())
@@ -844,7 +875,6 @@ public class BasePanel extends JPanel implements ClipboardOwner, FileUpdateListe
     private void copyCiteKey() {
         List<BibEntry> bes = mainTable.getSelectedEntries();
         if (!bes.isEmpty()) {
-            storeCurrentEdit();
             List<String> keys = new ArrayList<>(bes.size());
             // Collect all non-null keys.
             for (BibEntry be : bes) {
@@ -872,7 +902,6 @@ public class BasePanel extends JPanel implements ClipboardOwner, FileUpdateListe
     private void copyKey() {
         List<BibEntry> bes = mainTable.getSelectedEntries();
         if (!bes.isEmpty()) {
-            storeCurrentEdit();
             List<String> keys = new ArrayList<>(bes.size());
             // Collect all non-null keys.
             for (BibEntry be : bes) {
@@ -899,8 +928,6 @@ public class BasePanel extends JPanel implements ClipboardOwner, FileUpdateListe
     private void copyKeyAndTitle() {
         List<BibEntry> bes = mainTable.getSelectedEntries();
         if (!bes.isEmpty()) {
-            storeCurrentEdit();
-
             // OK: in a future version, this string should be configurable to allow arbitrary exports
             StringReader sr = new StringReader(
                     "\\bibtexkey - \\begin{title}\\format[RemoveBrackets]{\\title}\\end{title}\n");
@@ -1228,7 +1255,7 @@ public class BasePanel extends JPanel implements ClipboardOwner, FileUpdateListe
                     break;
                 case SHOWING_EDITOR:
                 case WILL_SHOW_EDITOR:
-                    getCurrentEditor().close();
+                    entryEditorClosing(getCurrentEditor());
                     break;
                 default:
                     LOGGER.warn("unknown BasePanelMode: '" + mode + "', doing nothing");
@@ -1428,13 +1455,13 @@ public class BasePanel extends JPanel implements ClipboardOwner, FileUpdateListe
 
         String visName = null;
         if ((getShowing() != null) && isShowingEditor()) {
-            visName = ((EntryEditor) splitPane.getBottomComponent()).getVisiblePanelName();
+            visName = ((EntryEditor) splitPane.getBottomComponent()).getVisibleTabName();
         }
 
         // We must instantiate a new editor.
         EntryEditor entryEditor = new EntryEditor(frame, BasePanel.this, be);
         if (visName != null) {
-            entryEditor.setVisiblePanel(visName);
+            entryEditor.setVisibleTab(visName);
         }
         showEntryEditor(entryEditor);
 
@@ -1449,8 +1476,6 @@ public class BasePanel extends JPanel implements ClipboardOwner, FileUpdateListe
      * @return A suitable entry editor.
      */
     public EntryEditor getEntryEditor(BibEntry entry) {
-        // We must instantiate a new editor. First make sure the old one stores its last edit:
-        storeCurrentEdit();
         // Then start the new one:
         return new EntryEditor(frame, BasePanel.this, entry);
     }
@@ -1561,24 +1586,12 @@ public class BasePanel extends JPanel implements ClipboardOwner, FileUpdateListe
 
     public void updateEntryEditorIfShowing() {
         if (mode == BasePanelMode.SHOWING_EDITOR) {
-            if (currentEditor.getDisplayedBibEntryType().equals(currentEditor.getEntry().getType())) {
-                currentEditor.updateSource();
-            } else {
+            if (!currentEditor.getDisplayedBibEntryType().equals(currentEditor.getEntry().getType())) {
                 // The entry has changed type, so we must get a new editor.
                 newEntryShowing(null);
                 final EntryEditor newEditor = getEntryEditor(currentEditor.getEntry());
                 showEntryEditor(newEditor);
             }
-        }
-    }
-
-    /**
-     * If an entry editor is showing, make sure its currently focused field stores its changes, if any.
-     */
-    public void storeCurrentEdit() {
-        if (isShowingEditor()) {
-            final EntryEditor editor = (EntryEditor) splitPane.getBottomComponent();
-            editor.storeCurrentEdit();
         }
     }
 
@@ -1612,12 +1625,6 @@ public class BasePanel extends JPanel implements ClipboardOwner, FileUpdateListe
     public void markNonUndoableBaseChanged() {
         nonUndoableChange = true;
         markBaseChanged();
-    }
-
-    public void rebuildAllEntryEditors() {
-        if (currentEditor != null) {
-            currentEditor.rebuildPanels();
-        }
     }
 
     private synchronized void markChangedOrUnChanged() {
@@ -2160,8 +2167,6 @@ public class BasePanel extends JPanel implements ClipboardOwner, FileUpdateListe
                     // Check if it is the preamble:
                     if ((preambleEditor != null) && (focused == preambleEditor.getFieldEditor())) {
                         preambleEditor.storeCurrentEdit();
-                    } else {
-                        storeCurrentEdit();
                     }
                 }
                 getUndoManager().undo();
@@ -2236,11 +2241,6 @@ public class BasePanel extends JPanel implements ClipboardOwner, FileUpdateListe
             try {
 
                 JComponent focused = Globals.getFocusListener().getFocused();
-                if ((focused != null) && (focused instanceof FieldEditor) && focused.hasFocus()) {
-                    // User is currently editing a field:
-                    storeCurrentEdit();
-                }
-
                 getUndoManager().redo();
                 markBaseChanged();
                 frame.output(Localization.lang("Redo"));

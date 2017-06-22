@@ -1,10 +1,11 @@
 package org.jabref.shared;
 
+import java.sql.SQLException;
+
 import org.jabref.shared.exception.InvalidDBMSConnectionPropertiesException;
 import org.jabref.testutils.category.DatabaseTests;
-import org.junit.experimental.categories.Category;
 
-import java.sql.SQLException;
+import org.junit.experimental.categories.Category;
 
 @Category(DatabaseTests.class)
 public class TestConnector {

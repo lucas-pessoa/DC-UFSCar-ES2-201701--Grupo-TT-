@@ -1,14 +1,15 @@
 package org.jabref.logic.importer.fileformat;
 
-import org.jabref.logic.util.FileExtensions;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
-
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Collections;
+
+import org.jabref.logic.util.FileExtensions;
+
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
 public class BiblioscapeImporterTest {
 

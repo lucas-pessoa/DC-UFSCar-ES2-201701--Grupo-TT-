@@ -1,12 +1,12 @@
 package org.jabref.logic.integrity;
 
-import org.jabref.model.entry.BibEntry;
-import org.jabref.model.util.OptionalUtil;
-
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
+
+import org.jabref.model.entry.BibEntry;
+import org.jabref.model.util.OptionalUtil;
 
 public class FieldChecker implements IntegrityCheck.Checker {
     protected final String field;

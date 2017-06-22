@@ -1,9 +1,9 @@
 package org.jabref.gui.push;
 
+import javax.swing.Icon;
+
 import org.jabref.gui.IconTheme;
 import org.jabref.preferences.JabRefPreferences;
-
-import javax.swing.*;
 
 public class PushToTeXstudio extends AbstractPushToApplication implements PushToApplication {
 

@@ -1,10 +1,13 @@
 package org.jabref.gui.fieldeditors;
 
+import java.io.IOException;
+import java.util.Optional;
+
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleObjectProperty;
-import org.fxmisc.easybind.EasyBind;
+
 import org.jabref.gui.DialogService;
 import org.jabref.gui.desktop.JabRefDesktop;
 import org.jabref.gui.mergeentries.FetchAndMergeEntry;
@@ -17,8 +20,7 @@ import org.jabref.model.entry.BibEntry;
 import org.jabref.model.entry.FieldName;
 import org.jabref.model.entry.identifier.Identifier;
 
-import java.io.IOException;
-import java.util.Optional;
+import org.fxmisc.easybind.EasyBind;
 
 public class IdentifierEditorViewModel extends AbstractEditorViewModel {
     private final String fieldName;

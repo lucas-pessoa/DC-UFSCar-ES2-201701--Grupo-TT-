@@ -1,12 +1,14 @@
 package org.jabref.gui.push;
 
+import java.util.List;
+
+import javax.swing.Icon;
+import javax.swing.JPanel;
+
 import org.jabref.gui.BasePanel;
 import org.jabref.model.database.BibDatabase;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.metadata.MetaData;
-
-import javax.swing.*;
-import java.util.List;
 
 /**
  * Class that defines interaction with an external application in the form of "pushing" selected entries to it.

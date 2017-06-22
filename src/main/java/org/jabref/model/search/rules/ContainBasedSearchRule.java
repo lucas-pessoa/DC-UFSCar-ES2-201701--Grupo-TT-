@@ -1,10 +1,10 @@
 package org.jabref.model.search.rules;
 
-import org.jabref.model.entry.BibEntry;
-
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
+
+import org.jabref.model.entry.BibEntry;
 
 /**
  * Search rule for contain-based search.

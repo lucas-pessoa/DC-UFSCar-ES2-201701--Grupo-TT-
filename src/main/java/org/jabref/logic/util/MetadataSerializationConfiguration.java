@@ -1,6 +1,12 @@
 package org.jabref.logic.util;
 
-import org.jabref.model.groups.*;
+import org.jabref.model.groups.AllEntriesGroup;
+import org.jabref.model.groups.AutomaticKeywordGroup;
+import org.jabref.model.groups.AutomaticPersonsGroup;
+import org.jabref.model.groups.ExplicitGroup;
+import org.jabref.model.groups.RegexKeywordGroup;
+import org.jabref.model.groups.SearchGroup;
+import org.jabref.model.groups.WordKeywordGroup;
 
 /**
  * Specifies how metadata is read and written.

@@ -1,14 +1,19 @@
 package org.jabref.model.util;
 
-import org.jabref.model.database.BibDatabaseContext;
-import org.jabref.model.metadata.FileDirectoryPreferences;
-
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+import java.util.Objects;
+import java.util.Optional;
+
+import org.jabref.model.database.BibDatabaseContext;
+import org.jabref.model.metadata.FileDirectoryPreferences;
 
 public class FileHelper {
+
     /**
      * Returns the extension of a file or Optional.empty() if the file does not have one (no . in name).
      *
@@ -48,7 +53,7 @@ public class FileHelper {
      * @param name     The filename, may also be a relative path to the file
      */
     public static Optional<Path> expandFilename(final BibDatabaseContext databaseContext, String name,
-                                                        FileDirectoryPreferences fileDirectoryPreferences) {
+            FileDirectoryPreferences fileDirectoryPreferences) {
         Optional<String> extension = getFileExtension(name);
         // Find the default directory for this field type, if any:
         List<String> directories = databaseContext.getFileDirectories(extension.orElse(null), fileDirectoryPreferences);
@@ -111,8 +116,10 @@ public class FileHelper {
         Objects.requireNonNull(directory);
 
         Path file = Paths.get(filename);
-        if (Files.exists(file)) {
-            return Optional.of(file);
+        //Explicitly check for an empty String, as File.exists returns true on that empty path, because it maps to the default jar location
+        // if we then call toAbsoluteDir, it would always return the jar-location folder. This is not what we want here
+        if (filename.isEmpty()) {
+            return Optional.of(directory);
         }
 
         Path resolvedFile = directory.resolve(file);

@@ -1,5 +1,11 @@
 package org.jabref.gui.maintable;
 
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
+
+import javax.swing.JLabel;
+
 import org.jabref.gui.GUIGlobals;
 import org.jabref.gui.IconTheme;
 import org.jabref.gui.externalfiletype.ExternalFileType;
@@ -9,11 +15,6 @@ import org.jabref.gui.specialfields.SpecialFieldViewModel;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.entry.FieldName;
 import org.jabref.model.entry.specialfields.SpecialField;
-
-import javax.swing.*;
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
 
 class SpecialMainTableColumnsBuilder {
 

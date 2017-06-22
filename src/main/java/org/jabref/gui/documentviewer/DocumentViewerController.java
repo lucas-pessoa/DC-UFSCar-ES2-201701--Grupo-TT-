@@ -1,17 +1,22 @@
 package org.jabref.gui.documentviewer;
 
+import javax.inject.Inject;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.ScrollBar;
+import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.BorderPane;
+
 import org.jabref.gui.AbstractController;
 import org.jabref.gui.StateManager;
 import org.jabref.gui.util.OnlyIntegerFormatter;
 import org.jabref.gui.util.TaskExecutor;
 import org.jabref.gui.util.ViewModelListCellFactory;
 import org.jabref.model.entry.LinkedFile;
-
-import javax.inject.Inject;
 
 public class DocumentViewerController extends AbstractController<DocumentViewerViewModel> {
 

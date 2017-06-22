@@ -1,14 +1,15 @@
 package org.jabref.gui.importer;
 
-import javafx.stage.FileChooser;
-import org.jabref.logic.importer.Importer;
-import org.jabref.logic.util.FileExtensions;
-
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+
+import javafx.stage.FileChooser;
+
+import org.jabref.logic.importer.Importer;
+import org.jabref.logic.util.FileExtensions;
 
 class ImportFileFilter {
 

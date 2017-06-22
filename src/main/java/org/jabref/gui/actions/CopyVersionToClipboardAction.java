@@ -1,13 +1,14 @@
 package org.jabref.gui.actions;
 
+import java.awt.event.ActionEvent;
+
+import javax.swing.AbstractAction;
+
 import org.jabref.Globals;
 import org.jabref.JabRefGUI;
 import org.jabref.gui.ClipBoardManager;
 import org.jabref.logic.l10n.Localization;
 import org.jabref.logic.util.BuildInfo;
-
-import javax.swing.*;
-import java.awt.event.ActionEvent;
 
 public class CopyVersionToClipboardAction extends AbstractAction {
 

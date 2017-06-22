@@ -1,7 +1,21 @@
 package org.jabref.gui.openoffice;
 
-import com.jgoodies.forms.builder.FormBuilder;
-import com.jgoodies.forms.layout.FormLayout;
+import java.awt.BorderLayout;
+import java.io.File;
+import java.nio.file.Path;
+import java.util.List;
+import java.util.Optional;
+
+import javax.swing.BorderFactory;
+import javax.swing.DefaultListModel;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JOptionPane;
+import javax.swing.JProgressBar;
+import javax.swing.ListSelectionModel;
+import javax.swing.SwingConstants;
+
 import org.jabref.gui.DialogService;
 import org.jabref.gui.FXDialogService;
 import org.jabref.gui.desktop.JabRefDesktop;
@@ -15,12 +29,8 @@ import org.jabref.logic.openoffice.OpenOfficePreferences;
 import org.jabref.logic.util.OS;
 import org.jabref.logic.util.io.FileUtil;
 
-import javax.swing.*;
-import java.awt.*;
-import java.io.File;
-import java.nio.file.Path;
-import java.util.List;
-import java.util.Optional;
+import com.jgoodies.forms.builder.FormBuilder;
+import com.jgoodies.forms.layout.FormLayout;
 
 /**
  * Tools for automatically detecting OpenOffice or LibreOffice installations.

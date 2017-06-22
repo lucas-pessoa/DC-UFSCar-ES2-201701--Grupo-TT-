@@ -1,23 +1,24 @@
 package org.jabref.logic.citationstyle;
 
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
+
+import org.jabref.logic.l10n.Localization;
+import org.jabref.model.entry.BibEntry;
+
 import de.undercouch.citeproc.CSL;
 import de.undercouch.citeproc.bibtex.BibTeXConverter;
 import de.undercouch.citeproc.csl.CSLItemData;
 import de.undercouch.citeproc.output.Bibliography;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.jabref.logic.l10n.Localization;
-import org.jabref.model.entry.BibEntry;
 import org.jbibtex.BibTeXEntry;
 import org.jbibtex.DigitStringValue;
 import org.jbibtex.Key;
 import org.jbibtex.TokenMgrException;
-
-import java.io.IOException;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
 
 
 /**

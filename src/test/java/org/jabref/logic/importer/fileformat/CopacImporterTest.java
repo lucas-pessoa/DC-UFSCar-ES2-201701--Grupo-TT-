@@ -1,11 +1,5 @@
 package org.jabref.logic.importer.fileformat;
 
-import org.jabref.logic.util.FileExtensions;
-import org.jabref.model.entry.BibEntry;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
-
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -15,6 +9,13 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import org.jabref.logic.util.FileExtensions;
+import org.jabref.model.entry.BibEntry;
+
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
 public class CopacImporterTest {
 

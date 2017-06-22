@@ -1,13 +1,14 @@
 package org.jabref.gui.fieldeditors.contextmenu;
 
+import java.util.Objects;
+
 import javafx.beans.property.StringProperty;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
+
 import org.jabref.logic.formatter.Formatters;
 import org.jabref.logic.l10n.Localization;
 import org.jabref.model.cleanup.Formatter;
-
-import java.util.Objects;
 
 class CaseChangeMenu extends Menu {
 

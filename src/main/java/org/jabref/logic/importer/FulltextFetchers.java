@@ -1,18 +1,25 @@
 package org.jabref.logic.importer;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.jabref.logic.importer.fetcher.*;
-import org.jabref.logic.net.URLDownload;
-import org.jabref.model.entry.BibEntry;
-import org.jabref.model.entry.FieldName;
-import org.jabref.model.entry.identifier.DOI;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+
+import org.jabref.logic.importer.fetcher.ACS;
+import org.jabref.logic.importer.fetcher.ArXiv;
+import org.jabref.logic.importer.fetcher.DoiResolution;
+import org.jabref.logic.importer.fetcher.GoogleScholar;
+import org.jabref.logic.importer.fetcher.IEEE;
+import org.jabref.logic.importer.fetcher.ScienceDirect;
+import org.jabref.logic.importer.fetcher.SpringerLink;
+import org.jabref.logic.net.URLDownload;
+import org.jabref.model.entry.BibEntry;
+import org.jabref.model.entry.FieldName;
+import org.jabref.model.entry.identifier.DOI;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * Utility class for trying to resolve URLs to full-text PDF for articles.

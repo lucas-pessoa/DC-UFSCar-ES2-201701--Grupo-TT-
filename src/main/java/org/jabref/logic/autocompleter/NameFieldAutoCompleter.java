@@ -1,10 +1,14 @@
 package org.jabref.logic.autocompleter;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Locale;
+import java.util.Objects;
+
 import org.jabref.model.entry.Author;
 import org.jabref.model.entry.AuthorList;
 import org.jabref.model.entry.BibEntry;
-
-import java.util.*;
 
 /**
  * Delivers possible completions for a given string.

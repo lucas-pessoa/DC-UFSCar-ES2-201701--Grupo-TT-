@@ -1,11 +1,11 @@
 package org.jabref.gui.importer.fetcher;
 
-import com.mashape.unirest.http.HttpResponse;
-import com.mashape.unirest.http.JsonNode;
-import com.mashape.unirest.http.Unirest;
-import com.mashape.unirest.http.exceptions.UnirestException;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import java.io.IOException;
+import java.net.URLEncoder;
+
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
 import org.jabref.gui.importer.ImportInspectionDialog;
 import org.jabref.logic.help.HelpFile;
 import org.jabref.logic.importer.ImportInspector;
@@ -13,12 +13,15 @@ import org.jabref.logic.importer.OutputPrinter;
 import org.jabref.logic.importer.util.JSONEntryParser;
 import org.jabref.logic.l10n.Localization;
 import org.jabref.model.entry.BibEntry;
+
+import com.mashape.unirest.http.HttpResponse;
+import com.mashape.unirest.http.JsonNode;
+import com.mashape.unirest.http.Unirest;
+import com.mashape.unirest.http.exceptions.UnirestException;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.json.JSONArray;
 import org.json.JSONObject;
-
-import javax.swing.*;
-import java.io.IOException;
-import java.net.URLEncoder;
 
 public class SpringerFetcher implements EntryFetcher {
 

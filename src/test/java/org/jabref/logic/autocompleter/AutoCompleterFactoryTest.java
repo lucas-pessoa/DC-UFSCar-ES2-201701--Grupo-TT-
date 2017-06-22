@@ -1,6 +1,7 @@
 package org.jabref.logic.autocompleter;
 
 import org.jabref.logic.journals.JournalAbbreviationLoader;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

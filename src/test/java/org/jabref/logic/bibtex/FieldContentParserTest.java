@@ -1,10 +1,11 @@
 package org.jabref.logic.bibtex;
 
+import java.util.Collections;
+
 import org.jabref.logic.util.OS;
+
 import org.junit.Before;
 import org.junit.Test;
-
-import java.util.Collections;
 
 import static org.junit.Assert.assertEquals;
 

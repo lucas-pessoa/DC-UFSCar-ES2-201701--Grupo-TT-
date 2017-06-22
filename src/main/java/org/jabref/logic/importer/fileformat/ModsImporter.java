@@ -1,29 +1,66 @@
 package org.jabref.logic.importer.fileformat;
 
-import com.google.common.base.Joiner;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.jabref.logic.importer.Importer;
-import org.jabref.logic.importer.ParseException;
-import org.jabref.logic.importer.Parser;
-import org.jabref.logic.importer.ParserResult;
-import org.jabref.logic.util.FileExtensions;
-import org.jabref.model.entry.BibEntry;
-import org.jabref.model.entry.FieldName;
-import org.jabref.preferences.JabRefPreferences;
-
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBElement;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Unmarshaller;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Optional;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBElement;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
+
+import org.jabref.logic.importer.Importer;
+import org.jabref.logic.importer.ParseException;
+import org.jabref.logic.importer.Parser;
+import org.jabref.logic.importer.ParserResult;
+import org.jabref.logic.importer.fileformat.mods.AbstractDefinition;
+import org.jabref.logic.importer.fileformat.mods.DateDefinition;
+import org.jabref.logic.importer.fileformat.mods.DetailDefinition;
+import org.jabref.logic.importer.fileformat.mods.ExtentDefinition;
+import org.jabref.logic.importer.fileformat.mods.GenreDefinition;
+import org.jabref.logic.importer.fileformat.mods.HierarchicalGeographicDefinition;
+import org.jabref.logic.importer.fileformat.mods.IdentifierDefinition;
+import org.jabref.logic.importer.fileformat.mods.IssuanceDefinition;
+import org.jabref.logic.importer.fileformat.mods.LanguageDefinition;
+import org.jabref.logic.importer.fileformat.mods.LanguageTermDefinition;
+import org.jabref.logic.importer.fileformat.mods.LocationDefinition;
+import org.jabref.logic.importer.fileformat.mods.ModsCollectionDefinition;
+import org.jabref.logic.importer.fileformat.mods.ModsDefinition;
+import org.jabref.logic.importer.fileformat.mods.NameDefinition;
+import org.jabref.logic.importer.fileformat.mods.NamePartDefinition;
+import org.jabref.logic.importer.fileformat.mods.NoteDefinition;
+import org.jabref.logic.importer.fileformat.mods.OriginInfoDefinition;
+import org.jabref.logic.importer.fileformat.mods.PartDefinition;
+import org.jabref.logic.importer.fileformat.mods.PhysicalLocationDefinition;
+import org.jabref.logic.importer.fileformat.mods.PlaceDefinition;
+import org.jabref.logic.importer.fileformat.mods.PlaceTermDefinition;
+import org.jabref.logic.importer.fileformat.mods.RecordInfoDefinition;
+import org.jabref.logic.importer.fileformat.mods.RelatedItemDefinition;
+import org.jabref.logic.importer.fileformat.mods.StringPlusLanguage;
+import org.jabref.logic.importer.fileformat.mods.StringPlusLanguagePlusAuthority;
+import org.jabref.logic.importer.fileformat.mods.StringPlusLanguagePlusSupplied;
+import org.jabref.logic.importer.fileformat.mods.SubjectDefinition;
+import org.jabref.logic.importer.fileformat.mods.TitleInfoDefinition;
+import org.jabref.logic.importer.fileformat.mods.UrlDefinition;
+import org.jabref.logic.util.FileExtensions;
+import org.jabref.model.entry.BibEntry;
+import org.jabref.model.entry.FieldName;
+import org.jabref.preferences.JabRefPreferences;
+
+import com.google.common.base.Joiner;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * Importer for the MODS format.<br>

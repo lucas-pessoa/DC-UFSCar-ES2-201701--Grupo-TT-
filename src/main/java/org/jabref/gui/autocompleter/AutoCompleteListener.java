@@ -1,13 +1,19 @@
 package org.jabref.gui.autocompleter;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.jabref.logic.autocompleter.AutoCompleter;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.util.List;
 
 import javax.swing.text.BadLocationException;
 import javax.swing.text.JTextComponent;
-import java.awt.event.*;
-import java.util.List;
+
+import org.jabref.logic.autocompleter.AutoCompleter;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class AutoCompleteListener extends KeyAdapter implements FocusListener {
 

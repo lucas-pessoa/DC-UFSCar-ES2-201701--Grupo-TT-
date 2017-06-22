@@ -1,11 +1,11 @@
 package org.jabref.model.entry.identifier;
 
-import org.jabref.model.entry.FieldName;
-
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Objects;
 import java.util.Optional;
+
+import org.jabref.model.entry.FieldName;
 
 public class ArXivIdentifier implements Identifier {
 

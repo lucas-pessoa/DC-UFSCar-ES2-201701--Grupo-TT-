@@ -1,10 +1,14 @@
 package org.jabref.model;
 
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.function.Consumer;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-
-import java.util.*;
-import java.util.function.Consumer;
 
 /**
  * Represents a node in a tree.

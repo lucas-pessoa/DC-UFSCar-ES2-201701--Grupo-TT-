@@ -1,15 +1,16 @@
 package org.jabref.logic.search.rules.describer;
 
-import org.antlr.v4.runtime.tree.ParseTree;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.regex.Pattern;
+
 import org.jabref.logic.l10n.Localization;
 import org.jabref.model.search.rules.GrammarBasedSearchRule;
 import org.jabref.model.strings.StringUtil;
 import org.jabref.search.SearchBaseVisitor;
 import org.jabref.search.SearchParser;
 
-import java.util.Objects;
-import java.util.Optional;
-import java.util.regex.Pattern;
+import org.antlr.v4.runtime.tree.ParseTree;
 
 public class GrammarBasedSearchRuleDescriber implements SearchDescriber {
 

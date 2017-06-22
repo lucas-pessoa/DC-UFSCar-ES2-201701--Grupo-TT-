@@ -1,5 +1,12 @@
 package org.jabref.logic.cleanup;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.Arrays;
+import java.util.Optional;
+
 import org.jabref.logic.layout.LayoutFormatterPreferences;
 import org.jabref.model.Defaults;
 import org.jabref.model.database.BibDatabase;
@@ -9,26 +16,21 @@ import org.jabref.model.entry.FileFieldWriter;
 import org.jabref.model.entry.LinkedFile;
 import org.jabref.model.metadata.FileDirectoryPreferences;
 import org.jabref.model.metadata.MetaData;
+
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.Arrays;
-import java.util.Optional;
-
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 public class MoveFilesCleanupTest {
 
-    @Rule
-    public TemporaryFolder bibFolder = new TemporaryFolder();
+    @Rule public TemporaryFolder bibFolder = new TemporaryFolder();
 
     private File pdfFolder;
     private BibDatabaseContext databaseContext;
@@ -92,8 +94,7 @@ public class MoveFilesCleanupTest {
         assertTrue(fileAfter.exists());
 
         assertEquals(
-                Optional.of(FileFieldWriter.getStringRepresentation(Arrays.asList(new LinkedFile("", "", ""),
-                        new LinkedFile("", fileAfter.getName(), ""), new LinkedFile("", "", "")))),
+                Optional.of(FileFieldWriter.getStringRepresentation(new LinkedFile("", fileAfter.getName(), ""))),
                 entry.getField("file"));
     }
 

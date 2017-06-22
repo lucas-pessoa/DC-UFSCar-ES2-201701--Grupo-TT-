@@ -1,6 +1,9 @@
 package org.jabref.logic.importer.fetcher;
 
-import org.apache.http.client.utils.URIBuilder;
+import java.net.MalformedURLException;
+import java.net.URISyntaxException;
+import java.net.URL;
+
 import org.jabref.logic.help.HelpFile;
 import org.jabref.logic.importer.FetcherException;
 import org.jabref.logic.importer.IdBasedParserFetcher;
@@ -8,9 +11,7 @@ import org.jabref.logic.importer.ImportFormatPreferences;
 import org.jabref.logic.importer.Parser;
 import org.jabref.logic.importer.fileformat.BibtexParser;
 
-import java.net.MalformedURLException;
-import java.net.URISyntaxException;
-import java.net.URL;
+import org.apache.http.client.utils.URIBuilder;
 
 /*
  * http://www.diva-portal.org/smash/aboutdiva.jsf?dswid=-3222

@@ -1,5 +1,22 @@
 package org.jabref.gui.bibtexkeypattern;
 
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.Map;
+
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextField;
+
 import org.jabref.Globals;
 import org.jabref.gui.BasePanel;
 import org.jabref.gui.IconTheme;
@@ -13,12 +30,6 @@ import org.jabref.model.bibtexkeypattern.GlobalBibtexKeyPattern;
 import org.jabref.model.database.BibDatabaseMode;
 import org.jabref.model.entry.EntryType;
 import org.jabref.preferences.JabRefPreferences;
-
-import javax.swing.*;
-import java.awt.*;
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Map;
 
 public class BibtexKeyPatternPanel extends JPanel {
 

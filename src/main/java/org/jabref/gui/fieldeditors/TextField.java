@@ -1,21 +1,25 @@
 package org.jabref.gui.fieldeditors;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.lang.reflect.InvocationTargetException;
+
+import javax.swing.AbstractAction;
+import javax.swing.JComponent;
+import javax.swing.SwingUtilities;
+import javax.swing.text.Document;
+import javax.swing.undo.CannotRedoException;
+import javax.swing.undo.CannotUndoException;
+import javax.swing.undo.UndoManager;
+
 import org.jabref.Globals;
 import org.jabref.gui.GUIGlobals;
 import org.jabref.gui.actions.Actions;
 import org.jabref.gui.autocompleter.AutoCompleteListener;
 import org.jabref.gui.util.component.JTextFieldWithPlaceholder;
 
-import javax.swing.*;
-import javax.swing.text.Document;
-import javax.swing.undo.CannotRedoException;
-import javax.swing.undo.CannotUndoException;
-import javax.swing.undo.UndoManager;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.lang.reflect.InvocationTargetException;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * An implementation of the FieldEditor backed by a JTextField. Used for single-line input, only BibTex key at the

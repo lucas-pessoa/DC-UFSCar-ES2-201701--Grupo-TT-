@@ -1,9 +1,13 @@
 package org.jabref.logic.msbib;
 
-import org.jabref.model.entry.*;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import org.jabref.model.entry.Author;
+import org.jabref.model.entry.AuthorList;
+import org.jabref.model.entry.BibEntry;
+import org.jabref.model.entry.FieldName;
+import org.jabref.model.entry.Month;
 
 public class MSBibConverter {
 

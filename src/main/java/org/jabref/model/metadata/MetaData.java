@@ -1,6 +1,13 @@
 package org.jabref.model.metadata;
 
-import com.google.common.eventbus.EventBus;
+import java.nio.charset.Charset;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Optional;
+
 import org.jabref.model.bibtexkeypattern.AbstractBibtexKeyPattern;
 import org.jabref.model.bibtexkeypattern.DatabaseBibtexKeyPattern;
 import org.jabref.model.bibtexkeypattern.GlobalBibtexKeyPattern;
@@ -12,8 +19,7 @@ import org.jabref.model.groups.GroupTreeNode;
 import org.jabref.model.groups.event.GroupUpdatedEvent;
 import org.jabref.model.metadata.event.MetaDataChangedEvent;
 
-import java.nio.charset.Charset;
-import java.util.*;
+import com.google.common.eventbus.EventBus;
 
 public class MetaData {
 

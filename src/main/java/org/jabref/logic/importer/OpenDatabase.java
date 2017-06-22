@@ -1,7 +1,10 @@
 package org.jabref.logic.importer;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import java.io.File;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
+
 import org.jabref.logic.importer.fileformat.BibtexImporter;
 import org.jabref.logic.importer.util.ConvertLegacyExplicitGroups;
 import org.jabref.logic.importer.util.PostOpenAction;
@@ -10,10 +13,8 @@ import org.jabref.logic.specialfields.SpecialFieldsUtils;
 import org.jabref.logic.util.io.FileBasedLock;
 import org.jabref.model.entry.BibEntry;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.Arrays;
-import java.util.List;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class OpenDatabase {
 

@@ -1,8 +1,8 @@
 package org.jabref.model;
 
-import org.jabref.model.entry.BibEntry;
-
 import java.util.Objects;
+
+import org.jabref.model.entry.BibEntry;
 
 /**
  *

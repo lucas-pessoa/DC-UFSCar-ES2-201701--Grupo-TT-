@@ -1,10 +1,10 @@
 package org.jabref.logic.autosaveandbackup;
 
-import org.junit.Assert;
-import org.junit.Test;
-
 import java.nio.file.Path;
 import java.nio.file.Paths;
+
+import org.junit.Assert;
+import org.junit.Test;
 
 public class BackupManagerTest {
 

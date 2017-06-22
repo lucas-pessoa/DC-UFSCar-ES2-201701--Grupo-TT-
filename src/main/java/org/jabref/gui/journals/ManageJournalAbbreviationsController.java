@@ -1,10 +1,20 @@
 package org.jabref.gui.journals;
 
+import javax.inject.Inject;
+
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.ProgressIndicator;
+import javafx.scene.control.TableCell;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
+
 import org.jabref.gui.AbstractController;
 import org.jabref.gui.DialogService;
 import org.jabref.gui.IconTheme;
@@ -12,8 +22,6 @@ import org.jabref.gui.util.TaskExecutor;
 import org.jabref.gui.util.ValueTableCellFactory;
 import org.jabref.logic.journals.JournalAbbreviationLoader;
 import org.jabref.preferences.PreferencesService;
-
-import javax.inject.Inject;
 
 public class ManageJournalAbbreviationsController extends AbstractController<ManageJournalAbbreviationsViewModel> {
 

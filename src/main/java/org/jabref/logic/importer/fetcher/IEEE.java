@@ -1,19 +1,20 @@
 package org.jabref.logic.importer.fetcher;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.jabref.logic.importer.FulltextFetcher;
-import org.jabref.logic.net.URLDownload;
-import org.jabref.model.entry.BibEntry;
-import org.jabref.model.entry.FieldName;
-import org.jabref.model.entry.identifier.DOI;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import org.jabref.logic.importer.FulltextFetcher;
+import org.jabref.logic.net.URLDownload;
+import org.jabref.model.entry.BibEntry;
+import org.jabref.model.entry.FieldName;
+import org.jabref.model.entry.identifier.DOI;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * Class for finding PDF URLs for entries on IEEE

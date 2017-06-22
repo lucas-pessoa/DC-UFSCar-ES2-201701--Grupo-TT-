@@ -1,18 +1,21 @@
 package org.jabref.gui;
 
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Locale;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+
+import org.jabref.testutils.category.GUITests;
+
 import org.assertj.swing.core.GenericTypeMatcher;
 import org.assertj.swing.dependency.jsr305.Nonnull;
 import org.assertj.swing.fixture.JTableFixture;
-import org.jabref.testutils.category.GUITests;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-
-import javax.swing.*;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Locale;
 
 import static org.assertj.swing.finder.WindowFinder.findDialog;
 

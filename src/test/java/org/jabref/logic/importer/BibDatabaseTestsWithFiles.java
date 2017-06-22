@@ -1,15 +1,16 @@
 package org.jabref.logic.importer;
 
-import org.jabref.logic.importer.fileformat.BibtexParser;
-import org.jabref.model.database.BibDatabase;
-import org.junit.Before;
-import org.junit.Test;
-import org.mockito.Answers;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+
+import org.jabref.logic.importer.fileformat.BibtexParser;
+import org.jabref.model.database.BibDatabase;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.Answers;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;

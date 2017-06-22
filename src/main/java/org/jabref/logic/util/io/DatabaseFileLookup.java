@@ -1,14 +1,19 @@
 package org.jabref.logic.util.io;
 
+import java.io.File;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
+
 import org.jabref.model.database.BibDatabase;
 import org.jabref.model.database.BibDatabaseContext;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.metadata.FileDirectoryPreferences;
-
-import java.io.File;
-import java.nio.file.Path;
-import java.util.*;
-import java.util.stream.Collectors;
 
 /**
  * Search class for files. <br>

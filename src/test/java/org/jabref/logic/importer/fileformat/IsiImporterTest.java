@@ -1,11 +1,5 @@
 package org.jabref.logic.importer.fileformat;
 
-import org.jabref.logic.util.FileExtensions;
-import org.jabref.model.entry.BibEntry;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
-
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
@@ -16,7 +10,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 
-import static org.junit.Assert.*;
+import org.jabref.logic.util.FileExtensions;
+import org.jabref.model.entry.BibEntry;
+
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Test cases for the IsiImporter

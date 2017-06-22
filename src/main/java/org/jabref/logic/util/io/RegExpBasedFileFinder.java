@@ -1,21 +1,26 @@
 package org.jabref.logic.util.io;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.jabref.logic.bibtexkeypattern.BibtexKeyPatternUtil;
-import org.jabref.model.database.BibDatabase;
-import org.jabref.model.entry.BibEntry;
-import org.jabref.model.strings.StringUtil;
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+
+import org.jabref.logic.bibtexkeypattern.BibtexKeyPatternUtil;
+import org.jabref.model.database.BibDatabase;
+import org.jabref.model.entry.BibEntry;
+import org.jabref.model.strings.StringUtil;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 class RegExpBasedFileFinder implements FileFinder {
     private static final Log LOGGER = LogFactory.getLog(RegExpBasedFileFinder.class);
@@ -248,7 +253,7 @@ class RegExpBasedFileFinder implements FileFinder {
         final Pattern toMatch = Pattern.compile('^' + filenameToLookFor.replaceAll("\\\\\\\\", "\\\\") + '$',
                 Pattern.CASE_INSENSITIVE);
         try {
-            List<Path> matches = Files.find(actualDirectory, Integer.MAX_VALUE,
+            List<Path> matches = Files.find(actualDirectory, 1,
                     (path, attributes) -> toMatch.matcher(path.getFileName().toString()).matches())
                     .collect(Collectors.toList());
             res.addAll(matches);

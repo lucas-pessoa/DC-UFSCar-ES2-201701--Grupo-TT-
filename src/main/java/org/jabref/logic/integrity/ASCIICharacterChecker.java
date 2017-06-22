@@ -1,13 +1,14 @@
 package org.jabref.logic.integrity;
 
-import com.google.common.base.CharMatcher;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
 import org.jabref.logic.integrity.IntegrityCheck.Checker;
 import org.jabref.logic.l10n.Localization;
 import org.jabref.model.entry.BibEntry;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import com.google.common.base.CharMatcher;
 
 public class ASCIICharacterChecker implements Checker {
 

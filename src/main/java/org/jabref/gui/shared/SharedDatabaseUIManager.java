@@ -1,6 +1,12 @@
 package org.jabref.gui.shared;
 
-import com.google.common.eventbus.Subscribe;
+import java.sql.SQLException;
+import java.util.Objects;
+import java.util.Optional;
+
+import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
+
 import org.jabref.Globals;
 import org.jabref.JabRefGUI;
 import org.jabref.gui.BasePanel;
@@ -23,10 +29,7 @@ import org.jabref.shared.exception.InvalidDBMSConnectionPropertiesException;
 import org.jabref.shared.exception.NotASharedDatabaseException;
 import org.jabref.shared.prefs.SharedDatabasePreferences;
 
-import javax.swing.*;
-import java.sql.SQLException;
-import java.util.Objects;
-import java.util.Optional;
+import com.google.common.eventbus.Subscribe;
 
 public class SharedDatabaseUIManager {
 

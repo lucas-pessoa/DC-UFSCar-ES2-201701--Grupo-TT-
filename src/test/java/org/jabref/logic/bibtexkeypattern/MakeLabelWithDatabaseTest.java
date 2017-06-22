@@ -1,13 +1,14 @@
 package org.jabref.logic.bibtexkeypattern;
 
+import java.util.Optional;
+
 import org.jabref.model.bibtexkeypattern.DatabaseBibtexKeyPattern;
 import org.jabref.model.bibtexkeypattern.GlobalBibtexKeyPattern;
 import org.jabref.model.database.BibDatabase;
 import org.jabref.model.entry.BibEntry;
+
 import org.junit.Before;
 import org.junit.Test;
-
-import java.util.Optional;
 
 import static org.junit.Assert.assertEquals;
 

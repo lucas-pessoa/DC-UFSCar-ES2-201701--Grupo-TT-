@@ -1,13 +1,14 @@
 package org.jabref.gui.fieldeditors;
 
-import com.sun.javafx.scene.control.skin.TextAreaSkin;
+import java.net.URL;
+import java.util.List;
+import java.util.ResourceBundle;
+
 import javafx.fxml.Initializable;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.MenuItem;
 
-import java.net.URL;
-import java.util.List;
-import java.util.ResourceBundle;
+import com.sun.javafx.scene.control.skin.TextAreaSkin;
 
 public class EditorTextArea extends javafx.scene.control.TextArea implements Initializable {
 
@@ -37,10 +38,6 @@ public class EditorTextArea extends javafx.scene.control.TextArea implements Ini
             }
         };
         setSkin(customContextSkin);
-    }
-
-    private String convertToHex(java.awt.Color color) {
-        return String.format("#%02x%02x%02x", color.getRed(), color.getGreen(), color.getBlue());
     }
 
     @Override

@@ -1,10 +1,10 @@
 package org.jabref.gui.importer;
 
-import org.jabref.gui.externalfiletype.ExternalFileType;
-import org.jabref.model.entry.BibEntry;
-
 import java.io.File;
 import java.util.Optional;
+
+import org.jabref.gui.externalfiletype.ExternalFileType;
+import org.jabref.model.entry.BibEntry;
 
 /** EntryCreator for any predefined ExternalFileType.
  * This Creator accepts all files with the extension defined in the ExternalFileType.

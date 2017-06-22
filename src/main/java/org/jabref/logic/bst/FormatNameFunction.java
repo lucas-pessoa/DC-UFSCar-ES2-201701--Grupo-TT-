@@ -1,11 +1,11 @@
 package org.jabref.logic.bst;
 
+import java.util.Stack;
+
 import org.jabref.logic.bst.VM.BstEntry;
 import org.jabref.logic.bst.VM.BstFunction;
 import org.jabref.model.entry.Author;
 import org.jabref.model.entry.AuthorList;
-
-import java.util.Stack;
 
 /**
  * From Bibtex:

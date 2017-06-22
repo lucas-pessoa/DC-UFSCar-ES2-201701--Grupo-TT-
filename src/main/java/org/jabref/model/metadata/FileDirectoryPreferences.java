@@ -1,12 +1,12 @@
 package org.jabref.model.metadata;
 
-import org.jabref.model.entry.FieldName;
-
 import java.nio.file.InvalidPathException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Map;
 import java.util.Optional;
+
+import org.jabref.model.entry.FieldName;
 
 public class FileDirectoryPreferences {
     public static final String DIR_SUFFIX = "Directory";

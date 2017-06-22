@@ -1,11 +1,23 @@
 package org.jabref.model;
 
-import org.jabref.model.database.BibDatabaseMode;
-import org.jabref.model.entry.*;
-
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Optional;
+import java.util.Set;
+import java.util.TreeMap;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+
+import org.jabref.model.database.BibDatabaseMode;
+import org.jabref.model.entry.BiblatexEntryTypes;
+import org.jabref.model.entry.BibtexEntryTypes;
+import org.jabref.model.entry.CustomEntryType;
+import org.jabref.model.entry.EntryType;
+import org.jabref.model.entry.IEEETranEntryTypes;
 
 public class EntryTypes {
     /**

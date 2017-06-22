@@ -1,19 +1,22 @@
 package org.jabref.logic.importer.fetcher;
 
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
+
 import org.jabref.logic.importer.FetcherException;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.entry.BiblatexEntryTypes;
 import org.jabref.model.entry.FieldName;
 import org.jabref.testutils.category.FetcherTests;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
-
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 @Category(FetcherTests.class)
 public class MedlineFetcherTest {

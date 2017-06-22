@@ -1,12 +1,5 @@
 package org.jabref.logic.importer;
 
-import org.jabref.model.database.BibDatabase;
-import org.jabref.model.entry.BibEntry;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
-import org.mockito.Answers;
-
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -15,6 +8,14 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Paths;
 import java.util.Collection;
 import java.util.Optional;
+
+import org.jabref.model.database.BibDatabase;
+import org.jabref.model.entry.BibEntry;
+
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.Answers;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;

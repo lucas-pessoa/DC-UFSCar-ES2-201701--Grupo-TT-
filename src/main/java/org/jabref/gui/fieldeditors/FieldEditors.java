@@ -1,5 +1,8 @@
 package org.jabref.gui.fieldeditors;
 
+import java.time.format.DateTimeFormatter;
+import java.util.Set;
+
 import org.jabref.Globals;
 import org.jabref.gui.DialogService;
 import org.jabref.gui.util.TaskExecutor;
@@ -9,9 +12,6 @@ import org.jabref.model.database.BibDatabaseContext;
 import org.jabref.model.entry.FieldProperty;
 import org.jabref.model.entry.InternalBibtexFields;
 import org.jabref.preferences.JabRefPreferences;
-
-import java.time.format.DateTimeFormatter;
-import java.util.Set;
 
 public class FieldEditors {
 
@@ -50,6 +50,8 @@ public class FieldEditors {
             } else {
                 return new OptionEditor<>(fieldName, new TypeEditorViewModel());
             }
+        } else if (fieldExtras.contains(FieldProperty.SINGLE_ENTRY_LINK) || fieldExtras.contains(FieldProperty.MULTIPLE_ENTRY_LINK)) {
+            return new LinkedEntriesEditor(fieldName, databaseContext);
         }
 
         // default

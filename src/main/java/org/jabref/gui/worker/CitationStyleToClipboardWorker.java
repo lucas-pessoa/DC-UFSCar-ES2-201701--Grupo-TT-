@@ -1,7 +1,14 @@
 package org.jabref.gui.worker;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import java.awt.datatransfer.StringSelection;
+import java.awt.datatransfer.Transferable;
+import java.io.StringReader;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
+
+import javax.swing.SwingWorker;
+
 import org.jabref.Globals;
 import org.jabref.gui.BasePanel;
 import org.jabref.gui.ClipBoardManager;
@@ -19,13 +26,8 @@ import org.jabref.logic.util.OS;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.preferences.PreviewPreferences;
 
-import javax.swing.*;
-import java.awt.datatransfer.StringSelection;
-import java.awt.datatransfer.Transferable;
-import java.io.StringReader;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.ExecutionException;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * Copies the selected entries and formats them with the selected citation style (or preview), then it is copied to the clipboard.

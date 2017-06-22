@@ -1,11 +1,17 @@
 package org.jabref.model.groups;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Objects;
+import java.util.Set;
+
 import org.jabref.model.FieldChange;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.entry.KeywordList;
 import org.jabref.model.strings.StringUtil;
-
-import java.util.*;
 
 /**
  * Matches entries if a given field contains a specified word.

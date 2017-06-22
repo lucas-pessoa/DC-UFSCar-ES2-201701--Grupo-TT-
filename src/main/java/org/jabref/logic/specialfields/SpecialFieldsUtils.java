@@ -1,5 +1,9 @@
 package org.jabref.logic.specialfields;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
 import org.jabref.logic.util.UpdateField;
 import org.jabref.model.FieldChange;
 import org.jabref.model.entry.BibEntry;
@@ -7,10 +11,6 @@ import org.jabref.model.entry.FieldName;
 import org.jabref.model.entry.Keyword;
 import org.jabref.model.entry.KeywordList;
 import org.jabref.model.entry.specialfields.SpecialField;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
 
 /**
  * @deprecated the class should be refactored and partly integrated into BibEntry

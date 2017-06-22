@@ -1,13 +1,14 @@
 package org.jabref.gui.undo;
 
-import com.google.common.eventbus.EventBus;
+import javax.swing.undo.CannotUndoException;
+import javax.swing.undo.UndoManager;
+import javax.swing.undo.UndoableEdit;
+
 import org.jabref.logic.l10n.Localization;
 import org.jabref.logic.undo.AddUndoableActionEvent;
 import org.jabref.logic.undo.UndoRedoEvent;
 
-import javax.swing.undo.CannotUndoException;
-import javax.swing.undo.UndoManager;
-import javax.swing.undo.UndoableEdit;
+import com.google.common.eventbus.EventBus;
 
 public class CountingUndoManager extends UndoManager {
 

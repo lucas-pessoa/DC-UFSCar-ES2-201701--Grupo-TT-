@@ -1,15 +1,15 @@
 package org.jabref.logic.importer.fileformat;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
-
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
+
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;
 

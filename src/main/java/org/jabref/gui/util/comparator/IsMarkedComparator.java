@@ -1,9 +1,9 @@
 package org.jabref.gui.util.comparator;
 
+import java.util.Comparator;
+
 import org.jabref.gui.EntryMarker;
 import org.jabref.model.entry.BibEntry;
-
-import java.util.Comparator;
 
 public class IsMarkedComparator implements Comparator<BibEntry> {
 

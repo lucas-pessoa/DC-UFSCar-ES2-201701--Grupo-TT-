@@ -1,19 +1,21 @@
 package org.jabref.gui;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.jabref.gui.fieldeditors.JTextAreaWithHighlighting;
-import org.jabref.logic.search.SearchQueryHighlightListener;
+import java.util.Optional;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-import javax.swing.*;
+import javax.swing.JEditorPane;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.DefaultHighlighter;
 import javax.swing.text.Document;
 import javax.swing.text.Highlighter;
 import javax.swing.text.LayeredHighlighter.LayerPainter;
-import java.util.Optional;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+
+import org.jabref.gui.fieldeditors.JTextAreaWithHighlighting;
+import org.jabref.logic.search.SearchQueryHighlightListener;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class JEditorPaneWithHighlighting extends JEditorPane implements SearchQueryHighlightListener {
 

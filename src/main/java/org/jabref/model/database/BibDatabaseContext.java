@@ -1,13 +1,5 @@
 package org.jabref.model.database;
 
-import org.jabref.model.Defaults;
-import org.jabref.model.bibtexkeypattern.GlobalBibtexKeyPattern;
-import org.jabref.model.entry.BibEntry;
-import org.jabref.model.entry.FieldName;
-import org.jabref.model.metadata.FileDirectoryPreferences;
-import org.jabref.model.metadata.MetaData;
-import org.jabref.shared.DBMSSynchronizer;
-
 import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -17,6 +9,14 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
+
+import org.jabref.model.Defaults;
+import org.jabref.model.bibtexkeypattern.GlobalBibtexKeyPattern;
+import org.jabref.model.entry.BibEntry;
+import org.jabref.model.entry.FieldName;
+import org.jabref.model.metadata.FileDirectoryPreferences;
+import org.jabref.model.metadata.MetaData;
+import org.jabref.shared.DBMSSynchronizer;
 
 /**
  * Represents everything related to a BIB file.
@@ -147,7 +147,12 @@ public class BibDatabaseContext {
 
     public List<Path> getFileDirectoriesAsPaths(FileDirectoryPreferences preferences) {
         // Filter for empty string, as this would be expanded to the jar-directory with Paths.get()
-        return getFileDirectories(preferences).stream().filter(s -> !s.isEmpty()).map(Paths::get).collect(Collectors.toList());
+        return getFileDirectories(preferences).stream()
+                .filter(s -> !s.isEmpty())
+                .map(Paths::get)
+                .map(Path::toAbsolutePath)
+                .map(Path::normalize)
+                .collect(Collectors.toList());
     }
 
     /**

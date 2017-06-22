@@ -1,11 +1,15 @@
 package org.jabref.model.cleanup;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Objects;
+import java.util.Set;
+
 import org.jabref.model.FieldChange;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.entry.FieldName;
 import org.jabref.model.entry.event.EntryEventSource;
-
-import java.util.*;
 
 /**
  * Formats a given entry field with the specified formatter.

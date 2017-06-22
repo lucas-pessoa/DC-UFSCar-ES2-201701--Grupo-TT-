@@ -1,10 +1,11 @@
 package org.jabref.model.groups;
 
-import org.jabref.model.entry.BibEntry;
-import org.junit.Test;
-
 import java.util.HashSet;
 import java.util.Set;
+
+import org.jabref.model.entry.BibEntry;
+
+import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 

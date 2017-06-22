@@ -1,17 +1,20 @@
 package org.jabref.gui.worker;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.concurrent.ExecutionException;
+
+import javax.swing.JEditorPane;
+import javax.swing.SwingWorker;
+
 import org.jabref.gui.BasePanel;
 import org.jabref.gui.PreviewPanel;
 import org.jabref.logic.citationstyle.CitationStyle;
 import org.jabref.logic.l10n.Localization;
 import org.jabref.model.entry.BibEntry;
 
-import javax.swing.*;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.concurrent.ExecutionException;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 
 /**

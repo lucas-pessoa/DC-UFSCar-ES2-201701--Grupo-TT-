@@ -1,12 +1,13 @@
 package org.jabref.logic.importer;
 
+import java.util.Optional;
+
 import org.jabref.logic.importer.fileformat.BibtexParser;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Answers;
-
-import java.util.Optional;
 
 import static org.mockito.Mockito.mock;
 

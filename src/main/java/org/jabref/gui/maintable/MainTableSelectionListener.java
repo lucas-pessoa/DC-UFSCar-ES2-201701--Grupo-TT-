@@ -1,14 +1,31 @@
 package org.jabref.gui.maintable;
 
-import ca.odell.glazedlists.EventList;
-import ca.odell.glazedlists.event.ListEvent;
-import ca.odell.glazedlists.event.ListEventListener;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
+import java.util.Objects;
+import java.util.Optional;
+
+import javax.swing.Icon;
+import javax.swing.JLabel;
+import javax.swing.JPopupMenu;
+import javax.swing.SwingUtilities;
+import javax.swing.Timer;
+
 import org.jabref.Globals;
 import org.jabref.JabRefExecutorService;
 import org.jabref.JabRefGUI;
-import org.jabref.gui.*;
+import org.jabref.gui.BasePanel;
+import org.jabref.gui.BasePanelMode;
+import org.jabref.gui.GUIGlobals;
+import org.jabref.gui.IconTheme;
+import org.jabref.gui.PreviewPanel;
 import org.jabref.gui.actions.CopyDoiUrlAction;
 import org.jabref.gui.desktop.JabRefDesktop;
 import org.jabref.gui.entryeditor.EntryEditor;
@@ -28,13 +45,11 @@ import org.jabref.model.entry.specialfields.SpecialField;
 import org.jabref.model.entry.specialfields.SpecialFieldValue;
 import org.jabref.preferences.PreviewPreferences;
 
-import javax.swing.*;
-import java.awt.event.*;
-import java.io.IOException;
-import java.util.List;
-import java.util.Locale;
-import java.util.Objects;
-import java.util.Optional;
+import ca.odell.glazedlists.EventList;
+import ca.odell.glazedlists.event.ListEvent;
+import ca.odell.glazedlists.event.ListEventListener;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * List event, mouse, key and focus listener for the main table that makes up the
@@ -47,16 +62,14 @@ public class MainTableSelectionListener implements ListEventListener<BibEntry>, 
     private final BasePanel panel;
 
     private final EventList<BibEntry> tableRows;
-    private PreviewPanel preview;
-    private boolean previewActive = Globals.prefs.getPreviewPreferences().isPreviewPanelEnabled();
-
-    private boolean workingOnPreview;
-
-    private boolean enabled = true;
     // Register the last character pressed to quick jump in the table. Together
     // with storing the last row number jumped to, this is used to let multiple
     // key strokes cycle between all entries starting with the same letter:
     private final int[] lastPressed = new int[20];
+    private PreviewPanel preview;
+    private boolean previewActive = Globals.prefs.getPreviewPreferences().isPreviewPanelEnabled();
+    private boolean workingOnPreview;
+    private boolean enabled = true;
     private int lastPressedCount;
 
     private long lastPressedTime;
@@ -103,7 +116,7 @@ public class MainTableSelectionListener implements ListEventListener<BibEntry>, 
                 EntryEditor oldEditor = panel.getCurrentEditor();
                 String visName = null;
                 if (oldEditor != null) {
-                    visName = oldEditor.getVisiblePanelName();
+                    visName = oldEditor.getVisibleTabName();
                 }
                 // Get a new editor for the entry to edit:
                 EntryEditor newEditor = panel.getEntryEditor(newSelected);
@@ -112,7 +125,7 @@ public class MainTableSelectionListener implements ListEventListener<BibEntry>, 
                 if (!Objects.equals(newEditor, oldEditor) || (mode != BasePanelMode.SHOWING_EDITOR)) {
 
                     if (visName != null) {
-                        newEditor.setVisiblePanel(visName);
+                        newEditor.setVisibleTab(visName);
                     }
                     panel.showEntryEditor(newEditor);
                     SwingUtilities.invokeLater(() -> table.ensureVisible(table.getSelectedRow()));

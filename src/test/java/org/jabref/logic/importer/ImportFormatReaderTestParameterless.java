@@ -1,13 +1,14 @@
 package org.jabref.logic.importer;
 
-import org.jabref.logic.xmp.XMPPreferences;
-import org.junit.Before;
-import org.junit.Test;
-import org.mockito.Answers;
-
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+
+import org.jabref.logic.xmp.XMPPreferences;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.Answers;
 
 import static org.junit.Assert.fail;
 import static org.mockito.Mockito.mock;

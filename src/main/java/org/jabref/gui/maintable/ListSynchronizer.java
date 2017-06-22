@@ -1,11 +1,12 @@
 package org.jabref.gui.maintable;
 
-import ca.odell.glazedlists.EventList;
-import com.google.common.eventbus.Subscribe;
 import org.jabref.model.database.event.EntryAddedEvent;
 import org.jabref.model.database.event.EntryRemovedEvent;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.entry.event.EntryChangedEvent;
+
+import ca.odell.glazedlists.EventList;
+import com.google.common.eventbus.Subscribe;
 
 public class ListSynchronizer {
 

@@ -1,9 +1,10 @@
 package org.jabref.gui;
 
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Component;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
+
+import javax.swing.JComponent;
 
 public class GlobalFocusListener implements FocusListener {
     private Component focused;

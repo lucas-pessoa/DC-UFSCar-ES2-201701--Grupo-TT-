@@ -1,15 +1,15 @@
 package org.jabref.logic.cleanup;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
 import org.jabref.model.FieldChange;
 import org.jabref.model.cleanup.CleanupJob;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.entry.EntryConverter;
 import org.jabref.model.entry.FieldName;
 import org.jabref.model.strings.StringUtil;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 
 /**
  * Converts the entry to biblatex format.

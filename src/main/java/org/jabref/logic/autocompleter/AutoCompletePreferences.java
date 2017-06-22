@@ -1,11 +1,11 @@
 package org.jabref.logic.autocompleter;
 
-import org.jabref.logic.journals.JournalAbbreviationPreferences;
-import org.jabref.preferences.JabRefPreferences;
-
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+
+import org.jabref.logic.journals.JournalAbbreviationPreferences;
+import org.jabref.preferences.JabRefPreferences;
 
 public class AutoCompletePreferences {
 

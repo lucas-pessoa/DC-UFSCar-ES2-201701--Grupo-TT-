@@ -1,12 +1,5 @@
 package org.jabref.logic.importer.fileformat;
 
-import org.jabref.logic.importer.Importer;
-import org.jabref.logic.importer.ParserResult;
-import org.jabref.logic.util.FileExtensions;
-import org.jabref.model.entry.AuthorList;
-import org.jabref.model.entry.BibEntry;
-import org.jabref.model.entry.FieldName;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -15,6 +8,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import org.jabref.logic.importer.Importer;
+import org.jabref.logic.importer.ParserResult;
+import org.jabref.logic.util.FileExtensions;
+import org.jabref.model.entry.AuthorList;
+import org.jabref.model.entry.BibEntry;
+import org.jabref.model.entry.FieldName;
 
 /**
  * Imports an Ovid file.

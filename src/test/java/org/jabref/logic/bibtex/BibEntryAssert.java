@@ -1,13 +1,5 @@
 package org.jabref.logic.bibtex;
 
-import org.jabref.logic.importer.ImportFormatPreferences;
-import org.jabref.logic.importer.Importer;
-import org.jabref.logic.importer.ParserResult;
-import org.jabref.logic.importer.fileformat.BibtexParser;
-import org.jabref.model.entry.BibEntry;
-import org.junit.Assert;
-import org.mockito.Answers;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -19,6 +11,15 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Collections;
 import java.util.List;
+
+import org.jabref.logic.importer.ImportFormatPreferences;
+import org.jabref.logic.importer.Importer;
+import org.jabref.logic.importer.ParserResult;
+import org.jabref.logic.importer.fileformat.BibtexParser;
+import org.jabref.model.entry.BibEntry;
+
+import org.junit.Assert;
+import org.mockito.Answers;
 
 import static org.mockito.Mockito.mock;
 

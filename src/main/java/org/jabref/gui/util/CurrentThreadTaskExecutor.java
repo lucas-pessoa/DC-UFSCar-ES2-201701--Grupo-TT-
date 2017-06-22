@@ -1,10 +1,11 @@
 package org.jabref.gui.util;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import java.util.function.Consumer;
+
 import org.jabref.gui.externalfiles.FileDownloadTask;
 
-import java.util.function.Consumer;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * Implementation of {@link TaskExecutor} that runs every task on the current thread, i.e. in a sequential order.

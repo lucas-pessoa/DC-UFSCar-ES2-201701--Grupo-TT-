@@ -1,11 +1,11 @@
 package org.jabref.logic.bst;
 
+import java.util.Locale;
+import java.util.Stack;
+
 import org.jabref.logic.bst.BibtexCaseChanger.FORMAT_MODE;
 import org.jabref.logic.bst.VM.BstEntry;
 import org.jabref.logic.bst.VM.BstFunction;
-
-import java.util.Locale;
-import java.util.Stack;
 
 /**
  * From the Bibtex manual:

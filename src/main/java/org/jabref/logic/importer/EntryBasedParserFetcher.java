@@ -1,8 +1,5 @@
 package org.jabref.logic.importer;
 
-import org.jabref.model.cleanup.Formatter;
-import org.jabref.model.entry.BibEntry;
-
 import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -11,6 +8,9 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.List;
 import java.util.Objects;
+
+import org.jabref.model.cleanup.Formatter;
+import org.jabref.model.entry.BibEntry;
 
 /**
  * Provides a convenient interface for entry-based fetcher, which follow the usual three-step procedure:

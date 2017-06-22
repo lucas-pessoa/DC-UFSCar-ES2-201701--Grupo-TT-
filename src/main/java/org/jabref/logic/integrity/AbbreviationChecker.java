@@ -1,8 +1,8 @@
 package org.jabref.logic.integrity;
 
-import org.jabref.logic.l10n.Localization;
-
 import java.util.Optional;
+
+import org.jabref.logic.l10n.Localization;
 
 public class AbbreviationChecker implements ValueChecker {
 

@@ -1,15 +1,17 @@
 package org.jabref.gui.fieldeditors;
 
+import java.io.IOException;
+
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
-import org.fxmisc.easybind.EasyBind;
+
 import org.jabref.gui.DialogService;
 import org.jabref.gui.desktop.JabRefDesktop;
 import org.jabref.logic.l10n.Localization;
 import org.jabref.logic.net.URLUtil;
 import org.jabref.model.strings.StringUtil;
 
-import java.io.IOException;
+import org.fxmisc.easybind.EasyBind;
 
 public class UrlEditorViewModel extends AbstractEditorViewModel {
     private DialogService dialogService;

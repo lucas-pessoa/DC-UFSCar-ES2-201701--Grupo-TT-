@@ -1,10 +1,11 @@
 package org.jabref.model.groups;
 
+import java.util.Set;
+
 import javafx.collections.ObservableList;
+
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.util.TreeCollector;
-
-import java.util.Set;
 
 public abstract class AutomaticGroup extends AbstractGroup {
     public AutomaticGroup(String name, GroupHierarchyType context) {

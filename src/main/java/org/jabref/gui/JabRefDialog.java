@@ -1,9 +1,11 @@
 package org.jabref.gui;
 
-import org.jabref.Globals;
+import java.awt.Frame;
+import java.awt.Window;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JDialog;
+
+import org.jabref.Globals;
 
 public class JabRefDialog extends JDialog {
 

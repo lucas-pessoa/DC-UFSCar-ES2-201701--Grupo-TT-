@@ -1,13 +1,14 @@
 package org.jabref.logic.msbib;
 
-import com.google.common.collect.HashBiMap;
+import java.util.Map;
+import java.util.TreeMap;
+
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.entry.BiblatexEntryTypes;
 import org.jabref.model.entry.BibtexEntryTypes;
 import org.jabref.model.entry.FieldName;
 
-import java.util.Map;
-import java.util.TreeMap;
+import com.google.common.collect.HashBiMap;
 
 /**
  * Mapping between Msbib and biblatex

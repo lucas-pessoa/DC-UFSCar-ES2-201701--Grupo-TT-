@@ -1,11 +1,11 @@
 package org.jabref.gui.remote;
 
+import java.util.List;
+
 import org.jabref.JabRefGUI;
 import org.jabref.cli.ArgumentProcessor;
 import org.jabref.logic.importer.ParserResult;
 import org.jabref.logic.remote.server.MessageHandler;
-
-import java.util.List;
 
 public class JabRefMessageHandler implements MessageHandler {
 

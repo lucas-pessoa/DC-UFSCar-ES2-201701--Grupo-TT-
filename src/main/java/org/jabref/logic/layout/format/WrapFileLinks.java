@@ -1,18 +1,19 @@
 package org.jabref.logic.layout.format;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.jabref.logic.layout.AbstractParamLayoutFormatter;
-import org.jabref.model.entry.FileFieldParser;
-import org.jabref.model.entry.LinkedFile;
-import org.jabref.model.util.FileHelper;
-
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+
+import org.jabref.logic.layout.AbstractParamLayoutFormatter;
+import org.jabref.model.entry.FileFieldParser;
+import org.jabref.model.entry.LinkedFile;
+import org.jabref.model.util.FileHelper;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * This formatter iterates over all file links, or all file links of a specified

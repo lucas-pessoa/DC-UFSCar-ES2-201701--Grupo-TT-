@@ -1,10 +1,5 @@
 package org.jabref.logic.exporter;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.jabref.logic.util.io.FileBasedLock;
-import org.jabref.logic.util.io.FileUtil;
-
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
@@ -12,6 +7,12 @@ import java.nio.file.Path;
 import java.nio.file.attribute.PosixFilePermission;
 import java.util.EnumSet;
 import java.util.Set;
+
+import org.jabref.logic.util.io.FileBasedLock;
+import org.jabref.logic.util.io.FileUtil;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * Class used to handle safe storage to disk.

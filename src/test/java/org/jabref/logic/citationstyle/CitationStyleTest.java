@@ -1,6 +1,7 @@
 package org.jabref.logic.citationstyle;
 
 import org.jabref.logic.util.TestEntry;
+
 import org.junit.Assert;
 import org.junit.Test;
 

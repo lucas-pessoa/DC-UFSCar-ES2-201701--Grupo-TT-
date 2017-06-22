@@ -1,16 +1,17 @@
 package org.jabref.logic.importer.util;
 
+import java.util.Collections;
+import java.util.Optional;
+
 import org.jabref.logic.importer.ParserResult;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.groups.AllEntriesGroup;
 import org.jabref.model.groups.ExplicitGroup;
 import org.jabref.model.groups.GroupHierarchyType;
 import org.jabref.model.groups.GroupTreeNode;
+
 import org.junit.Before;
 import org.junit.Test;
-
-import java.util.Collections;
-import java.util.Optional;
 
 import static org.junit.Assert.assertEquals;
 

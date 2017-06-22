@@ -1,7 +1,23 @@
 package org.jabref.gui.importer.fetcher;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import java.awt.BorderLayout;
+import java.io.IOException;
+import java.net.CookieHandler;
+import java.net.CookieManager;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Locale;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import javax.swing.JCheckBox;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
 import org.jabref.Globals;
 import org.jabref.gui.importer.ImportInspectionDialog;
 import org.jabref.logic.formatter.bibtexfields.HtmlToLatexFormatter;
@@ -19,19 +35,12 @@ import org.jabref.logic.net.URLDownload;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.entry.FieldName;
 import org.jabref.preferences.JabRefPreferences;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import javax.swing.*;
-import java.awt.*;
-import java.io.IOException;
-import java.net.CookieHandler;
-import java.net.CookieManager;
-import java.util.*;
-import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class IEEEXploreFetcher implements EntryFetcher {
 

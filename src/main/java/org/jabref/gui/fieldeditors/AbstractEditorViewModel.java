@@ -2,22 +2,21 @@ package org.jabref.gui.fieldeditors;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+
 import org.jabref.gui.AbstractViewModel;
 import org.jabref.gui.util.BindingsHelper;
 import org.jabref.model.entry.BibEntry;
 
-import java.util.Optional;
-
 public class AbstractEditorViewModel extends AbstractViewModel {
     protected StringProperty text = new SimpleStringProperty("");
-    protected Optional<BibEntry> entry;
+    protected BibEntry entry;
 
     public StringProperty textProperty() {
         return text;
     }
 
     public void bindToEntry(String fieldName, BibEntry entry) {
-        this.entry = Optional.ofNullable(entry);
+        this.entry = entry;
         BindingsHelper.bindBidirectional(
                 this.textProperty(),
                 entry.getFieldBinding(fieldName),

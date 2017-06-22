@@ -1,6 +1,7 @@
 package org.jabref.shared;
 
 import org.jabref.testutils.category.DatabaseTests;
+
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;

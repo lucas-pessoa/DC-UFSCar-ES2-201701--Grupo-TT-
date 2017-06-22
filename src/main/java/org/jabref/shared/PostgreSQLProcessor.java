@@ -1,17 +1,18 @@
 package org.jabref.shared;
 
-import com.impossibl.postgres.api.jdbc.PGConnection;
-import com.impossibl.postgres.jdbc.PGDataSource;
-import com.impossibl.postgres.jdbc.ThreadedHousekeeper;
-import org.jabref.model.entry.BibEntry;
-import org.jabref.shared.listener.PostgresSQLNotificationListener;
-
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import org.jabref.model.entry.BibEntry;
+import org.jabref.shared.listener.PostgresSQLNotificationListener;
+
+import com.impossibl.postgres.api.jdbc.PGConnection;
+import com.impossibl.postgres.jdbc.PGDataSource;
+import com.impossibl.postgres.jdbc.ThreadedHousekeeper;
 
 /**
  * Processes all incoming or outgoing bib data to PostgreSQL database and manages its structure.

@@ -1,5 +1,9 @@
 package org.jabref.gui.util;
 
+import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.ObjectProperty;
@@ -11,10 +15,6 @@ import javafx.collections.transformation.FilteredList;
 import javafx.scene.Node;
 import javafx.scene.control.TreeItem;
 import javafx.util.Callback;
-
-import java.util.List;
-import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
 /**
  * Taken from https://gist.github.com/lestard/011e9ed4433f9eb791a8

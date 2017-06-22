@@ -1,14 +1,22 @@
 package org.jabref.gui.errorconsole;
 
+import javax.inject.Inject;
+
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.ContentDisplay;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.ListView;
+import javafx.scene.control.SelectionMode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.util.Callback;
+
 import org.jabref.gui.AbstractController;
 import org.jabref.gui.ClipBoardManager;
 import org.jabref.gui.DialogService;
@@ -16,8 +24,6 @@ import org.jabref.gui.IconTheme;
 import org.jabref.gui.keyboard.KeyBinding;
 import org.jabref.gui.keyboard.KeyBindingRepository;
 import org.jabref.logic.util.BuildInfo;
-
-import javax.inject.Inject;
 
 public class ErrorConsoleController extends AbstractController<ErrorConsoleViewModel> {
 

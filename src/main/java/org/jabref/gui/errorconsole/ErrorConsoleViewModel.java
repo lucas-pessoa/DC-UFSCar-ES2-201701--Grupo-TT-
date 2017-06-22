@@ -1,13 +1,18 @@
 package org.jabref.gui.errorconsole;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
+
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.ReadOnlyListWrapper;
 import javafx.collections.ObservableList;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.apache.http.client.utils.URIBuilder;
-import org.apache.logging.log4j.core.LogEvent;
-import org.fxmisc.easybind.EasyBind;
+
 import org.jabref.gui.AbstractViewModel;
 import org.jabref.gui.ClipBoardManager;
 import org.jabref.gui.DialogService;
@@ -17,14 +22,11 @@ import org.jabref.logic.logging.LogMessages;
 import org.jabref.logic.util.BuildInfo;
 import org.jabref.logic.util.OS;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
-import java.util.Objects;
-import java.util.stream.Collectors;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.apache.http.client.utils.URIBuilder;
+import org.apache.logging.log4j.core.LogEvent;
+import org.fxmisc.easybind.EasyBind;
 
 public class ErrorConsoleViewModel extends AbstractViewModel {
     private static final Log LOGGER = LogFactory.getLog(ErrorConsoleViewModel.class);

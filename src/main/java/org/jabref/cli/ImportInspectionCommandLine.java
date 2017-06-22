@@ -1,15 +1,15 @@
 package org.jabref.cli;
 
+import java.util.Collection;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+
 import org.jabref.gui.importer.fetcher.EntryFetcher;
 import org.jabref.logic.importer.ImportInspector;
 import org.jabref.logic.importer.OutputPrinter;
 import org.jabref.logic.l10n.Localization;
 import org.jabref.model.entry.BibEntry;
-
-import java.util.Collection;
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
 
 public class ImportInspectionCommandLine implements ImportInspector {
 

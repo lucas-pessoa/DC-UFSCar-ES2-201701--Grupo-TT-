@@ -1,7 +1,5 @@
 package org.jabref.logic.l10n;
 
-import org.junit.Test;
-
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -10,6 +8,8 @@ import java.nio.file.Paths;
 import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
+
+import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
 

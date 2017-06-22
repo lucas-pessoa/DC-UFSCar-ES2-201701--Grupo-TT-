@@ -1,12 +1,12 @@
 package org.jabref.logic.bst;
 
-import org.jabref.model.entry.Author;
-import org.jabref.model.entry.AuthorList;
-
 import java.util.Arrays;
 import java.util.Locale;
 import java.util.Optional;
 import java.util.stream.Collectors;
+
+import org.jabref.model.entry.Author;
+import org.jabref.model.entry.AuthorList;
 
 /**
  * From Bibtex:

@@ -1,18 +1,24 @@
 package org.jabref.logic.cleanup;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import org.jabref.logic.formatter.Formatters;
 import org.jabref.logic.formatter.IdentityFormatter;
-import org.jabref.logic.formatter.bibtexfields.*;
+import org.jabref.logic.formatter.bibtexfields.HtmlToLatexFormatter;
+import org.jabref.logic.formatter.bibtexfields.HtmlToUnicodeFormatter;
+import org.jabref.logic.formatter.bibtexfields.NormalizeDateFormatter;
+import org.jabref.logic.formatter.bibtexfields.NormalizeMonthFormatter;
+import org.jabref.logic.formatter.bibtexfields.NormalizePagesFormatter;
+import org.jabref.logic.formatter.bibtexfields.OrdinalsToSuperscriptFormatter;
+import org.jabref.logic.formatter.bibtexfields.UnicodeToLatexFormatter;
 import org.jabref.logic.layout.format.LatexToUnicodeFormatter;
 import org.jabref.model.cleanup.FieldFormatterCleanup;
 import org.jabref.model.cleanup.FieldFormatterCleanups;
 import org.jabref.model.cleanup.Formatter;
 import org.jabref.model.entry.FieldName;
 import org.jabref.model.strings.StringUtil;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 public class Cleanups {
 

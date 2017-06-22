@@ -1,12 +1,13 @@
 package org.jabref.gui.errorconsole;
 
-import org.apache.commons.lang3.exception.ExceptionUtils;
-import org.apache.logging.log4j.core.LogEvent;
+import java.util.Objects;
+import java.util.Optional;
+
 import org.jabref.gui.IconTheme;
 import org.jabref.logic.util.OS;
 
-import java.util.Objects;
-import java.util.Optional;
+import org.apache.commons.lang3.exception.ExceptionUtils;
+import org.apache.logging.log4j.core.LogEvent;
 
 public class LogEventViewModel {
 

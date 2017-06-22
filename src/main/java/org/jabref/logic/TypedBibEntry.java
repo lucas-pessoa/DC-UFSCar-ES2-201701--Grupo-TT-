@@ -1,5 +1,8 @@
 package org.jabref.logic;
 
+import java.util.Objects;
+import java.util.Optional;
+
 import org.jabref.model.EntryTypes;
 import org.jabref.model.database.BibDatabase;
 import org.jabref.model.database.BibDatabaseContext;
@@ -7,9 +10,6 @@ import org.jabref.model.database.BibDatabaseMode;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.entry.EntryType;
 import org.jabref.model.strings.StringUtil;
-
-import java.util.Objects;
-import java.util.Optional;
 
 /**
  * Wrapper around a {@link BibEntry} offering methods for {@link BibDatabaseMode} dependend results

@@ -1,15 +1,15 @@
 package org.jabref.logic.pdf;
 
+import java.awt.geom.Rectangle2D;
+import java.io.IOException;
+import java.util.Objects;
+
 import org.apache.pdfbox.cos.COSArray;
 import org.apache.pdfbox.cos.COSFloat;
 import org.apache.pdfbox.cos.COSInteger;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.common.PDRectangle;
 import org.apache.pdfbox.util.PDFTextStripperByArea;
-
-import java.awt.geom.Rectangle2D;
-import java.io.IOException;
-import java.util.Objects;
 
 /**
  * Extracts the text of marked annotations using bounding boxes.

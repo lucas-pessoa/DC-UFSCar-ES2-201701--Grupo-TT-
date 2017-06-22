@@ -1,7 +1,21 @@
 package org.jabref.gui.menus;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import java.awt.event.ActionEvent;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
+
+import javax.swing.AbstractAction;
+import javax.swing.Action;
+import javax.swing.Icon;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import javax.swing.JPopupMenu;
+import javax.swing.event.PopupMenuEvent;
+import javax.swing.event.PopupMenuListener;
+
 import org.jabref.Globals;
 import org.jabref.gui.BasePanel;
 import org.jabref.gui.EntryMarker;
@@ -24,14 +38,8 @@ import org.jabref.model.entry.specialfields.SpecialFieldValue;
 import org.jabref.preferences.JabRefPreferences;
 import org.jabref.preferences.PreviewPreferences;
 
-import javax.swing.*;
-import javax.swing.event.PopupMenuEvent;
-import javax.swing.event.PopupMenuListener;
-import java.awt.event.ActionEvent;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class RightClickMenu extends JPopupMenu implements PopupMenuListener {
     private static final Log LOGGER = LogFactory.getLog(RightClickMenu.class);
@@ -205,14 +213,6 @@ public class RightClickMenu extends JPopupMenu implements PopupMenuListener {
         frame.createDisabledIconsForMenuEntries(this);
     }
 
-    private boolean areMultipleEntriesSelected() {
-        return panel.getMainTable().getSelectedRowCount() > 1;
-    }
-
-    private boolean areExactlyTwoEntriesSelected() {
-        return panel.getMainTable().getSelectedRowCount() == 2;
-    }
-
     /**
      * Remove all types from the menu.
      * Then cycle through all available values, and add them.
@@ -226,13 +226,19 @@ public class RightClickMenu extends JPopupMenu implements PopupMenuListener {
         }
     }
 
+    private boolean areMultipleEntriesSelected() {
+        return panel.getMainTable().getSelectedRowCount() > 1;
+    }
+
+    private boolean areExactlyTwoEntriesSelected() {
+        return panel.getMainTable().getSelectedRowCount() == 2;
+    }
+
     /**
      * Set the dynamic contents of "Add to group ..." submenu.
      */
     @Override
     public void popupMenuWillBecomeVisible(PopupMenuEvent e) {
-        panel.storeCurrentEdit();
-
         boolean groupsPresent = panel.getBibDatabaseContext().getMetaData().getGroups().isPresent();
         groupAdd.setEnabled(groupsPresent);
         groupRemove.setEnabled(groupsPresent);

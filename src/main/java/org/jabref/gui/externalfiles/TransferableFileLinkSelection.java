@@ -1,12 +1,5 @@
 package org.jabref.gui.externalfiles;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.jabref.Globals;
-import org.jabref.gui.BasePanel;
-import org.jabref.model.entry.BibEntry;
-import org.jabref.model.entry.LinkedFile;
-
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.Transferable;
 import java.awt.datatransfer.UnsupportedFlavorException;
@@ -14,6 +7,14 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.jabref.Globals;
+import org.jabref.gui.BasePanel;
+import org.jabref.model.entry.BibEntry;
+import org.jabref.model.entry.LinkedFile;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  *

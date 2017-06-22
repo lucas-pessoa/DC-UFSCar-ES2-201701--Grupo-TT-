@@ -1,13 +1,14 @@
 package org.jabref.logic.importer.fetcher;
 
+import java.util.Locale;
+import java.util.Optional;
+
 import org.jabref.model.entry.BibEntry;
 import org.jabref.testutils.category.FetcherTests;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
-
-import java.util.Locale;
-import java.util.Optional;
 
 import static org.junit.Assert.assertEquals;
 

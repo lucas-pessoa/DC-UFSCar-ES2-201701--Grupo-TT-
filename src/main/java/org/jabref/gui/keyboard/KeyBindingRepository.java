@@ -1,18 +1,29 @@
 package org.jabref.gui.keyboard;
 
+import java.awt.AWTError;
+import java.awt.HeadlessException;
+import java.awt.Toolkit;
+import java.awt.event.InputEvent;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Optional;
+import java.util.SortedMap;
+import java.util.TreeMap;
+import java.util.stream.Collectors;
+
+import javax.swing.KeyStroke;
+
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyCombination;
 import javafx.scene.input.KeyEvent;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+
 import org.jabref.logic.util.OS;
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.InputEvent;
-import java.util.*;
-import java.util.List;
-import java.util.stream.Collectors;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class KeyBindingRepository {
 
@@ -42,8 +53,24 @@ public class KeyBindingRepository {
         }
     }
 
+    /**
+     * Check if the given keyCombination equals the given keyEvent
+     *
+     * @param combination as KeyCombination
+     * @param keyEvent    as KeEvent
+     * @return true if matching, else false
+     */
+    public static boolean checkKeyCombinationEquality(KeyCombination combination, KeyEvent keyEvent) {
+        KeyCode code = keyEvent.getCode();
+        if (code == KeyCode.UNDEFINED) {
+            return false;
+        }
+
+        return combination.match(keyEvent);
+    }
+
     public Optional<String> get(KeyBinding key) {
-        return getKeyBinding(key).flatMap(k -> Optional.ofNullable(bindings.get(k)));
+        return Optional.ofNullable(bindings.get(key));
     }
 
     public String get(String key) {
@@ -67,19 +94,15 @@ public class KeyBindingRepository {
     }
 
     public void put(KeyBinding key, String value) {
-        getKeyBinding(key).ifPresent(binding -> bindings.put(binding, value));
+        bindings.put(key, value);
     }
 
     public void put(String key, String value) {
-        getKeyBinding(key).ifPresent(binding -> bindings.put(binding, value));
+        getKeyBinding(key).ifPresent(binding -> put(binding, value));
     }
 
     private Optional<KeyBinding> getKeyBinding(String key) {
         return Arrays.stream(KeyBinding.values()).filter(b -> b.getKey().equals(key)).findFirst();
-    }
-
-    private Optional<KeyBinding> getKeyBinding(KeyBinding key) {
-        return Arrays.stream(KeyBinding.values()).filter(b -> b.equals(key)).findFirst();
     }
 
     public void resetToDefault(String key) {
@@ -92,6 +115,15 @@ public class KeyBindingRepository {
 
     public int size() {
         return this.bindings.size();
+    }
+
+    public Optional<KeyBinding> mapToKeyBinding(KeyEvent keyEvent) {
+        for (KeyBinding binding : KeyBinding.values()) {
+            if (checkKeyCombinationEquality(binding, keyEvent)) {
+                return Optional.of(binding);
+            }
+        }
+        return Optional.empty();
     }
 
     /**
@@ -111,35 +143,6 @@ public class KeyBindingRepository {
     private KeyCombination getKeyCombination(KeyBinding bindName) {
         String binding = get(bindName.getKey());
         return KeyCombination.valueOf(binding);
-    }
-
-    /**
-     * Check if the given keyCombination equals the given keyEvent
-     *
-     * @param combination as KeyCombination
-     * @param keyEvent as KeEvent
-     * @return true if matching, else false
-     */
-    public boolean checkKeyCombinationEquality(KeyCombination combination, KeyEvent keyEvent) {
-        KeyCode code = keyEvent.getCode();
-        if (code == KeyCode.UNDEFINED) {
-            return false;
-        }
-        // gather the pressed modifier keys
-        String modifiers = "";
-        if (keyEvent.isControlDown()) {
-            modifiers = "ctrl";
-        }
-        if (keyEvent.isShiftDown()) {
-            modifiers += " shift";
-        }
-        if (keyEvent.isAltDown()) {
-            modifiers += " alt";
-        }
-        modifiers = modifiers.trim();
-        String newShortcut = (modifiers.isEmpty()) ? code.toString() : modifiers + " " + code;
-        KeyCombination pressedCombination = KeyCombination.valueOf(newShortcut);
-        return combination.equals(pressedCombination);
     }
 
     /**

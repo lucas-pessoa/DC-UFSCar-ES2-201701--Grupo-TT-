@@ -1,12 +1,20 @@
 package org.jabref.logic.importer.util;
 
-import javafx.scene.paint.Color;
-import org.jabref.logic.importer.ParseException;
-import org.jabref.model.groups.*;
-import org.junit.Test;
-
 import java.util.Arrays;
 import java.util.List;
+
+import javafx.scene.paint.Color;
+
+import org.jabref.logic.importer.ParseException;
+import org.jabref.model.groups.AbstractGroup;
+import org.jabref.model.groups.AutomaticGroup;
+import org.jabref.model.groups.AutomaticKeywordGroup;
+import org.jabref.model.groups.AutomaticPersonsGroup;
+import org.jabref.model.groups.ExplicitGroup;
+import org.jabref.model.groups.GroupHierarchyType;
+import org.jabref.model.groups.GroupTreeNode;
+
+import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
@@ -55,9 +63,9 @@ public class GroupsParserTest {
     }
 
     @Test
-    public void fromStringParsesExplicitGroupWithIconAndDesrcitpion() throws Exception {
+    public void fromStringParsesExplicitGroupWithIconAndDescription() throws Exception {
         ExplicitGroup expected = new ExplicitGroup("myExplicitGroup", GroupHierarchyType.INDEPENDENT, ',');
-        expected.setIconCode("test icon");
+        expected.setIconName("test icon");
         expected.setExpanded(true);
         expected.setColor(Color.ALICEBLUE);
         expected.setDescription("test description");

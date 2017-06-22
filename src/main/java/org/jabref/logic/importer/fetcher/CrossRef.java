@@ -1,25 +1,36 @@
 package org.jabref.logic.importer.fetcher;
 
-import org.apache.http.client.utils.URIBuilder;
-import org.jabref.logic.formatter.bibtexfields.ClearFormatter;
-import org.jabref.logic.formatter.bibtexfields.RemoveBracesFormatter;
-import org.jabref.logic.importer.*;
-import org.jabref.logic.importer.util.JsonReader;
-import org.jabref.logic.util.strings.StringSimilarity;
-import org.jabref.model.cleanup.FieldFormatterCleanup;
-import org.jabref.model.entry.*;
-import org.jabref.model.entry.identifier.DOI;
-import org.jabref.model.util.OptionalUtil;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+
+import org.jabref.logic.formatter.bibtexfields.ClearFormatter;
+import org.jabref.logic.formatter.bibtexfields.RemoveBracesFormatter;
+import org.jabref.logic.importer.EntryBasedParserFetcher;
+import org.jabref.logic.importer.FetcherException;
+import org.jabref.logic.importer.IdBasedParserFetcher;
+import org.jabref.logic.importer.IdParserFetcher;
+import org.jabref.logic.importer.ParseException;
+import org.jabref.logic.importer.Parser;
+import org.jabref.logic.importer.SearchBasedParserFetcher;
+import org.jabref.logic.importer.util.JsonReader;
+import org.jabref.logic.util.strings.StringSimilarity;
+import org.jabref.model.cleanup.FieldFormatterCleanup;
+import org.jabref.model.entry.AuthorList;
+import org.jabref.model.entry.BibEntry;
+import org.jabref.model.entry.BiblatexEntryTypes;
+import org.jabref.model.entry.EntryType;
+import org.jabref.model.entry.FieldName;
+import org.jabref.model.entry.identifier.DOI;
+import org.jabref.model.util.OptionalUtil;
+
+import org.apache.http.client.utils.URIBuilder;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /**
  * A class for fetching DOIs from CrossRef

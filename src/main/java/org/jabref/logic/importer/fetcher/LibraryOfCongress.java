@@ -1,14 +1,15 @@
 package org.jabref.logic.importer.fetcher;
 
-import org.apache.http.client.utils.URIBuilder;
+import java.net.MalformedURLException;
+import java.net.URISyntaxException;
+import java.net.URL;
+
 import org.jabref.logic.importer.FetcherException;
 import org.jabref.logic.importer.IdBasedParserFetcher;
 import org.jabref.logic.importer.Parser;
 import org.jabref.logic.importer.fileformat.ModsImporter;
 
-import java.net.MalformedURLException;
-import java.net.URISyntaxException;
-import java.net.URL;
+import org.apache.http.client.utils.URIBuilder;
 
 /**
  * Fetcher for the Library of Congress Control Number (LCCN) using https://lccn.loc.gov/

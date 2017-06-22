@@ -1,7 +1,17 @@
 package org.jabref.logic.cleanup;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
 import org.jabref.logic.layout.LayoutFormatterPreferences;
 import org.jabref.logic.util.io.FileUtil;
 import org.jabref.model.FieldChange;
@@ -10,14 +20,11 @@ import org.jabref.model.database.BibDatabaseContext;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.entry.LinkedFile;
 import org.jabref.model.metadata.FileDirectoryPreferences;
+import org.jabref.model.strings.StringUtil;
 import org.jabref.model.util.FileHelper;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.*;
-import java.util.stream.Collectors;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class RenamePdfCleanup implements CleanupJob {
 
@@ -69,6 +76,10 @@ public class RenamePdfCleanup implements CleanupJob {
 
         for (LinkedFile flEntry : fileList) {
             String realOldFilename = flEntry.getLink();
+
+            if (StringUtil.isBlank(realOldFilename)) {
+                continue; //Skip empty filenames
+            }
 
             if (onlyRelativePaths && Paths.get(realOldFilename).isAbsolute()) {
                 newFileList.add(flEntry);

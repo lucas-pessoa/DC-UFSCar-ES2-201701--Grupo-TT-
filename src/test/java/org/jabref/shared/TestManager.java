@@ -1,11 +1,11 @@
 package org.jabref.shared;
 
-import org.jabref.shared.exception.InvalidDBMSConnectionPropertiesException;
-
 import java.sql.SQLException;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
+
+import org.jabref.shared.exception.InvalidDBMSConnectionPropertiesException;
 
 /**
  * This class provides helping methods for database tests.

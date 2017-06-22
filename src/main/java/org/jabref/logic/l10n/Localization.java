@@ -1,10 +1,14 @@
 package org.jabref.logic.l10n;
 
+import java.nio.charset.StandardCharsets;
+import java.util.Locale;
+import java.util.MissingResourceException;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.ResourceBundle;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
-import java.nio.charset.StandardCharsets;
-import java.util.*;
 
 public class Localization {
     public static final String RESOURCE_PREFIX = "l10n/JabRef";

@@ -1,24 +1,5 @@
 package org.jabref.logic.importer.fileformat;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.jabref.JabRefGUI;
-import org.jabref.logic.bibtexkeypattern.BibtexKeyPatternUtil;
-import org.jabref.logic.importer.ImportFormatPreferences;
-import org.jabref.logic.importer.Importer;
-import org.jabref.logic.importer.ParserResult;
-import org.jabref.logic.l10n.Localization;
-import org.jabref.logic.util.FileExtensions;
-import org.jabref.logic.util.OS;
-import org.jabref.model.entry.BibEntry;
-import org.jabref.model.entry.BibtexEntryTypes;
-import org.jabref.model.entry.EntryType;
-import org.jabref.model.entry.FieldName;
-
-import javax.xml.stream.XMLInputFactory;
-import javax.xml.stream.XMLStreamConstants;
-import javax.xml.stream.XMLStreamException;
-import javax.xml.stream.XMLStreamReader;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
@@ -32,6 +13,27 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
+
+import javax.xml.stream.XMLInputFactory;
+import javax.xml.stream.XMLStreamConstants;
+import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.XMLStreamReader;
+
+import org.jabref.JabRefGUI;
+import org.jabref.logic.bibtexkeypattern.BibtexKeyPatternUtil;
+import org.jabref.logic.importer.ImportFormatPreferences;
+import org.jabref.logic.importer.Importer;
+import org.jabref.logic.importer.ParserResult;
+import org.jabref.logic.l10n.Localization;
+import org.jabref.logic.util.FileExtensions;
+import org.jabref.logic.util.OS;
+import org.jabref.model.entry.BibEntry;
+import org.jabref.model.entry.BibtexEntryTypes;
+import org.jabref.model.entry.EntryType;
+import org.jabref.model.entry.FieldName;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * This importer parses text format citations using the online API of FreeCite -

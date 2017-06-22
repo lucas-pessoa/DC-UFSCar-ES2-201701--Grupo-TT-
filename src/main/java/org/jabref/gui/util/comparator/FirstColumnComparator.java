@@ -1,10 +1,10 @@
 package org.jabref.gui.util.comparator;
 
+import java.util.Comparator;
+
 import org.jabref.logic.TypedBibEntry;
 import org.jabref.model.database.BibDatabaseContext;
 import org.jabref.model.entry.BibEntry;
-
-import java.util.Comparator;
 
 public class FirstColumnComparator implements Comparator<BibEntry> {
 

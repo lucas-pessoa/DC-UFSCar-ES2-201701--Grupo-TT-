@@ -1,8 +1,31 @@
 package org.jabref.gui;
 
-import com.google.common.eventbus.Subscribe;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.print.PrinterException;
+import java.io.IOException;
+import java.io.StringReader;
+import java.util.Optional;
+import java.util.regex.Pattern;
+
+import javax.print.attribute.HashPrintRequestAttributeSet;
+import javax.print.attribute.PrintRequestAttributeSet;
+import javax.print.attribute.standard.JobName;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
+import javax.swing.ActionMap;
+import javax.swing.InputMap;
+import javax.swing.JComponent;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JPopupMenu;
+import javax.swing.JScrollPane;
+import javax.swing.ScrollPaneConstants;
+import javax.swing.SwingUtilities;
+import javax.swing.event.HyperlinkEvent;
+
 import org.jabref.Globals;
 import org.jabref.JabRefExecutorService;
 import org.jabref.gui.desktop.JabRefDesktop;
@@ -21,18 +44,9 @@ import org.jabref.model.entry.FieldName;
 import org.jabref.model.entry.event.FieldChangedEvent;
 import org.jabref.preferences.PreviewPreferences;
 
-import javax.print.attribute.HashPrintRequestAttributeSet;
-import javax.print.attribute.PrintRequestAttributeSet;
-import javax.print.attribute.standard.JobName;
-import javax.swing.*;
-import javax.swing.event.HyperlinkEvent;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.print.PrinterException;
-import java.io.IOException;
-import java.io.StringReader;
-import java.util.Optional;
-import java.util.regex.Pattern;
+import com.google.common.eventbus.Subscribe;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * Displays an BibEntry using the given layout format.

@@ -1,15 +1,5 @@
 package org.jabref.logic.importer.fetcher;
 
-import org.apache.http.client.utils.URIBuilder;
-import org.jabref.logic.cleanup.MoveFieldCleanup;
-import org.jabref.logic.formatter.bibtexfields.ClearFormatter;
-import org.jabref.logic.importer.*;
-import org.jabref.logic.importer.fileformat.BibtexParser;
-import org.jabref.logic.util.OS;
-import org.jabref.model.cleanup.FieldFormatterCleanup;
-import org.jabref.model.entry.BibEntry;
-import org.jabref.model.entry.FieldName;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
@@ -21,6 +11,22 @@ import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+
+import org.jabref.logic.cleanup.MoveFieldCleanup;
+import org.jabref.logic.formatter.bibtexfields.ClearFormatter;
+import org.jabref.logic.importer.EntryBasedParserFetcher;
+import org.jabref.logic.importer.FetcherException;
+import org.jabref.logic.importer.IdBasedParserFetcher;
+import org.jabref.logic.importer.ImportFormatPreferences;
+import org.jabref.logic.importer.Parser;
+import org.jabref.logic.importer.SearchBasedParserFetcher;
+import org.jabref.logic.importer.fileformat.BibtexParser;
+import org.jabref.logic.util.OS;
+import org.jabref.model.cleanup.FieldFormatterCleanup;
+import org.jabref.model.entry.BibEntry;
+import org.jabref.model.entry.FieldName;
+
+import org.apache.http.client.utils.URIBuilder;
 
 /**
  * Fetches data from the MathSciNet (http://www.ams.org/mathscinet)

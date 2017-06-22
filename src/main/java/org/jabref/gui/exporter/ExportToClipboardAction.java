@@ -1,18 +1,6 @@
 package org.jabref.gui.exporter;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.jabref.Globals;
-import org.jabref.gui.BasePanel;
-import org.jabref.gui.JabRefFrame;
-import org.jabref.gui.worker.AbstractWorker;
-import org.jabref.logic.exporter.ExportFormats;
-import org.jabref.logic.exporter.IExportFormat;
-import org.jabref.logic.l10n.Localization;
-import org.jabref.model.entry.BibEntry;
-
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Toolkit;
 import java.awt.datatransfer.ClipboardOwner;
 import java.io.File;
 import java.io.FileInputStream;
@@ -22,6 +10,23 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
+
+import javax.swing.BorderFactory;
+import javax.swing.JList;
+import javax.swing.JOptionPane;
+import javax.swing.ListSelectionModel;
+
+import org.jabref.Globals;
+import org.jabref.gui.BasePanel;
+import org.jabref.gui.JabRefFrame;
+import org.jabref.gui.worker.AbstractWorker;
+import org.jabref.logic.exporter.ExportFormats;
+import org.jabref.logic.exporter.IExportFormat;
+import org.jabref.logic.l10n.Localization;
+import org.jabref.model.entry.BibEntry;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class ExportToClipboardAction extends AbstractWorker {
 

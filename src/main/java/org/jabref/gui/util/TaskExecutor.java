@@ -1,6 +1,7 @@
 package org.jabref.gui.util;
 
 import javafx.concurrent.Task;
+
 import org.jabref.gui.externalfiles.FileDownloadTask;
 
 /**

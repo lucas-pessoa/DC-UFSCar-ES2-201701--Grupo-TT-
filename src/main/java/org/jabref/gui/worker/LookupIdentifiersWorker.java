@@ -1,7 +1,9 @@
 package org.jabref.gui.worker;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
+
 import org.jabref.gui.BasePanel;
 import org.jabref.gui.JabRefFrame;
 import org.jabref.gui.undo.NamedCompound;
@@ -13,9 +15,8 @@ import org.jabref.model.FieldChange;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.entry.identifier.Identifier;
 
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class LookupIdentifiersWorker<T extends Identifier> extends AbstractWorker {
 

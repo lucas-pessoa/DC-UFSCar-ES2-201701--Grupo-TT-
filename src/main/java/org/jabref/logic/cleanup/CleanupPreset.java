@@ -1,13 +1,13 @@
 package org.jabref.logic.cleanup;
 
-import org.jabref.logic.util.OS;
-import org.jabref.model.cleanup.FieldFormatterCleanups;
-import org.jabref.preferences.JabRefPreferences;
-
 import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.Objects;
 import java.util.Set;
+
+import org.jabref.logic.util.OS;
+import org.jabref.model.cleanup.FieldFormatterCleanups;
+import org.jabref.preferences.JabRefPreferences;
 
 public class CleanupPreset {
 

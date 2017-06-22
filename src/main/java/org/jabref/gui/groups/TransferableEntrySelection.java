@@ -1,7 +1,5 @@
 package org.jabref.gui.groups;
 
-import org.jabref.model.entry.BibEntry;
-
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.Transferable;
 import java.awt.datatransfer.UnsupportedFlavorException;
@@ -10,6 +8,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+
+import org.jabref.model.entry.BibEntry;
 
 public class TransferableEntrySelection implements Transferable {
 

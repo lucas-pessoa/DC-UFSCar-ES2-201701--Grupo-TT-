@@ -1,8 +1,9 @@
 package org.jabref.shared.listener;
 
-import com.impossibl.postgres.api.jdbc.PGNotificationListener;
 import org.jabref.shared.DBMSProcessor;
 import org.jabref.shared.DBMSSynchronizer;
+
+import com.impossibl.postgres.api.jdbc.PGNotificationListener;
 
 /**
  * A listener for PostgreSQL database notifications.

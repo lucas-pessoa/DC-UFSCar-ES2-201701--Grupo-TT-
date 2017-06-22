@@ -1,8 +1,8 @@
 package org.jabref.model.entry.specialfields;
 
-import org.jabref.model.entry.Keyword;
-
 import java.util.Optional;
+
+import org.jabref.model.entry.Keyword;
 
 public enum SpecialFieldValue {
 

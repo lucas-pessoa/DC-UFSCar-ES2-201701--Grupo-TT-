@@ -1,7 +1,12 @@
 package org.jabref.model.entry;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.Map;
 import java.util.Map.Entry;
+import java.util.SortedSet;
+import java.util.StringJoiner;
+import java.util.TreeSet;
 
 public class CanonicalBibtexEntry {
 

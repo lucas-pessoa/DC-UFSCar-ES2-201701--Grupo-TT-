@@ -1,14 +1,20 @@
 package org.jabref.cli;
 
-import org.apache.commons.cli.*;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import java.util.Arrays;
+import java.util.List;
+
 import org.jabref.Globals;
 import org.jabref.logic.exporter.ExportFormats;
 import org.jabref.logic.l10n.Localization;
 
-import java.util.Arrays;
-import java.util.List;
+import org.apache.commons.cli.CommandLine;
+import org.apache.commons.cli.DefaultParser;
+import org.apache.commons.cli.HelpFormatter;
+import org.apache.commons.cli.Option;
+import org.apache.commons.cli.Options;
+import org.apache.commons.cli.ParseException;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class JabRefCLI {
 

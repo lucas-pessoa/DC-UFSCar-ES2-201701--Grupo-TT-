@@ -1,14 +1,15 @@
 package org.jabref.logic.integrity;
 
-import com.google.common.collect.ArrayListMultimap;
-import com.google.common.collect.Multimap;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.jabref.model.database.BibDatabaseContext;
 import org.jabref.model.entry.FieldName;
 import org.jabref.model.entry.InternalBibtexFields;
 import org.jabref.model.metadata.FileDirectoryPreferences;
 
-import java.util.List;
-import java.util.stream.Collectors;
+import com.google.common.collect.ArrayListMultimap;
+import com.google.common.collect.Multimap;
 
 public class FieldCheckers {
 

@@ -1,14 +1,15 @@
 package org.jabref.shared;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.jabref.shared.prefs.SharedDatabasePreferences;
-import org.jabref.shared.security.Password;
-
 import java.io.UnsupportedEncodingException;
 import java.security.GeneralSecurityException;
 import java.util.Objects;
 import java.util.Optional;
+
+import org.jabref.shared.prefs.SharedDatabasePreferences;
+import org.jabref.shared.security.Password;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * Keeps all essential data for establishing a new connection to a DBMS using {@link DBMSConnection}.

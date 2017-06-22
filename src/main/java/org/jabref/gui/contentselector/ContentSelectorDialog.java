@@ -1,8 +1,33 @@
 package org.jabref.gui.contentselector;
 
-import com.jgoodies.forms.builder.ButtonBarBuilder;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
+import java.awt.Window;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.SortedSet;
+import java.util.TreeSet;
+
+import javax.swing.AbstractAction;
+import javax.swing.Action;
+import javax.swing.BorderFactory;
+import javax.swing.DefaultListModel;
+import javax.swing.JButton;
+import javax.swing.JList;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextField;
+
 import org.jabref.gui.BasePanel;
 import org.jabref.gui.JabRefDialog;
 import org.jabref.gui.JabRefFrame;
@@ -15,14 +40,9 @@ import org.jabref.model.metadata.ContentSelector;
 import org.jabref.model.metadata.ContentSelectors;
 import org.jabref.model.metadata.MetaData;
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.FocusAdapter;
-import java.awt.event.FocusEvent;
-import java.util.*;
-import java.util.List;
+import com.jgoodies.forms.builder.ButtonBarBuilder;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class ContentSelectorDialog extends JabRefDialog {
 
@@ -38,7 +58,6 @@ public class ContentSelectorDialog extends JabRefDialog {
     private final JPanel fieldNamePan = new JPanel();
     private final JPanel wordEditPan = new JPanel();
     private final MetaData metaData;
-    private String currentField;
     private final JabRefFrame frame;
     private final BasePanel panel;
     private final JButton newField = new JButton(Localization.lang("New"));
@@ -49,17 +68,16 @@ public class ContentSelectorDialog extends JabRefDialog {
     private final JButton cancel = new JButton();
     private final JButton apply = new JButton(Localization.lang("Apply"));
     private final DefaultListModel<String> fieldListModel = new DefaultListModel<>();
-    private DefaultListModel<String> wordListModel = new DefaultListModel<>();
     private final JList<String> fieldList = new JList<>(fieldListModel);
-    private final JList<String> wordList = new JList<>(wordListModel);
     private final JTextField fieldNameField = new JTextField("", 20);
     private final JTextField wordEditField = new JTextField("", 20);
     private final JScrollPane fPane = new JScrollPane(fieldList);
-
-    private final JScrollPane wPane = new JScrollPane(wordList);
     private final Map<String, DefaultListModel<String>> wordListModels = new HashMap<>();
-
+    private DefaultListModel<String> wordListModel = new DefaultListModel<>();
+    private final JList<String> wordList = new JList<>(wordListModel);
+    private final JScrollPane wPane = new JScrollPane(wordList);
     private final List<String> removedFields = new ArrayList<>();
+    private String currentField;
 
 
     /**
@@ -98,6 +116,16 @@ public class ContentSelectorDialog extends JabRefDialog {
         KeyBinder.bindCloseDialogKeyToCancelAction(this.rootPane, cancel.getAction());
 
         pack();
+    }
+
+    private static int findPos(DefaultListModel<String> lm, String item) {
+        for (int i = 0; i < lm.size(); i++) {
+            String s = lm.get(i);
+            if (item.compareToIgnoreCase(s) < 0) { // item precedes s
+                return i;
+            }
+        }
+        return lm.size();
     }
 
     private void setupActions() {
@@ -282,8 +310,7 @@ public class ContentSelectorDialog extends JabRefDialog {
 
         // Update all selectors in the current BasePanel.
         if (changedFieldSet) {
-            // We have added or removed content selectors, update the entry editor
-            panel.rebuildAllEntryEditors();
+            // TODO: We have added or removed content selectors, update the entry editor
         } else if (anythingChanged) {
             // Enough to update the content selectors, if anything changed
             panel.updateAllContentSelectors();
@@ -353,16 +380,6 @@ public class ContentSelectorDialog extends JabRefDialog {
         } else {
             wordList.setModel(wordListModel);
         }
-    }
-
-    private static int findPos(DefaultListModel<String> lm, String item) {
-        for (int i = 0; i < lm.size(); i++) {
-            String s = lm.get(i);
-            if (item.compareToIgnoreCase(s) < 0) { // item precedes s
-                return i;
-            }
-        }
-        return lm.size();
     }
 
     private void initLayout() {

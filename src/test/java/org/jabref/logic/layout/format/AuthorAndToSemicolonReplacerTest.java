@@ -1,5 +1,8 @@
 package org.jabref.logic.layout.format;
 
+import java.util.Arrays;
+import java.util.Collection;
+
 import org.jabref.logic.layout.LayoutFormatter;
 import org.junit.Assert;
 import org.junit.Test;
@@ -7,9 +10,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
-
-import java.util.Arrays;
-import java.util.Collection;
 
 @RunWith(Parameterized.class)
 public class AuthorAndToSemicolonReplacerTest {

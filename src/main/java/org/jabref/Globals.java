@@ -1,9 +1,8 @@
 package org.jabref;
 
-import com.microsoft.applicationinsights.TelemetryClient;
-import com.microsoft.applicationinsights.TelemetryConfiguration;
-import com.microsoft.applicationinsights.telemetry.SessionState;
-import org.apache.commons.lang3.SystemUtils;
+import java.awt.Toolkit;
+import java.util.UUID;
+
 import org.jabref.collab.FileUpdateMonitor;
 import org.jabref.gui.GlobalFocusListener;
 import org.jabref.gui.StateManager;
@@ -17,8 +16,10 @@ import org.jabref.logic.remote.server.RemoteListenerServerLifecycle;
 import org.jabref.logic.util.BuildInfo;
 import org.jabref.preferences.JabRefPreferences;
 
-import java.awt.*;
-import java.util.UUID;
+import com.microsoft.applicationinsights.TelemetryClient;
+import com.microsoft.applicationinsights.TelemetryConfiguration;
+import com.microsoft.applicationinsights.telemetry.SessionState;
+import org.apache.commons.lang3.SystemUtils;
 
 public class Globals {
 

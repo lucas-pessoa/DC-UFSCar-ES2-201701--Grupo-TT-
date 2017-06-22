@@ -1,5 +1,12 @@
 package org.jabref.gui.maintable;
 
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
+import java.util.StringJoiner;
+
+import javax.swing.JLabel;
+
 import org.jabref.logic.layout.LayoutFormatter;
 import org.jabref.logic.layout.format.LatexToUnicodeFormatter;
 import org.jabref.model.database.BibDatabase;
@@ -7,12 +14,6 @@ import org.jabref.model.entry.BibEntry;
 import org.jabref.model.entry.FieldName;
 import org.jabref.model.entry.FieldProperty;
 import org.jabref.model.entry.InternalBibtexFields;
-
-import javax.swing.*;
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
-import java.util.StringJoiner;
 
 public class MainTableColumn {
 

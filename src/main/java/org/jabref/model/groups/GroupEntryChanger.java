@@ -1,10 +1,10 @@
 package org.jabref.model.groups;
 
-import org.jabref.model.FieldChange;
-import org.jabref.model.entry.BibEntry;
-
 import java.util.Collections;
 import java.util.List;
+
+import org.jabref.model.FieldChange;
+import org.jabref.model.entry.BibEntry;
 
 /**
  * Some groups can change entries so that they match (or no longer match) the group.

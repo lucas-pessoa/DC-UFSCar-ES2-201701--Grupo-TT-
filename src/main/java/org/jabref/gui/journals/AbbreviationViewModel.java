@@ -1,12 +1,13 @@
 package org.jabref.gui.journals;
 
+import java.util.Objects;
+
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import org.jabref.logic.journals.Abbreviation;
 
-import java.util.Objects;
+import org.jabref.logic.journals.Abbreviation;
 
 /**
  * This class provides a view model for abbreviation objects which can also

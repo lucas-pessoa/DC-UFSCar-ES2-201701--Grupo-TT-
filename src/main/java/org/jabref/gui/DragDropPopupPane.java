@@ -1,7 +1,8 @@
 package org.jabref.gui;
 
-import javax.swing.*;
 import java.awt.event.MouseEvent;
+
+import javax.swing.JPopupMenu;
 
 /**
  * Adds popup functionality to DragDropPane

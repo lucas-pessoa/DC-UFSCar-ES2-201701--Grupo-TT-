@@ -1,13 +1,22 @@
 package org.jabref.gui.fieldeditors;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleListProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+
 import org.jabref.Globals;
 import org.jabref.gui.DialogService;
 import org.jabref.gui.externalfiles.DownloadExternalFile;
@@ -34,15 +43,8 @@ import org.jabref.model.entry.LinkedFile;
 import org.jabref.model.util.FileHelper;
 import org.jabref.preferences.JabRefPreferences;
 
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class LinkedFilesEditorViewModel extends AbstractEditorViewModel {
     private static final Log LOGGER = LogFactory.getLog(LinkedFilesEditorViewModel.class);
@@ -99,7 +101,7 @@ public class LinkedFilesEditorViewModel extends AbstractEditorViewModel {
 
     private List<LinkedFileViewModel> parseToFileViewModel(String stringValue) {
         return FileFieldParser.parse(stringValue).stream()
-                .map(LinkedFileViewModel::new)
+                .map(linkedFile -> new LinkedFileViewModel(linkedFile, entry, databaseContext))
                 .collect(Collectors.toList());
     }
 
@@ -123,7 +125,7 @@ public class LinkedFilesEditorViewModel extends AbstractEditorViewModel {
         dialogService.showFileOpenDialog(fileDialogConfiguration).ifPresent(
                 newFile -> {
                     LinkedFile newLinkedFile = fromFile(newFile, fileDirectories);
-                    files.add(new LinkedFileViewModel(newLinkedFile));
+                    files.add(new LinkedFileViewModel(newLinkedFile, entry, databaseContext));
                 }
         );
     }
@@ -157,7 +159,7 @@ public class LinkedFilesEditorViewModel extends AbstractEditorViewModel {
                     .map(file -> file.findIn(dirs))
                     .anyMatch(file -> file.isPresent() && file.get().equals(newFile));
             if (!alreadyLinked) {
-                LinkedFileViewModel newLinkedFile = new LinkedFileViewModel(fromFile(newFile, dirs));
+                LinkedFileViewModel newLinkedFile = new LinkedFileViewModel(fromFile(newFile, dirs), entry, databaseContext);
                 newLinkedFile.markAsAutomaticallyFound();
                 result.add(newLinkedFile);
             }
@@ -166,21 +168,19 @@ public class LinkedFilesEditorViewModel extends AbstractEditorViewModel {
     }
 
     public void fetchFulltext() {
-        if (entry.isPresent()) {
-            FulltextFetchers fetcher = new FulltextFetchers(Globals.prefs.getImportFormatPreferences());
-            BackgroundTask
-                    .wrap(() -> fetcher.findFullTextPDF(entry.get()))
-                    .onRunning(() -> fulltextLookupInProgress.setValue(true))
-                    .onFinished(() -> fulltextLookupInProgress.setValue(false))
-                    .onSuccess(url -> {
-                        if (url.isPresent()) {
-                            addFromURL(url.get());
-                        } else {
-                            dialogService.notify(Localization.lang("Full text document download failed"));
-                        }
-                    })
-                    .executeWith(taskExecutor);
-        }
+        FulltextFetchers fetcher = new FulltextFetchers(Globals.prefs.getImportFormatPreferences());
+        BackgroundTask
+                .wrap(() -> fetcher.findFullTextPDF(entry))
+                .onRunning(() -> fulltextLookupInProgress.setValue(true))
+                .onFinished(() -> fulltextLookupInProgress.setValue(false))
+                .onSuccess(url -> {
+                    if (url.isPresent()) {
+                        addFromURL(url.get());
+                    } else {
+                        dialogService.notify(Localization.lang("Full text document download failed"));
+                    }
+                })
+                .executeWith(taskExecutor);
     }
 
     public void addFromURL() {
@@ -207,14 +207,15 @@ public class LinkedFilesEditorViewModel extends AbstractEditorViewModel {
         List<Path> fileDirectories = databaseContext.getFileDirectoriesAsPaths(Globals.prefs.getFileDirectoryPreferences());
         Path destination = constructSuggestedPath(suggestedType, fileDirectories);
 
-        LinkedFileViewModel temporaryDownloadFile = new LinkedFileViewModel(new LinkedFile("", url, suggestedTypeName));
+        LinkedFileViewModel temporaryDownloadFile = new LinkedFileViewModel(
+                new LinkedFile("", url, suggestedTypeName), entry, databaseContext);
         files.add(temporaryDownloadFile);
         FileDownloadTask downloadTask = new FileDownloadTask(url, destination);
         temporaryDownloadFile.downloadProgressProperty().bind(downloadTask.progressProperty());
         downloadTask.setOnSucceeded(event -> {
             files.remove(temporaryDownloadFile);
             LinkedFile newLinkedFile = fromFile(destination, fileDirectories);
-            files.add(new LinkedFileViewModel(newLinkedFile));
+            files.add(new LinkedFileViewModel(newLinkedFile, entry, databaseContext));
         });
         downloadTask.setOnFailed(event ->
                 dialogService.showErrorDialogAndWait("", downloadTask.getException()));
@@ -270,7 +271,7 @@ public class LinkedFilesEditorViewModel extends AbstractEditorViewModel {
     }
 
     private String getSuggestedFileName(String suffix) {
-        String plannedName = FileUtil.createFileNameFromPattern(databaseContext.getDatabase(), entry.get(),
+        String plannedName = FileUtil.createFileNameFromPattern(databaseContext.getDatabase(), entry,
                 Globals.prefs.get(JabRefPreferences.IMPORT_FILENAMEPATTERN),
                 Globals.prefs.getLayoutFormatterPreferences(Globals.journalAbbreviationLoader));
 
@@ -294,5 +295,12 @@ public class LinkedFilesEditorViewModel extends AbstractEditorViewModel {
         }
 
         return plannedName;
+    }
+
+    public void deleteFile(LinkedFileViewModel file) {
+        boolean deleteSuccessful = file.delete();
+        if (deleteSuccessful) {
+            files.remove(file);
+        }
     }
 }

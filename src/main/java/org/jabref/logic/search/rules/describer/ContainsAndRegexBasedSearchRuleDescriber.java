@@ -1,11 +1,11 @@
 package org.jabref.logic.search.rules.describer;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import org.jabref.logic.l10n.Localization;
 import org.jabref.model.search.rules.SentenceAnalyzer;
 import org.jabref.model.strings.StringUtil;
-
-import java.util.LinkedList;
-import java.util.List;
 
 public class ContainsAndRegexBasedSearchRuleDescriber implements SearchDescriber {
 

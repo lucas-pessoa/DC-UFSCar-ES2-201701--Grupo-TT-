@@ -2,6 +2,7 @@ package org.jabref.gui.fieldeditors;
 
 import org.jabref.gui.DialogService;
 import org.jabref.gui.util.CurrentThreadTaskExecutor;
+
 import org.junit.Before;
 import org.junit.Test;
 

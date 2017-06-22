@@ -1,9 +1,5 @@
 package org.jabref.logic.msbib;
 
-import org.jabref.model.entry.BibEntry;
-import org.jabref.model.entry.FieldName;
-import org.jabref.model.entry.Month;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -11,6 +7,10 @@ import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+
+import org.jabref.model.entry.BibEntry;
+import org.jabref.model.entry.FieldName;
+import org.jabref.model.entry.Month;
 
 public class BibTeXConverter {
 

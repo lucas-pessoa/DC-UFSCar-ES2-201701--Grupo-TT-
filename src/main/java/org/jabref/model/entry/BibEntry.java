@@ -1,13 +1,24 @@
 package org.jabref.model.entry;
 
-import com.google.common.base.Strings;
-import com.google.common.eventbus.EventBus;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.Set;
+import java.util.TreeSet;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.regex.Pattern;
+
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.ObjectBinding;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableMap;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+
 import org.jabref.model.EntryTypes;
 import org.jabref.model.FieldChange;
 import org.jabref.model.database.BibDatabase;
@@ -18,9 +29,10 @@ import org.jabref.model.entry.identifier.DOI;
 import org.jabref.model.strings.LatexToUnicodeAdapter;
 import org.jabref.model.strings.StringUtil;
 
-import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.regex.Pattern;
+import com.google.common.base.Strings;
+import com.google.common.eventbus.EventBus;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class BibEntry implements Cloneable {
 
@@ -202,15 +214,15 @@ public class BibEntry implements Cloneable {
     /**
      * Sets this entry's type.
      */
-    public void setType(String type) {
-        setType(type, EntryEventSource.LOCAL);
+    public void setType(EntryType type) {
+        this.setType(type.getName());
     }
 
     /**
      * Sets this entry's type.
      */
-    public void setType(EntryType type) {
-        this.setType(type.getName());
+    public void setType(String type) {
+        setType(type, EntryEventSource.LOCAL);
     }
 
     /**
@@ -812,6 +824,12 @@ public class BibEntry implements Cloneable {
 
     public ObjectBinding<String> getFieldBinding(String fieldName) {
         return Bindings.valueAt(fields, fieldName);
+    }
+
+    public Optional<FieldChange> addFile(LinkedFile file) {
+        List<LinkedFile> linkedFiles = getFiles();
+        linkedFiles.add(file);
+        return setFiles(linkedFiles);
     }
 
     private interface GetFieldInterface {

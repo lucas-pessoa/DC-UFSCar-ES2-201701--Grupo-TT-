@@ -1,11 +1,12 @@
 package org.jabref.logic.importer.fileformat;
 
-import org.jabref.logic.importer.Importer;
-import org.junit.Before;
-import org.junit.Test;
-
 import java.nio.file.Paths;
 import java.util.Arrays;
+
+import org.jabref.logic.importer.Importer;
+
+import org.junit.Before;
+import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;

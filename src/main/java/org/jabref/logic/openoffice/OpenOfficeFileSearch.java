@@ -1,8 +1,5 @@
 package org.jabref.logic.openoffice;
 
-import org.jabref.logic.util.OS;
-import org.jabref.logic.util.io.FileUtil;
-
 import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -11,6 +8,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 import java.util.stream.Collectors;
+
+import org.jabref.logic.util.OS;
+import org.jabref.logic.util.io.FileUtil;
 
 public class OpenOfficeFileSearch {
     /**

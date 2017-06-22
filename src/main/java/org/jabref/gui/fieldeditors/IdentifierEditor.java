@@ -1,5 +1,9 @@
 package org.jabref.gui.fieldeditors;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
@@ -7,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.Tooltip;
 import javafx.scene.layout.HBox;
+
 import org.jabref.gui.DialogService;
 import org.jabref.gui.fieldeditors.contextmenu.EditorMenus;
 import org.jabref.gui.util.ControlHelper;
@@ -14,10 +19,6 @@ import org.jabref.gui.util.TaskExecutor;
 import org.jabref.logic.l10n.Localization;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.entry.FieldName;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
 
 public class IdentifierEditor extends HBox implements FieldEditorFX {
 

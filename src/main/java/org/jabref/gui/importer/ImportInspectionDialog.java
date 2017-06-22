@@ -1,24 +1,64 @@
 package org.jabref.gui.importer;
 
-import ca.odell.glazedlists.BasicEventList;
-import ca.odell.glazedlists.EventList;
-import ca.odell.glazedlists.SortedList;
-import ca.odell.glazedlists.event.ListEvent;
-import ca.odell.glazedlists.event.ListEventListener;
-import ca.odell.glazedlists.gui.AbstractTableComparatorChooser;
-import ca.odell.glazedlists.gui.TableFormat;
-import ca.odell.glazedlists.swing.DefaultEventSelectionModel;
-import ca.odell.glazedlists.swing.DefaultEventTableModel;
-import ca.odell.glazedlists.swing.GlazedListsSwing;
-import ca.odell.glazedlists.swing.TableComparatorChooser;
-import com.jgoodies.forms.builder.ButtonBarBuilder;
-import com.jgoodies.forms.builder.ButtonStackBuilder;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Rectangle;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.Set;
+
+import javax.swing.AbstractAction;
+import javax.swing.Action;
+import javax.swing.ActionMap;
+import javax.swing.BorderFactory;
+import javax.swing.InputMap;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JComponent;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JPopupMenu;
+import javax.swing.JProgressBar;
+import javax.swing.JScrollPane;
+import javax.swing.JSplitPane;
+import javax.swing.JTable;
+import javax.swing.SwingConstants;
+import javax.swing.SwingUtilities;
+import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableColumnModel;
+import javax.swing.table.TableModel;
+
 import org.jabref.Globals;
 import org.jabref.JabRefExecutorService;
-import org.jabref.gui.*;
+import org.jabref.gui.BasePanel;
+import org.jabref.gui.DuplicateResolverDialog;
 import org.jabref.gui.DuplicateResolverDialog.DuplicateResolverResult;
+import org.jabref.gui.EntryMarker;
+import org.jabref.gui.GUIGlobals;
+import org.jabref.gui.IconTheme;
+import org.jabref.gui.JabRefDialog;
+import org.jabref.gui.JabRefFrame;
+import org.jabref.gui.PreviewPanel;
 import org.jabref.gui.desktop.JabRefDesktop;
 import org.jabref.gui.externalfiles.AutoSetLinks;
 import org.jabref.gui.externalfiles.DownloadExternalFile;
@@ -48,7 +88,13 @@ import org.jabref.model.Defaults;
 import org.jabref.model.FieldChange;
 import org.jabref.model.database.BibDatabase;
 import org.jabref.model.database.BibDatabaseContext;
-import org.jabref.model.entry.*;
+import org.jabref.model.entry.AuthorList;
+import org.jabref.model.entry.BibEntry;
+import org.jabref.model.entry.FieldName;
+import org.jabref.model.entry.FieldProperty;
+import org.jabref.model.entry.IdGenerator;
+import org.jabref.model.entry.InternalBibtexFields;
+import org.jabref.model.entry.LinkedFile;
 import org.jabref.model.groups.AllEntriesGroup;
 import org.jabref.model.groups.GroupEntryChanger;
 import org.jabref.model.groups.GroupTreeNode;
@@ -56,15 +102,21 @@ import org.jabref.model.metadata.MetaData;
 import org.jabref.model.strings.StringUtil;
 import org.jabref.preferences.JabRefPreferences;
 
-import javax.swing.*;
-import javax.swing.table.TableCellRenderer;
-import javax.swing.table.TableColumnModel;
-import javax.swing.table.TableModel;
-import java.awt.*;
-import java.awt.event.*;
-import java.io.IOException;
-import java.util.*;
-import java.util.List;
+import ca.odell.glazedlists.BasicEventList;
+import ca.odell.glazedlists.EventList;
+import ca.odell.glazedlists.SortedList;
+import ca.odell.glazedlists.event.ListEvent;
+import ca.odell.glazedlists.event.ListEventListener;
+import ca.odell.glazedlists.gui.AbstractTableComparatorChooser;
+import ca.odell.glazedlists.gui.TableFormat;
+import ca.odell.glazedlists.swing.DefaultEventSelectionModel;
+import ca.odell.glazedlists.swing.DefaultEventTableModel;
+import ca.odell.glazedlists.swing.GlazedListsSwing;
+import ca.odell.glazedlists.swing.TableComparatorChooser;
+import com.jgoodies.forms.builder.ButtonBarBuilder;
+import com.jgoodies.forms.builder.ButtonStackBuilder;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * Dialog to allow the selection of entries as part of an Import.
@@ -185,7 +237,7 @@ public class ImportInspectionDialog extends JabRefDialog implements ImportInspec
 
         popup.add(deleteListener);
         popup.addSeparator();
-        if (!newDatabase && (bibDatabaseContext != null)) {
+        if (!newDatabase && (bibDatabaseContext != null) && bibDatabaseContext.getMetaData().getGroups().isPresent()) {
             GroupTreeNode node = bibDatabaseContext.getMetaData().getGroups().get();
             JMenu groupsAdd = new JMenu(Localization.lang("Add to group"));
             groupsAdd.setEnabled(false); // Will get enabled if there are groups that can be added to.
@@ -1201,14 +1253,11 @@ public class ImportInspectionDialog extends JabRefDialog implements ImportInspec
         }
 
         @Override
-        public void downloadComplete(FileListEntry file) {
+        public void downloadComplete(LinkedFile file) {
             ImportInspectionDialog.this.toFront(); // Hack
-            FileListTableModel localModel = new FileListTableModel();
-            entry.getField(FieldName.FILE).ifPresent(localModel::setContent);
-            localModel.addEntry(localModel.getRowCount(), file);
             entries.getReadWriteLock().writeLock().lock();
             try {
-                entry.setField(FieldName.FILE, localModel.getStringRepresentation());
+                entry.addFile(file);
             } finally {
                 entries.getReadWriteLock().writeLock().unlock();
             }
@@ -1277,16 +1326,13 @@ public class ImportInspectionDialog extends JabRefDialog implements ImportInspec
                 return;
             }
             entry = selectionModel.getSelected().get(0);
-            FileListEntry flEntry = new FileListEntry("", "");
-            FileListEntryEditor editor = new FileListEntryEditor(frame, flEntry, false, true, bibDatabaseContext, true);
+            LinkedFile flEntry = new LinkedFile("", "", "");
+            FileListEntryEditor editor = new FileListEntryEditor(flEntry, false, true, bibDatabaseContext, true);
             editor.setVisible(true, true);
             if (editor.okPressed()) {
-                FileListTableModel localModel = new FileListTableModel();
-                entry.getField(FieldName.FILE).ifPresent(localModel::setContent);
-                localModel.addEntry(localModel.getRowCount(), flEntry);
                 entries.getReadWriteLock().writeLock().lock();
                 try {
-                    entry.setField(FieldName.FILE, localModel.getStringRepresentation());
+                    entry.addFile(flEntry);
                 } finally {
                     entries.getReadWriteLock().writeLock().unlock();
                 }
@@ -1295,14 +1341,11 @@ public class ImportInspectionDialog extends JabRefDialog implements ImportInspec
         }
 
         @Override
-        public void downloadComplete(FileListEntry file) {
+        public void downloadComplete(LinkedFile file) {
             ImportInspectionDialog.this.toFront(); // Hack
-            FileListTableModel localModel = new FileListTableModel();
-            entry.getField(FieldName.FILE).ifPresent(localModel::setContent);
-            localModel.addEntry(localModel.getRowCount(), file);
             entries.getReadWriteLock().writeLock().lock();
             try {
-                entry.setField(FieldName.FILE, localModel.getStringRepresentation());
+                entry.addFile(file);
             } finally {
                 entries.getReadWriteLock().writeLock().unlock();
             }

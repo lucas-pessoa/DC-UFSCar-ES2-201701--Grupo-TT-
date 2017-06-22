@@ -1,9 +1,9 @@
 package org.jabref.logic.bst;
 
+import java.util.Stack;
+
 import org.jabref.logic.bst.VM.BstEntry;
 import org.jabref.logic.bst.VM.BstFunction;
-
-import java.util.Stack;
 
 /**
  The |built_in| function {\.{text.prefix\$}} pops the top two literals

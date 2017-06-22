@@ -1,5 +1,10 @@
 package org.jabref.logic.cleanup;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.Optional;
+
 import org.jabref.logic.layout.LayoutFormatterPreferences;
 import org.jabref.model.Defaults;
 import org.jabref.model.database.BibDatabase;
@@ -9,16 +14,12 @@ import org.jabref.model.entry.FileFieldWriter;
 import org.jabref.model.entry.LinkedFile;
 import org.jabref.model.metadata.FileDirectoryPreferences;
 import org.jabref.model.metadata.MetaData;
+
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
 import org.mockito.Answers;
-
-import java.io.File;
-import java.io.IOException;
-import java.util.Arrays;
-import java.util.Optional;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
@@ -26,8 +27,7 @@ import static org.mockito.Mockito.when;
 
 public class RenamePdfCleanupTest {
 
-    @Rule
-    public TemporaryFolder testFolder = new TemporaryFolder();
+    @Rule public TemporaryFolder testFolder = new TemporaryFolder();
     private BibDatabaseContext context;
     private BibEntry entry;
 
@@ -42,7 +42,6 @@ public class RenamePdfCleanupTest {
 
         fileDirPrefs = mock(FileDirectoryPreferences.class);
         when(fileDirPrefs.isBibLocationAsPrimary()).thenReturn(true); //Set Biblocation as Primary Directory, otherwise the tmp folders won't be cleaned up correctly
-
         entry = new BibEntry();
         entry.setCiteKey("Toot");
         layoutFormatterPreferences = mock(LayoutFormatterPreferences.class, Answers.RETURNS_DEEP_STUBS);
@@ -80,8 +79,7 @@ public class RenamePdfCleanupTest {
         cleanup.cleanup(entry);
 
         assertEquals(
-                Optional.of(FileFieldWriter.getStringRepresentation(Arrays.asList(new LinkedFile("", "", ""),
-                        new LinkedFile("", "Toot - test title.tmp", ""), new LinkedFile("", "", "")))),
+                Optional.of(FileFieldWriter.getStringRepresentation(new LinkedFile("", "Toot - test title.tmp", ""))),
                 entry.getField("file"));
     }
 

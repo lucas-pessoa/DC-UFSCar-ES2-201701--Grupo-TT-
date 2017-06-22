@@ -1,14 +1,15 @@
 package org.jabref.gui;
 
+import java.awt.event.KeyEvent;
+import java.util.regex.Pattern;
+
+import org.jabref.testutils.category.GUITests;
+
 import org.assertj.swing.fixture.JTableCellFixture;
 import org.assertj.swing.fixture.JTableFixture;
-import org.jabref.testutils.category.GUITests;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
-
-import java.awt.event.KeyEvent;
-import java.util.regex.Pattern;
 
 /**
  * Specific Use-Case:

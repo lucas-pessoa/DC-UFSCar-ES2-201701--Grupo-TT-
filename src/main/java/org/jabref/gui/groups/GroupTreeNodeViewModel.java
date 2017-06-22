@@ -1,18 +1,5 @@
 package org.jabref.gui.groups;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.jabref.gui.IconTheme;
-import org.jabref.gui.undo.CountingUndoManager;
-import org.jabref.model.FieldChange;
-import org.jabref.model.entry.BibEntry;
-import org.jabref.model.groups.*;
-
-import javax.swing.*;
-import javax.swing.tree.TreeNode;
-import javax.swing.tree.TreePath;
-import javax.swing.undo.AbstractUndoableEdit;
-import javax.swing.undo.UndoManager;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.Transferable;
 import java.awt.datatransfer.UnsupportedFlavorException;
@@ -21,6 +8,28 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 import java.util.function.Consumer;
+
+import javax.swing.Icon;
+import javax.swing.JTree;
+import javax.swing.tree.TreeNode;
+import javax.swing.tree.TreePath;
+import javax.swing.undo.AbstractUndoableEdit;
+import javax.swing.undo.UndoManager;
+
+import org.jabref.gui.IconTheme;
+import org.jabref.gui.undo.CountingUndoManager;
+import org.jabref.model.FieldChange;
+import org.jabref.model.entry.BibEntry;
+import org.jabref.model.groups.AbstractGroup;
+import org.jabref.model.groups.AllEntriesGroup;
+import org.jabref.model.groups.ExplicitGroup;
+import org.jabref.model.groups.GroupEntryChanger;
+import org.jabref.model.groups.GroupTreeNode;
+import org.jabref.model.groups.KeywordGroup;
+import org.jabref.model.groups.SearchGroup;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class GroupTreeNodeViewModel implements Transferable, TreeNode {
 

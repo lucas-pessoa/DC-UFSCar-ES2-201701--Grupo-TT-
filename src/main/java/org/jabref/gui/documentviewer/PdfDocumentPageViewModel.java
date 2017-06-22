@@ -1,14 +1,15 @@
 package org.jabref.gui.documentviewer;
 
-import javafx.embed.swing.SwingFXUtils;
-import javafx.scene.image.Image;
-import org.apache.pdfbox.pdmodel.PDPage;
-import org.apache.pdfbox.pdmodel.common.PDRectangle;
-
-import java.awt.*;
+import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.Objects;
+
+import javafx.embed.swing.SwingFXUtils;
+import javafx.scene.image.Image;
+
+import org.apache.pdfbox.pdmodel.PDPage;
+import org.apache.pdfbox.pdmodel.common.PDRectangle;
 
 /**
  * Represents the view model of a pdf page backed by a {@link PDPage}.

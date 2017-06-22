@@ -1,13 +1,14 @@
 package org.jabref.gui.specialfields;
 
+import java.util.Objects;
+
+import javax.swing.Icon;
+
 import org.jabref.gui.IconTheme;
 import org.jabref.gui.JabRefFrame;
 import org.jabref.logic.l10n.Localization;
 import org.jabref.model.entry.specialfields.SpecialField;
 import org.jabref.model.entry.specialfields.SpecialFieldValue;
-
-import javax.swing.*;
-import java.util.Objects;
 
 public class SpecialFieldViewModel {
 

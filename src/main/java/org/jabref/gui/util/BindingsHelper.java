@@ -1,5 +1,10 @@
 package org.jabref.gui.util;
 
+import java.util.List;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Predicate;
+
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.BooleanBinding;
 import javafx.beans.property.BooleanProperty;
@@ -12,12 +17,8 @@ import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.css.PseudoClass;
 import javafx.scene.Node;
-import net.corda.client.jfx.utils.MappedList;
 
-import java.util.List;
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.Predicate;
+import net.corda.client.jfx.utils.MappedList;
 
 
 /**
@@ -153,7 +154,7 @@ public class BindingsHelper {
         public void changedA(ObservableValue<? extends A> observable, A oldValue, A newValue) {
             updateLocked(updateB, oldValue, newValue);
         }
-
+        
         public void changedB(ObservableValue<? extends B> observable, B oldValue, B newValue) {
             updateLocked(updateA, oldValue, newValue);
         }

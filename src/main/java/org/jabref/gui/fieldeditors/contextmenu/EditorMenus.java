@@ -1,16 +1,19 @@
 package org.jabref.gui.fieldeditors.contextmenu;
 
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.SeparatorMenuItem;
-import javafx.scene.control.TextArea;
-import org.jabref.gui.actions.CopyDoiUrlAction;
-import org.jabref.logic.formatter.bibtexfields.NormalizeNamesFormatter;
-import org.jabref.logic.l10n.Localization;
-
-import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import javax.swing.AbstractAction;
+import javax.swing.Action;
+
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.SeparatorMenuItem;
+import javafx.scene.control.TextArea;
+
+import org.jabref.gui.actions.CopyDoiUrlAction;
+import org.jabref.logic.formatter.bibtexfields.NormalizeNamesFormatter;
+import org.jabref.logic.l10n.Localization;
 
 public class EditorMenus {
 

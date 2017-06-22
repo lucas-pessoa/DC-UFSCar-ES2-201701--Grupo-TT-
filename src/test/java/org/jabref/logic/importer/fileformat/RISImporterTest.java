@@ -1,15 +1,16 @@
 package org.jabref.logic.importer.fileformat;
 
-import org.jabref.logic.util.FileExtensions;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
-
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+
+import org.jabref.logic.util.FileExtensions;
+
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
 public class RISImporterTest {
 

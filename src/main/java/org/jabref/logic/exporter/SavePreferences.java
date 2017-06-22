@@ -1,12 +1,12 @@
 package org.jabref.logic.exporter;
 
+import java.nio.charset.Charset;
+import java.util.Collections;
+
 import org.jabref.logic.bibtex.LatexFieldFormatterPreferences;
 import org.jabref.model.bibtexkeypattern.GlobalBibtexKeyPattern;
 import org.jabref.model.metadata.SaveOrderConfig;
 import org.jabref.preferences.JabRefPreferences;
-
-import java.nio.charset.Charset;
-import java.util.Collections;
 
 public class SavePreferences {
 

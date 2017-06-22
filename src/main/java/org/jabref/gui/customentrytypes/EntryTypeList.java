@@ -1,5 +1,16 @@
 package org.jabref.gui.customentrytypes;
 
+import java.awt.GridBagConstraints;
+import java.awt.event.ActionListener;
+import java.util.List;
+import java.util.Locale;
+import java.util.Optional;
+
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+
 import org.jabref.Globals;
 import org.jabref.logic.bibtexkeypattern.BibtexKeyPatternUtil;
 import org.jabref.logic.l10n.Localization;
@@ -8,15 +19,6 @@ import org.jabref.model.database.BibDatabaseMode;
 import org.jabref.model.entry.CustomEntryType;
 import org.jabref.model.entry.EntryType;
 import org.jabref.preferences.JabRefPreferences;
-
-import javax.swing.*;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
-import java.awt.*;
-import java.awt.event.ActionListener;
-import java.util.List;
-import java.util.Locale;
-import java.util.Optional;
 
 /**
  * This class extends FieldSetComponent to provide some required functionality for the

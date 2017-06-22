@@ -1,9 +1,9 @@
 package org.jabref.cli;
 
-import org.jabref.logic.util.strings.HTMLUnicodeConversionMaps;
-
 import java.util.Map;
 import java.util.TreeMap;
+
+import org.jabref.logic.util.strings.HTMLUnicodeConversionMaps;
 
 public class GenerateCharacterTable {
 

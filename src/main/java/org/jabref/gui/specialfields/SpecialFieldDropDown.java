@@ -1,17 +1,22 @@
 package org.jabref.gui.specialfields;
 
-import com.jgoodies.looks.HeaderStyle;
-import com.jgoodies.looks.Options;
+import java.awt.Dimension;
+import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JMenuItem;
+import javax.swing.JPopupMenu;
+
 import org.jabref.gui.BasePanel;
 import org.jabref.gui.JabRefFrame;
 import org.jabref.logic.util.OS;
 import org.jabref.model.entry.specialfields.SpecialField;
 import org.jabref.model.entry.specialfields.SpecialFieldValue;
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import com.jgoodies.looks.HeaderStyle;
+import com.jgoodies.looks.Options;
 
 public class SpecialFieldDropDown {
 
