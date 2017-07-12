@@ -41,7 +41,5 @@ public class InsertionTestCase {
         Assert.assertEquals(expected, id);
     }
 
-    @Test
-    public void testeBibEntry3(){
-    }
+
 }
