@@ -8,7 +8,6 @@ import org.junit.Assert;
 import static org.junit.Assert.assertEquals;
 
 public class InsertionTestCase {
-
     private BibEntry entry;
     private BibEntry emptyEntry;
 
@@ -42,19 +41,7 @@ public class InsertionTestCase {
         Assert.assertEquals(expected, id);
     }
 
-    //Teste para validação do CiteKey (Não é o mesmo ID mas não deve ser nulo)
     @Test
-    public void invalidCiteKey(){
-        String citeKeyTest = ""; //citeKey não pode ser vazia
-        String expected = "2";
-        entry.setCiteKey(citeKeyTest);
-        citeKeyTest = entry.getCiteKey();
-        Assert.assertEquals(expected, citeKeyTest);
+    public void testeBibEntry3(){
     }
-
-    @Test
-    public void teste(){
-        //teste de commit
-    }
-
 }
