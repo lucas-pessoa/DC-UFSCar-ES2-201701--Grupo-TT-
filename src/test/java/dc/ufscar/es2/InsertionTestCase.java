@@ -8,7 +8,6 @@ import org.junit.Assert;
 import static org.junit.Assert.assertEquals;
 
 public class InsertionTestCase {
-
     private BibEntry entry;
     private BibEntry emptyEntry;
 
@@ -44,7 +43,5 @@ public class InsertionTestCase {
 
     @Test
     public void testeBibEntry3(){
-
     }
-
 }
