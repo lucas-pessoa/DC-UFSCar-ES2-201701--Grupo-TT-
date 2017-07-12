@@ -42,9 +42,13 @@ public class InsertionTestCase {
         Assert.assertEquals(expected, id);
     }
 
+    //Teste para validação do CiteKey (Não é o mesmo ID mas não deve ser nula)
     @Test
-    public void testeBibEntry3(){
-
+    public void invalidCiteKey(){
+        String citeKeyTest = ""; //citeKey não pode ser vazia
+        String expected = "1";
+        entry.setCiteKey(citeKeyTest);
+        citeKeyTest = entry.getCiteKey();
+        Assert.assertEquals(expected, citeKeyTest);
     }
-
 }
