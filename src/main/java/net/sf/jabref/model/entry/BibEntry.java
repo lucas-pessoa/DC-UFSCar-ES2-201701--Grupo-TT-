@@ -421,6 +421,22 @@ public class BibEntry implements Cloneable {
      * extract the year from the 'date' field (analogously for 'month').
      * </p>
      */
+
+    //Manutenção perfectiva para validação de ano
+    public static String validaAno (String ano) {
+        Calendar calAuxiliar = Calendar.getInstance(); //método para instanciar a data do SO
+        int limInferior = 1900;
+        int limSuperior = calAuxiliar.get(Calendar.YEAR); //Recebe o ano atual do SO
+        int aux = Integer.parseInt(ano); //auxiliar recebera a conversão de ano (string) para int
+
+        //checa validade de data
+        if ((aux < limInferior || aux > limSuperior)) {
+            System.out.print("Ano Inválido");
+        } else {
+            return ano;
+        }
+    }
+
     public Optional<String> getFieldOrAlias(String name) {
         return genericGetFieldOrAlias(name, this::getField);
     }
