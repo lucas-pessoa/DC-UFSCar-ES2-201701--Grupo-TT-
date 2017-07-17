@@ -422,7 +422,7 @@ public class BibEntry implements Cloneable {
      * </p>
      */
 
-    //Manutenção perfectiva para validação de ano
+   /* //Manutenção perfectiva para validação de ano
     public static String validaAno (String ano) {
         Calendar calAuxiliar = Calendar.getInstance(); //método para instanciar a data do SO
         int limInferior = 1900;
@@ -436,7 +436,7 @@ public class BibEntry implements Cloneable {
             return ano;
         }
     }
-
+*/
     public Optional<String> getFieldOrAlias(String name) {
         return genericGetFieldOrAlias(name, this::getField);
     }
