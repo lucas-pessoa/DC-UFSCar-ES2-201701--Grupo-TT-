@@ -181,6 +181,7 @@ public class BibtexParser implements Parser {
         }
     }
 
+
     private ParserResult parseFileContent() throws IOException {
         Map<String, String> meta = new HashMap<>();
 
