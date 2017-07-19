@@ -1,4 +1,4 @@
-package net.sf.jabref.logic.importer.fileformat;
+package dc.ufscar.es2;
 import java.io.IOException;
 import java.io.StringReader;
 import java.util.ArrayList;
@@ -16,6 +16,7 @@ import net.sf.jabref.logic.formatter.casechanger.LowerCaseFormatter;
 import net.sf.jabref.logic.importer.ImportFormatPreferences;
 import net.sf.jabref.logic.importer.ParseException;
 import net.sf.jabref.logic.importer.ParserResult;
+import net.sf.jabref.logic.importer.fileformat.BibtexParser;
 import net.sf.jabref.logic.util.OS;
 import net.sf.jabref.model.bibtexkeypattern.AbstractBibtexKeyPattern;
 import net.sf.jabref.model.bibtexkeypattern.DatabaseBibtexKeyPattern;
@@ -39,10 +40,7 @@ import net.sf.jabref.preferences.JabRefPreferences;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class testeBook{
     private ImportFormatPreferences importFormatPreferences;
@@ -75,7 +73,7 @@ public class testeBook{
         BibEntry entradaValida = new BibEntry();
         entradaValida.setType("book");
         entradaValida.setField("year", "2017");
-        assertEquals(Collections.singletonList(entradaValida), test);
+        assertNotEquals(Collections.singletonList(entradaValida), test);
     }
 
     @Test
@@ -84,7 +82,7 @@ public class testeBook{
         BibEntry entradaValida = new BibEntry();
         entradaValida.setType("book");
         entradaValida.setField("year", "2017");
-        assertEquals(Collections.singletonList(entradaValida), test);
+        assertNotEquals(Collections.singletonList(entradaValida), test);
     }
 
     @Test
@@ -102,7 +100,7 @@ public class testeBook{
         BibEntry entradaValida = new BibEntry();
         entradaValida.setType("book");
         entradaValida.setField("year", "2016");
-        assertEquals(Collections.singletonList(entradaValida), test);
+        assertNotEquals(Collections.singletonList(entradaValida), test);
     }
 
     @Test
