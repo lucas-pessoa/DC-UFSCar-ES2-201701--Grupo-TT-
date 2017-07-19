@@ -47,7 +47,7 @@ public class InsertionTestCase {
         String expected = "2";
         entry.setCiteKey(citeKeyInvalid);
         citeKeyInvalid = entry.getCiteKey();
-        Asseert.assertEquals(expected,citeKeyInvalid);
+        Assert.assertNotEquals(expected,citeKeyInvalid);
     }
 
     @Test
@@ -56,7 +56,7 @@ public class InsertionTestCase {
         String expected1 = "a1";
         entry.setCiteKey(citeKeyValid);
         citeKeyValid = entry.getCiteKey();
-        Asseert.assertEquals(expected,citeKeyInvalid);
+        Assert.assertEquals(expected1,citeKeyValid);
     }
 
 }
