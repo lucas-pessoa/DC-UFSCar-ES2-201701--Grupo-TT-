@@ -483,6 +483,8 @@ public class BibEntry implements Cloneable {
             case "year":
                 validaAno(value);
                 break;
+            case "bibtexkey":
+                validaBibtexKey(value);
         }
     }
 
@@ -502,6 +504,16 @@ public class BibEntry implements Cloneable {
         }
     }
 
+    //Aqui será feita a verificação BibtexKey
+    public static void validaBibtexKey(String name) {
+        if (name.length() < 2) {
+            JOptionPane.showMessageDialog(null, "Entrada inválida. Adiocione mais caracteres!!");
+        } else {
+            if (!Character.isLetter(name.charAt(0))) {
+                JOptionPane.showMessageDialog(null, "Entrada inválida. Primeiro carcter precisa ser uma letra!!");
+            }
+        }
+    }
     public Optional<FieldChange> setField(String name, Optional<String> value, EntryEventSource eventSource) {
         if (value.isPresent()) {
             return setField(name, value.get(), eventSource);

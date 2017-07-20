@@ -122,6 +122,16 @@ public class testeBook{
     }
 
     @Test
+    public void bitTexKeyUmCaracter() throws ParseException{
+        List<BibEntry> test = parser.parseEntries("@book{A}");
+        BibEntry entradaValida = new BibEntry();
+        entradaValida.setType("book");
+        entradaValida.setCiteKey("A");
+        assertEquals(Collections.singletonList(entradaValida), test);
+    }
+
+
+    @Test
     public void bitTexKey1Correta() throws ParseException{
         List<BibEntry> test = parser.parseEntries("@book{Aaa111}");
         BibEntry entradaValida = new BibEntry();
