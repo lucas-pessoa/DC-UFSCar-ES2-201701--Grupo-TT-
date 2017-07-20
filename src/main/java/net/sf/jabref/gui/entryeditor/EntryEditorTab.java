@@ -299,10 +299,25 @@ class EntryEditorTab {
     public void setEntry(BibEntry entry) {
         try {
             updating = true;
+            //Manutenção Perfectiva de ano inserido
             for (FieldEditor editor : editors.values()) {
                 String toSet = entry.getField(editor.getFieldName()).orElse("");
-                if (!toSet.equals(editor.getText())) {
-                    editor.setText(toSet);
+                //Verifica se o campo analisado é o campo de ano
+                String fieldYear = "year";
+                if(!fieldYear.equals(editor.getFieldName())) {
+                    if ((!toSet.equals(editor.getText()))) {
+                        editor.setText(toSet);
+                    }
+                }
+                //Se for, verifica se o valor inserido está entre 1800 e 2017
+                else{
+                    int yearMax = 2017;
+                    int yearMin = 1800;
+                    //Se estiver no intervalo, seta o campo com o valor
+                    if((Integer.parseInt(editor.getText()) < yearMax) &&
+                            (Integer.parseInt(editor.getText()) > yearMin)){
+                        editor.setText(toSet);
+                    }
                 }
             }
             this.entry = entry;
