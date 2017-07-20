@@ -41,6 +41,8 @@ public class InsertionTestCase {
         Assert.assertEquals(expected, id);
     }
 
+
+
     @Test
     public void invalidCiteKey(){
         String citeKeyInvalid = ""; //entrada nula
@@ -58,5 +60,6 @@ public class InsertionTestCase {
         citeKeyValid = entry.getCiteKey();
         Assert.assertEquals(expected1,citeKeyValid);
     }
+
 
 }

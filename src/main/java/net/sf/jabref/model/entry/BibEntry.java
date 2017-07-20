@@ -496,7 +496,7 @@ public class BibEntry implements Cloneable {
 
         //checa validade de data
         if ((aux < limInferior || aux > limSuperior)){
-            JOptionPane.showMessageDialog(null, "Ano Inválido. Tente Novamente!");
+            JOptionPane.showMessageDialog(null, "Ano Inválido. Tente Novamente!!");
         }
     }
 
