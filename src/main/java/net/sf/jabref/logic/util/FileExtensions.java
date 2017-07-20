@@ -14,6 +14,7 @@ public enum FileExtensions {
     BIBTEX_DB(String.format("%1s %2s", "BibTex", Localization.lang("Database")), "bib"),
     BIBTEXML(Localization.lang("%0 file", "BibTeXML"), "bibx", "xml"),
     BILBIOSCAPE(Localization.lang("%0 file", "Biblioscape"), "txt"),
+    CSV(Localization.lang("%0 file", "Comma Separated Values"), "csv"),
     COPAC(Localization.lang("%0 file", "Copac"), "txt"),
     CITATION_STYLE(Localization.lang("%0 file", "CSL"), "csl"),
     ENDNOTE(Localization.lang("%0 file", "Endnote/Refer"), "ref", "enw"),

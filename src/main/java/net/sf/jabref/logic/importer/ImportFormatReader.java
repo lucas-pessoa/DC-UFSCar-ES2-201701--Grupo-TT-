@@ -11,6 +11,7 @@ import java.util.TreeSet;
 import net.sf.jabref.logic.importer.fileformat.BibTeXMLImporter;
 import net.sf.jabref.logic.importer.fileformat.BiblioscapeImporter;
 import net.sf.jabref.logic.importer.fileformat.BibtexImporter;
+import net.sf.jabref.logic.importer.fileformat.CSVImporter;
 import net.sf.jabref.logic.importer.fileformat.CopacImporter;
 import net.sf.jabref.logic.importer.fileformat.CustomImporter;
 import net.sf.jabref.logic.importer.fileformat.EndnoteImporter;
@@ -55,6 +56,7 @@ public class ImportFormatReader {
         formats.add(new BibtexImporter(importFormatPreferences));
         formats.add(new BibTeXMLImporter());
         formats.add(new CopacImporter());
+        formats.add(new CSVImporter());
         formats.add(new EndnoteImporter(importFormatPreferences));
         formats.add(new FreeCiteImporter(importFormatPreferences));
         formats.add(new InspecImporter());
