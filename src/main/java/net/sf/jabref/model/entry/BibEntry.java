@@ -22,6 +22,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Pattern;
 import javax.swing.*;
 
+import com.sun.org.apache.bcel.internal.generic.GETFIELD;
 import net.sf.jabref.model.EntryTypes;
 import net.sf.jabref.model.FieldChange;
 import net.sf.jabref.model.database.BibDatabase;
@@ -465,7 +466,7 @@ public class BibEntry implements Cloneable {
             throw new IllegalArgumentException("The field name '" + name + "' is reserved");
         }
 
-        checaCampo(fieldName, value); //Faz a chamada para verificar qual o campo está sendo inserido
+        value = checaCampo(fieldName, value); //Faz a chamada para verificar qual o campo está sendo inserido
 
         changed = true;
 
@@ -478,22 +479,23 @@ public class BibEntry implements Cloneable {
     }
 
     //Caso seja o campo ano, verificaremos se o ano é válido
-    public void checaCampo(String fieldName, String value){
+    public String checaCampo(String fieldName, String value){
         switch (fieldName) {
             case "year":
-                validaAno(value);
+                value = validaAno(value);
                 break;
             case "bibtexkey":
-                validaBibtexKey(value);
+                value = validaBibtexKey(value);
                 break;
             case "pages":
-                validaNumeroPaginas(value);
+                value = validaNumeroPaginas(value);
                 break;
         }
+        return value;
     }
 
     //Aqui será feito a verificação do ano
-    public static void validaAno (String ano) {
+    public static String validaAno (String ano) {
         String str = null;
         Calendar calAuxiliar = Calendar.getInstance(); //método para instanciar a data do SO
         int limInferior = 1900;
@@ -503,31 +505,40 @@ public class BibEntry implements Cloneable {
         //checa validade de data
         if ((aux < limInferior && aux < limSuperior)){
             JOptionPane.showMessageDialog(null, "Ano inferior ao limite. Tente Novamente!!");
+            return "";
         }else if (aux > limInferior && aux > limSuperior){
             JOptionPane.showMessageDialog(null, "Ano superior ao limite. Tente Novamente!!");
+            return "";
         }
+        return ano;
     }
 
     //Aqui será feita a verificação BibtexKey
-    public static void validaBibtexKey(String name) {
+    public static String validaBibtexKey(String name) {
         if (name.length() < 2) {
             JOptionPane.showMessageDialog(null, "Entrada inválida. Adicione mais caracteres!!");
-        } else {
-            if (!Character.isLetter(name.charAt(0))) {
-                JOptionPane.showMessageDialog(null, "Entrada inválida. Primeiro caracter precisa ser uma letra!!");
-            }
+            return "";
+        } else if (!Character.isLetter(name.charAt(0))) {
+            JOptionPane.showMessageDialog(null, "Entrada inválida. Primeiro caracter precisa ser uma letra!!");
+            return "";
         }
+        else
+            return name;
     }
 
     //Verificação de valor negativo ou vazio no campo de número de páginas
-    public static void validaNumeroPaginas(String n_paginas){
+    public static String validaNumeroPaginas(String n_paginas){
         int minimo = 1;
         String empty = "";
         if(n_paginas.equals(empty)){
             JOptionPane.showMessageDialog(null, "Número de páginas inválido. Adicione um valor válido");
+            return empty;
         }else if(Integer.parseInt(n_paginas) < minimo){
             JOptionPane.showMessageDialog(null, "Número de páginas negativo. Adicione um valor positivo");
+            return empty;
         }
+        else
+            return n_paginas;
     }
 
     public Optional<FieldChange> setField(String name, Optional<String> value, EntryEventSource eventSource) {
