@@ -1,22 +1,69 @@
 package dc.ufscar.es2;
-import net.sf.jabref.logic.importer.fileformat.BibtexImporter;
-import net.sf.jabref.logic.importer.fileformat.PdfContentImporter;
+import net.sf.jabref.logic.bibtex.BibEntryAssert;
+import net.sf.jabref.logic.importer.fileformat.*;
 import net.sf.jabref.model.entry.BibEntry;
 import net.sf.jabref.preferences.JabRefPreferences;
+import net.sf.jabref.pdfimport.PdfImporter;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.Assert;
+import org.junit.runners.Parameterized.Parameters;
+import org.junit.runners.Parameterized.Parameter;
+
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+import java.util.Optional;
+
+import static org.junit.Assert.assertEquals;
 
 public class ImportTestCase {
 
-    private BibtexImporter BTimporter;
-    private PdfContentImporter PDFimporter;
+    @Parameter
+    public String fileName;
+
+    @Parameters(name = "{index}: {0}")
+    public static Collection<Object[]> filenames(){
+        // The test folder contains pairs of PDFs and BibTeX files. We check each pair.
+        // A pasta de testes
+        // This method returns the basenames of the available pairs
+
+        Object[][] data = new Object[][] {
+                // minimal PDF, not encrypted
+                {"LNCS-minimal"},
+                // minimal PDF, write-protected, thus encrypted
+                {"LNCS-minimal-protected"}};
+        return Arrays.asList(data);
+    }
 
     @Before
     public void setUp(){
-        BTimporter = new BibtexImporter(JabRefPreferences.getInstance().getImportFormatPreferences());
-        PDFimporter = new PdfContentImporter(JabRefPreferences.getInstance().getImportFormatPreferences());
+    }
+
+    @After
+    public void tearDown(){
+    }
+
+    @Test
+    public void importPDFTest() throws URISyntaxException {
+
+        PdfXmpImporter importer = new PdfXmpImporter(JabRefPreferences.getInstance().getXMPPreferences());
+        Path pdfFile = Paths.get(PdfXmpImporterTest.class.getResource("blank.pdf").toURI());
+        List<BibEntry> bibEntries = importer.importDatabase(pdfFile, StandardCharsets.UTF_8).getDatabase().getEntries();
+
+        assertEquals(1, bibEntries.size());
+
+        BibEntry be0 = bibEntries.get(0);
+        assertEquals(Optional.empty(), be0.getField("abstract"));
+        assertEquals(Optional.empty(), be0.getField("author"));
+        assertEquals(Optional.empty(), be0.getField("keywords"));
+        assertEquals(Optional.of("Blank PDF Document"), be0.getField("title"));
     }
 
 }
