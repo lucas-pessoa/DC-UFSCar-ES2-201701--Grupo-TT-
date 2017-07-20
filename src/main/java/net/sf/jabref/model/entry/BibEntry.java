@@ -20,6 +20,7 @@ import java.util.Set;
 import java.util.TreeSet;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Pattern;
+import javax.swing.*;
 
 import net.sf.jabref.model.EntryTypes;
 import net.sf.jabref.model.FieldChange;
@@ -313,6 +314,8 @@ public class BibEntry implements Cloneable {
         // Finally, handle dates
         if (FieldName.DATE.equals(name)) {
             Optional<String> year = getFieldInterface.getValueForField(FieldName.YEAR);
+
+
             if (year.isPresent()) {
                 MonthUtil.Month month = MonthUtil.getMonth(getFieldInterface.getValueForField(FieldName.MONTH).orElse(""));
                 if (month.isValid()) {
@@ -422,21 +425,6 @@ public class BibEntry implements Cloneable {
      * </p>
      */
 
-   /* //Manutenção perfectiva para validação de ano
-    public static String validaAno (String ano) {
-        Calendar calAuxiliar = Calendar.getInstance(); //método para instanciar a data do SO
-        int limInferior = 1900;
-        int limSuperior = calAuxiliar.get(Calendar.YEAR); //Recebe o ano atual do SO
-        int aux = Integer.parseInt(ano); //auxiliar recebera a conversão de ano (string) para int
-
-        //checa validade de data
-        if ((aux < limInferior || aux > limSuperior)) {
-            System.out.print("Ano Inválido");
-        } else {
-            return ano;
-        }
-    }
-*/
     public Optional<String> getFieldOrAlias(String name) {
         return genericGetFieldOrAlias(name, this::getField);
     }
@@ -477,6 +465,8 @@ public class BibEntry implements Cloneable {
             throw new IllegalArgumentException("The field name '" + name + "' is reserved");
         }
 
+        checaCampo(fieldName, value); //Faz a chamada para verificar qual o campo está sendo inserido
+
         changed = true;
 
         fields.put(fieldName, value.intern());
@@ -485,6 +475,29 @@ public class BibEntry implements Cloneable {
         FieldChange change = new FieldChange(this, fieldName, oldValue, value);
         eventBus.post(new FieldChangedEvent(change, eventSource));
         return Optional.of(change);
+    }
+
+    //Caso seja o campo ano, verificaremos se o ano é válido
+    public void checaCampo(String fieldName, String value){
+        switch (fieldName) {
+            case "year":
+                validaAno(value);
+                break;
+        }
+    }
+
+    //Aqui será feito a verificação do ano
+    public static void validaAno (String ano) {
+        String str = null;
+        Calendar calAuxiliar = Calendar.getInstance(); //método para instanciar a data do SO
+        int limInferior = 1900;
+        int limSuperior = calAuxiliar.get(Calendar.YEAR); //Recebe o ano atual do SO
+        int aux = Integer.parseInt(ano); //auxiliar recebera a conversão de ano (string) para int
+
+        //checa validade de data
+        if ((aux < limInferior || aux > limSuperior)){
+            JOptionPane.showMessageDialog(null, "Ano Inválido. Tente Novamente!");
+        }
     }
 
     public Optional<FieldChange> setField(String name, Optional<String> value, EntryEventSource eventSource) {

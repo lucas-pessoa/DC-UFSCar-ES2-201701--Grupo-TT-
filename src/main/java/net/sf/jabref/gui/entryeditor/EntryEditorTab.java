@@ -14,7 +14,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
+import java.util.Calendar;
 
+import javax.swing.*;
 import javax.swing.ActionMap;
 import javax.swing.InputMap;
 import javax.swing.JComponent;
@@ -23,6 +25,7 @@ import javax.swing.JScrollPane;
 import javax.swing.KeyStroke;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.text.JTextComponent;
+
 
 import net.sf.jabref.Globals;
 import net.sf.jabref.gui.BasePanel;
@@ -297,30 +300,16 @@ class EntryEditorTab {
     }
 
     public void setEntry(BibEntry entry) {
+        String str = null;
         try {
             updating = true;
-            //Manutenção Perfectiva de ano inserido
+
             for (FieldEditor editor : editors.values()) {
                 String toSet = entry.getField(editor.getFieldName()).orElse("");
-                //Verifica se o campo analisado é o campo de ano
-                String fieldYear = "year";
-                if(!fieldYear.equals(editor.getFieldName())) {
-                    if ((!toSet.equals(editor.getText()))) {
-                        editor.setText(toSet);
-                    }
-                }
-                //Se for, verifica se o valor inserido está entre 1800 e 2017
-                else{
-                    int yearMax = 2017;
-                    int yearMin = 1800;
-                    //Se estiver no intervalo, seta o campo com o valor
-                    if((Integer.parseInt(editor.getText()) < yearMax) &&
-                            (Integer.parseInt(editor.getText()) > yearMin)){
-                        editor.setText(toSet);
-                    }
-                }
-            }
+             }
+
             this.entry = entry;
+
         } finally {
             updating = false;
         }
