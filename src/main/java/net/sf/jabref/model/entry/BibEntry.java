@@ -485,6 +485,10 @@ public class BibEntry implements Cloneable {
                 break;
             case "bibtexkey":
                 validaBibtexKey(value);
+                break;
+            case "pages":
+                validaNumeroPaginas(value);
+                break;
         }
     }
 
@@ -507,13 +511,25 @@ public class BibEntry implements Cloneable {
     //Aqui será feita a verificação BibtexKey
     public static void validaBibtexKey(String name) {
         if (name.length() < 2) {
-            JOptionPane.showMessageDialog(null, "Entrada inválida. Adiocione mais caracteres!!");
+            JOptionPane.showMessageDialog(null, "Entrada inválida. Adicione mais caracteres!!");
         } else {
             if (!Character.isLetter(name.charAt(0))) {
-                JOptionPane.showMessageDialog(null, "Entrada inválida. Primeiro carcter precisa ser uma letra!!");
+                JOptionPane.showMessageDialog(null, "Entrada inválida. Primeiro caracter precisa ser uma letra!!");
             }
         }
     }
+
+    //Verificação de valor negativo ou vazio no campo de número de páginas
+    public static void validaNumeroPaginas(String n_paginas){
+        int minimo = 1;
+        String empty = "";
+        if(n_paginas.equals(empty)){
+            JOptionPane.showMessageDialog(null, "Número de páginas inválido. Adicione um valor válido");
+        }else if(Integer.parseInt(n_paginas) < minimo){
+            JOptionPane.showMessageDialog(null, "Número de páginas negativo. Adicione um valor positivo");
+        }
+    }
+
     public Optional<FieldChange> setField(String name, Optional<String> value, EntryEventSource eventSource) {
         if (value.isPresent()) {
             return setField(name, value.get(), eventSource);
