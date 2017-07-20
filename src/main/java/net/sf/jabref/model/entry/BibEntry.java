@@ -495,8 +495,10 @@ public class BibEntry implements Cloneable {
         int aux = Integer.parseInt(ano); //auxiliar recebera a conversão de ano (string) para int
 
         //checa validade de data
-        if ((aux < limInferior || aux > limSuperior)){
-            JOptionPane.showMessageDialog(null, "Ano Inválido. Tente Novamente!!");
+        if ((aux < limInferior && aux < limSuperior)){
+            JOptionPane.showMessageDialog(null, "Ano inferior ao limite. Tente Novamente!!");
+        }else if (aux > limInferior && aux > limSuperior){
+            JOptionPane.showMessageDialog(null, "Ano superior ao limite. Tente Novamente!!");
         }
     }
 
