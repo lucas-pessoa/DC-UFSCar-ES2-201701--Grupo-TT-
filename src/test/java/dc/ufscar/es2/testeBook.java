@@ -37,7 +37,6 @@ import net.sf.jabref.model.groups.WordKeywordGroup;
 import net.sf.jabref.model.metadata.SaveOrderConfig;
 import net.sf.jabref.preferences.JabRefPreferences;
 
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -66,6 +65,35 @@ public class testeBook{
         entradaValida.setField("author", "Mauro");
         entradaValida.setField("editor", "Abril");
         assertEquals(Collections.singletonList(entradaValida), test);
+    }
+
+    @Test
+    public void tNull() throws ParseException{
+        List<BibEntry> test2 = parser.parseEntries("@book{,}");
+        BibEntry entradaValida = new BibEntry();
+        entradaValida.setType("book");
+        assertEquals(Collections.singletonList(entradaValida), test2);
+    }
+
+    @Test
+    public void camposExtras() throws ParseException{
+        List<BibEntry> test3 = parser.parseEntries("@book{2, title = {Na natureza Selvagem},\n" + "publisher = {Joseph},\n year = {2018},\n author={Michael Johnson},\n editor = {Abril},\n "+ "volume = {1},\n series = {2},\n edition = {6},\n note = {Livro legal}, number = {7},\n"+ "address = {UFSCar},\n month = {Fevereiro}}");
+        BibEntry entradaValida = new BibEntry();
+        entradaValida.setType("book");
+        entradaValida.setCiteKey("2");
+        entradaValida.setField("title", "Na natureza Selvagem");
+        entradaValida.setField("publisher", "Joseph");
+        entradaValida.setField("year", "2018");
+        entradaValida.setField("author", "Michael Johnson");
+        entradaValida.setField("editor", "Abril");
+        entradaValida.setField("volume", "1");
+        entradaValida.setField("series", "2");
+        entradaValida.setField("edition", "6");
+        entradaValida.setField("note", "Livro legal");
+        entradaValida.setField("number", "7");
+        entradaValida.setField("address", "UFSCar");
+        entradaValida.setField("month", "Fevereiro");
+        assertEquals(Collections.singletonList(entradaValida), test3);
     }
 
     @Test
@@ -139,152 +167,5 @@ public class testeBook{
         entradaValida.setType("book");
         entradaValida.setCiteKey("Aaa111");
         assertEquals(Collections.singletonList(entradaValida), test);
-    }
-
-    @Test
-    public void tNull() throws ParseException{
-        List<BibEntry> test2 = parser.parseEntries("@book{,}");
-        BibEntry entradaValida = new BibEntry();
-        entradaValida.setType("book");
-        assertEquals(Collections.singletonList(entradaValida), test2);
-    }
-
-    @Test
-    public void camposExtras() throws ParseException{
-        List<BibEntry> test3 = parser.parseEntries("@book{2, title = {Na natureza Selvagem},\n" + "publisher = {Joseph},\n year = {2018},\n author={Michael Johnson},\n editor = {Abril},\n "+ "volume = {1},\n series = {2},\n edition = {6},\n note = {Livro legal}, number = {7},\n"+ "address = {UFSCar},\n month = {Fevereiro}}");
-        BibEntry entradaValida = new BibEntry();
-        entradaValida.setType("book");
-        entradaValida.setCiteKey("2");
-        entradaValida.setField("title", "Na natureza Selvagem");
-        entradaValida.setField("publisher", "Joseph");
-        entradaValida.setField("year", "2018");
-        entradaValida.setField("author", "Michael Johnson");
-        entradaValida.setField("editor", "Abril");
-        entradaValida.setField("volume", "1");
-        entradaValida.setField("series", "2");
-        entradaValida.setField("edition", "6");
-        entradaValida.setField("note", "Livro legal");
-        entradaValida.setField("number", "7");
-        entradaValida.setField("address", "UFSCar");
-        entradaValida.setField("month", "Fevereiro");
-        assertEquals(Collections.singletonList(entradaValida), test3);
-    }
-
-    //testes de regressão por duplicação de código
-    @After
-    public void todosCampos2() throws ParseException{
-        List<BibEntry> test = parser.parseEntries("@book{1, title = {São Marcos},\n" + "publisher = {Mauro Beting},\n year = {2012},\n author={Mauro},\n editor = {Abril} }");
-
-        BibEntry entradaValida = new BibEntry();
-        entradaValida.setType("book");
-        entradaValida.setCiteKey("1");
-        entradaValida.setField("title", "São Marcos");
-        entradaValida.setField("publisher", "Mauro Beting");
-        entradaValida.setField("year", "2012");
-        entradaValida.setField("author", "Mauro");
-        entradaValida.setField("editor", "Abril");
-        assertEquals(Collections.singletonList(entradaValida), test);
-    }
-
-    @After
-    public void anoMaior2() throws ParseException{
-        List<BibEntry> test = parser.parseEntries("@book{, year = {2018}}");
-        BibEntry entradaValida = new BibEntry();
-        entradaValida.setType("book");
-        entradaValida.setField("year", "2017");
-        assertNotEquals(Collections.singletonList(entradaValida), test);
-    }
-
-    @After
-    public void anoMenor2() throws ParseException{
-        List<BibEntry> test = parser.parseEntries("@book{, year = {1899}}");
-        BibEntry entradaValida = new BibEntry();
-        entradaValida.setType("book");
-        entradaValida.setField("year", "2017");
-        assertNotEquals(Collections.singletonList(entradaValida), test);
-    }
-
-    @After
-    public void anoInferior2() throws ParseException{
-        List<BibEntry> test = parser.parseEntries("@book{, year = {1900}}");
-        BibEntry entradaValida = new BibEntry();
-        entradaValida.setType("book");
-        entradaValida.setField("year", "1900");
-        assertEquals(Collections.singletonList(entradaValida), test);
-    }
-
-    @After
-    public void anoSuperior2()  throws ParseException{
-        List<BibEntry> test = parser.parseEntries("@book{, year = {2017}}");
-        BibEntry entradaValida = new BibEntry();
-        entradaValida.setType("book");
-        entradaValida.setField("year", "2016");
-        assertNotEquals(Collections.singletonList(entradaValida), test);
-    }
-
-    @After
-    public void bitTexKey1_2() throws ParseException{
-        List<BibEntry> test = parser.parseEntries("@book{a}");
-        BibEntry entradaValida = new BibEntry();
-        entradaValida.setType("book");
-        entradaValida.setCiteKey("a");
-        assertEquals(Collections.singletonList(entradaValida), test);
-    }
-
-    @After
-    public void bitTexKeyNaoLetraInicio2() throws ParseException{
-        List<BibEntry> test = parser.parseEntries("@book{0AAA}");
-        BibEntry entradaValida = new BibEntry();
-        entradaValida.setType("book");
-        entradaValida.setCiteKey("0AAA");
-        assertEquals(Collections.singletonList(entradaValida), test);
-    }
-
-    @After
-    public void bitTexKeyUmCaracter2() throws ParseException{
-        List<BibEntry> test = parser.parseEntries("@book{A}");
-        BibEntry entradaValida = new BibEntry();
-        entradaValida.setType("book");
-        entradaValida.setCiteKey("A");
-        assertEquals(Collections.singletonList(entradaValida), test);
-    }
-
-
-    @After
-    public void bitTexKey1Correta2() throws ParseException{
-        List<BibEntry> test = parser.parseEntries("@book{Aaa111}");
-        BibEntry entradaValida = new BibEntry();
-        entradaValida.setType("book");
-        entradaValida.setCiteKey("Aaa111");
-        assertEquals(Collections.singletonList(entradaValida), test);
-    }
-
-    @After
-    public void tNull2() throws ParseException{
-        List<BibEntry> test2 = parser.parseEntries("@book{,}");
-        BibEntry entradaValida = new BibEntry();
-        entradaValida.setType("book");
-        assertEquals(Collections.singletonList(entradaValida), test2);
-    }
-
-    @After
-    public void camposExtras2() throws ParseException{
-        List<BibEntry> test3 = parser.parseEntries("@book{2, title = {Na natureza Selvagem},\n" + "publisher = {Joseph},\n year = {2018},\n author={Michael Johnson},\n editor = {Abril},\n "+ "volume = {1},\n series = {2},\n edition = {6},\n note = {Livro legal}, number = {7},\n"+ "address = {UFSCar},\n month = {Fevereiro}}");
-        BibEntry entradaValida = new BibEntry();
-        entradaValida.setType("book");
-        entradaValida.setCiteKey("2");
-        entradaValida.setField("title", "Na natureza Selvagem");
-        entradaValida.setField("publisher", "Joseph");
-        entradaValida.setField("year", "2018");
-        entradaValida.setField("author", "Michael Johnson");
-        entradaValida.setField("editor", "Abril");
-        entradaValida.setField("volume", "1");
-        entradaValida.setField("series", "2");
-        entradaValida.setField("edition", "6");
-        entradaValida.setField("note", "Livro legal");
-        entradaValida.setField("number", "7");
-        entradaValida.setField("address", "UFSCar");
-        entradaValida.setField("month", "Fevereiro");
-        assertEquals(Collections.singletonList(entradaValida), test3);
     }
 }

@@ -533,8 +533,11 @@ public class BibEntry implements Cloneable {
         if(n_paginas.equals(empty)){
             JOptionPane.showMessageDialog(null, "Número de páginas inválido. Adicione um valor válido");
             return empty;
-        }else if(Integer.parseInt(n_paginas) < minimo){
+        }else if(Integer.parseInt(n_paginas) < minimo) {
             JOptionPane.showMessageDialog(null, "Número de páginas negativo. Adicione um valor positivo");
+            return empty;
+        }else if(Integer.parseInt(n_paginas) == 0){
+            JOptionPane.showMessageDialog(null, "Número de páginas não pode ser igual a 0");
             return empty;
         }
         else

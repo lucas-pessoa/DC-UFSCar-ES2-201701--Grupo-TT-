@@ -37,7 +37,6 @@ import net.sf.jabref.model.groups.WordKeywordGroup;
 import net.sf.jabref.model.metadata.SaveOrderConfig;
 import net.sf.jabref.preferences.JabRefPreferences;
 
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -64,6 +63,33 @@ public class testeArticle {
         entradaValida.setField("journal", "json");
         entradaValida.setField("year", "2017");
         assertEquals(Collections.singletonList(entradaValida), teste1);
+    }
+
+    @Test
+    public void tNull() throws ParseException{
+        List<BibEntry> teste2 = parser.parseEntries("@article{,}");
+        BibEntry entradaValida = new BibEntry();
+        entradaValida.setType("article");
+        assertEquals(Collections.singletonList(entradaValida), teste2);
+    }
+
+    @Test
+    public void camposExtras() throws ParseException{
+        List<BibEntry> teste3 = parser.parseEntries("@article{2, author={Lucas},\n"+ "title = {Engenharia de Software do futuro},\n journal = {json},\n year = {2017},\n"+ "volume = {1},\n number = {1},\n pages = {fifth},\n month = {february},\n note = {lalala} }");
+
+        BibEntry entradaValida = new BibEntry();
+        entradaValida.setType("article");
+        entradaValida.setCiteKey("2");
+        entradaValida.setField("author", "Lucas");
+        entradaValida.setField("title", "Engenharia de Software do futuro");
+        entradaValida.setField("journal", "json");
+        entradaValida.setField("year", "2017");
+        entradaValida.setField("volume", "1");
+        entradaValida.setField("number", "1");
+        entradaValida.setField("pages", "fifth");
+        entradaValida.setField("month", "february");
+        entradaValida.setField("note", "lalala");
+        assertEquals(Collections.singletonList(entradaValida), teste3);
     }
 
     @Test
@@ -129,137 +155,4 @@ public class testeArticle {
         assertEquals(Collections.singletonList(entradaValida), teste1);
     }
 
-    @Test
-    public void tNull() throws ParseException{
-        List<BibEntry> teste2 = parser.parseEntries("@article{,}");
-        BibEntry entradaValida = new BibEntry();
-        entradaValida.setType("article");
-        assertEquals(Collections.singletonList(entradaValida), teste2);
-    }
-
-    @Test
-    public void camposExtras() throws ParseException{
-        List<BibEntry> teste3 = parser.parseEntries("@article{2, author={Lucas},\n"+ "title = {Engenharia de Software do futuro},\n journal = {json},\n year = {2017},\n"+ "volume = {1},\n number = {1},\n pages = {fifth},\n month = {february},\n note = {lalala} }");
-
-        BibEntry entradaValida = new BibEntry();
-        entradaValida.setType("article");
-        entradaValida.setCiteKey("2");
-        entradaValida.setField("author", "Lucas");
-        entradaValida.setField("title", "Engenharia de Software do futuro");
-        entradaValida.setField("journal", "json");
-        entradaValida.setField("year", "2017");
-        entradaValida.setField("volume", "1");
-        entradaValida.setField("number", "1");
-        entradaValida.setField("pages", "fifth");
-        entradaValida.setField("month", "february");
-        entradaValida.setField("note", "lalala");
-        assertEquals(Collections.singletonList(entradaValida), teste3);
-
-    }
-
-    //testes de regressão por repetição de código
-
-    @After
-    public void todosCampos2() throws ParseException{
-        List<BibEntry> teste1 = parser.parseEntries("@article{1, author={Gustavo},\n"+ "title = {A descoberta dos dados},\n journal = {json},\n year = {2017} }");
-        BibEntry entradaValida = new BibEntry();
-        entradaValida.setType("article");
-        entradaValida.setCiteKey("1");
-        entradaValida.setField("author", "Gustavo");
-        entradaValida.setField("title", "A descoberta dos dados");
-        entradaValida.setField("journal", "json");
-        entradaValida.setField("year", "2017");
-        assertEquals(Collections.singletonList(entradaValida), teste1);
-    }
-
-    @After
-    public void anoMaior2() throws ParseException{
-        List<BibEntry> teste1 = parser.parseEntries("@article{, year = {2018}}");
-        BibEntry entradaValida = new BibEntry();
-        entradaValida.setType("article");
-        entradaValida.setField("year", "2017");
-        assertNotEquals(Collections.singletonList(entradaValida), teste1);
-    }
-
-    @After
-    public void anoMenor2() throws ParseException{
-        List<BibEntry> teste1 = parser.parseEntries("@article{, year = {1899}}");
-        BibEntry entradaValida = new BibEntry();
-        entradaValida.setType("article");
-        entradaValida.setField("year", "2017");
-        assertNotEquals(Collections.singletonList(entradaValida), teste1);
-    }
-
-    @After
-    public void anoInferior2() throws ParseException{
-        List<BibEntry> teste1 = parser.parseEntries("@article{, year = {1900}}");
-        BibEntry entradaValida = new BibEntry();
-        entradaValida.setType("article");
-        entradaValida.setField("year", "1900");
-        assertEquals(Collections.singletonList(entradaValida), teste1);
-    }
-
-    @After
-    public void anoSuperior2() throws ParseException{
-        List<BibEntry> teste1 = parser.parseEntries("@article{, year = {2017}}");
-        BibEntry entradaValida = new BibEntry();
-        entradaValida.setType("article");
-        entradaValida.setField("year", "2017");
-        assertEquals(Collections.singletonList(entradaValida), teste1);
-    }
-
-    @After
-    public void bitTexKey1_2() throws ParseException{
-        List<BibEntry> teste1 = parser.parseEntries("@article{a}");
-        BibEntry entradaValida = new BibEntry();
-        entradaValida.setType("article");
-        entradaValida.setCiteKey("a");
-        assertEquals(Collections.singletonList(entradaValida), teste1);
-    }
-
-    @After
-    public void bitTexKeyNaoLetraInicio2() throws ParseException{
-        List<BibEntry> teste1 = parser.parseEntries("@article{0Aaa}");
-        BibEntry entradaValida = new BibEntry();
-        entradaValida.setType("article");
-        entradaValida.setCiteKey("0Aaa");
-        assertEquals(Collections.singletonList(entradaValida), teste1);
-    }
-
-    @After
-    public void bitTexKey1Correta2()throws ParseException{
-        List<BibEntry> teste1 = parser.parseEntries("@article{Aaa111}");
-        BibEntry entradaValida = new BibEntry();
-        entradaValida.setType("article");
-        entradaValida.setCiteKey("Aaa111");
-        assertEquals(Collections.singletonList(entradaValida), teste1);
-    }
-
-    @After
-    public void tNull2() throws ParseException{
-        List<BibEntry> teste2 = parser.parseEntries("@article{,}");
-        BibEntry entradaValida = new BibEntry();
-        entradaValida.setType("article");
-        assertEquals(Collections.singletonList(entradaValida), teste2);
-    }
-
-    @After
-    public void camposExtras2() throws ParseException{
-        List<BibEntry> teste3 = parser.parseEntries("@article{2, author={Lucas},\n"+ "title = {Engenharia de Software do futuro},\n journal = {json},\n year = {2017},\n"+ "volume = {1},\n number = {1},\n pages = {fifth},\n month = {february},\n note = {lalala} }");
-
-        BibEntry entradaValida = new BibEntry();
-        entradaValida.setType("article");
-        entradaValida.setCiteKey("2");
-        entradaValida.setField("author", "Lucas");
-        entradaValida.setField("title", "Engenharia de Software do futuro");
-        entradaValida.setField("journal", "json");
-        entradaValida.setField("year", "2017");
-        entradaValida.setField("volume", "1");
-        entradaValida.setField("number", "1");
-        entradaValida.setField("pages", "fifth");
-        entradaValida.setField("month", "february");
-        entradaValida.setField("note", "lalala");
-        assertEquals(Collections.singletonList(entradaValida), teste3);
-
-    }
 }
