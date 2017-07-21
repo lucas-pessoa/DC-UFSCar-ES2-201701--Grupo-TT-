@@ -1,15 +1,10 @@
-package net.sf.jabref.logic.importer.fileformat;
-
+import net.sf.jabref.logic.importer.fileformat.CSVImporter;
 import net.sf.jabref.Globals;
-
 import net.sf.jabref.logic.util.FileExtensions;
-
 import net.sf.jabref.preferences.JabRefPreferences;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
 import static org.junit.Assert.assertEquals;
 
 
