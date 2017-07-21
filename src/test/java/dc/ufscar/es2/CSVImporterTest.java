@@ -6,6 +6,7 @@ import net.sf.jabref.logic.util.FileExtensions;
 
 import net.sf.jabref.preferences.JabRefPreferences;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -38,6 +39,22 @@ public class CSVImporterTest {
         assertEquals(FileExtensions.CSV, importer.getExtensions());
     }
 
+    //testes de regressão por duplicação de código
+    @After
+    public void testeNomeExtensao2() {
+        assertEquals("Comma Separated Values", importer.getName());
+    }
+
+    @After
+    public void testFormatoID2() {
+        assertEquals("Comma Separated Values", importer.getId());
+    }
+
+
+    @After
+    public void testsExtensao2() {
+        assertEquals(FileExtensions.CSV, importer.getExtensions());
+    }
 
 
 }

@@ -62,4 +62,39 @@ public class InsertionTestCase {
     }
 
 
+    //testes de regressão por duplicação de testes
+    @After
+    public void nullBibEntry2(){
+        entry.setField("","");
+        Assert.assertTrue(entry.getKeywords(',').isEmpty());
+    }
+
+    @After
+    public void invalidIdBibEntry2(){
+        String id = "99999999999999999999999999999999999999";
+        String expected = "99999999999999999999999999999999999999";
+        entry.setId(id);
+        id = entry.getId();
+        Assert.assertEquals(expected, id);
+    }
+
+
+    @After
+    public void invalidCiteKey2(){
+        String citeKeyInvalid = ""; //entrada nula
+        String expected = "2";
+        entry.setCiteKey(citeKeyInvalid);
+        citeKeyInvalid = entry.getCiteKey();
+        Assert.assertNotEquals(expected,citeKeyInvalid);
+    }
+
+    @After
+    public void validCiteKey2(){
+        String citeKeyValid = "a1"; //entrada nula
+        String expected1 = "a1";
+        entry.setCiteKey(citeKeyValid);
+        citeKeyValid = entry.getCiteKey();
+        Assert.assertEquals(expected1,citeKeyValid);
+    }
+
 }

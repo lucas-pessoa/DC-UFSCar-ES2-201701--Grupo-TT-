@@ -5,6 +5,7 @@ import net.sf.jabref.logic.importer.ParseException;
 import net.sf.jabref.logic.importer.fileformat.BibtexParser;
 import net.sf.jabref.model.entry.BibEntry;
 import net.sf.jabref.preferences.JabRefPreferences;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -36,6 +37,25 @@ public class testeinBook {
 
     @Test
     public void nPaginasNulo() throws ParseException{
+        List<BibEntry> teste = parser.parseEntries("@inbook{2, title = {Sherlock},\n" + "pages = {}}");
+        BibEntry entradaValida = new BibEntry();
+        entradaValida.setType("inbook");
+        entradaValida.setField("pages", "3");
+        assertEquals(Collections.singletonList(entradaValida), teste);
+    }
+
+    //testes de regressão por duplicação de código
+    @After
+    public void nPaginasNegativo2() throws ParseException{
+        List<BibEntry> teste = parser.parseEntries("@inbook{1, title = {A arte da Guerra},\n" + "pages = {-1}}");
+        BibEntry entradaValida = new BibEntry();
+        entradaValida.setType("book");
+        entradaValida.setField("pages", "2");
+        assertNotEquals(Collections.singletonList(entradaValida), teste);
+    }
+
+    @After
+    public void nPaginasNulo2() throws ParseException{
         List<BibEntry> teste = parser.parseEntries("@inbook{2, title = {Sherlock},\n" + "pages = {}}");
         BibEntry entradaValida = new BibEntry();
         entradaValida.setType("inbook");
