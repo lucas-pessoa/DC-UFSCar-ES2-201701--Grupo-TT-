@@ -262,4 +262,3 @@ public class testeArticle {
         assertEquals(Collections.singletonList(entradaValida), teste3);
 
     }
-}

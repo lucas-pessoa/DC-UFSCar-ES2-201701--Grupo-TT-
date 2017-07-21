@@ -1,4 +1,5 @@
-package net.sf.jabref.logic.importer.fileformat;
+package dc.ufscar.es2;
+import net.sf.jabref.logic.importer.fileformat.CSVImporter;
 
 import net.sf.jabref.Globals;
 
